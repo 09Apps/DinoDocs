@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED818F2218961BDC00223BA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED818F2118961BDC00223BA1 /* Foundation.framework */; };
+		ED818F2418961BDC00223BA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED818F2318961BDC00223BA1 /* CoreGraphics.framework */; };
+		ED818F2618961BDC00223BA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED818F2518961BDC00223BA1 /* UIKit.framework */; };
+		ED818F2C18961BDC00223BA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED818F2A18961BDC00223BA1 /* InfoPlist.strings */; };
+		ED818F2E18961BDC00223BA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED818F2D18961BDC00223BA1 /* main.m */; };
+		ED818F3218961BDC00223BA1 /* DDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED818F3118961BDC00223BA1 /* DDAppDelegate.m */; };
+		ED818F3518961BDC00223BA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED818F3318961BDC00223BA1 /* Main.storyboard */; };
+		ED818F3818961BDC00223BA1 /* DDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED818F3718961BDC00223BA1 /* DDViewController.m */; };
+		ED818F3A18961BDC00223BA1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED818F3918961BDC00223BA1 /* Images.xcassets */; };
+		ED818F4118961BDC00223BA1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED818F4018961BDC00223BA1 /* XCTest.framework */; };
+		ED818F4218961BDC00223BA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED818F2118961BDC00223BA1 /* Foundation.framework */; };
+		ED818F4318961BDC00223BA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED818F2518961BDC00223BA1 /* UIKit.framework */; };
+		ED818F4B18961BDC00223BA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED818F4918961BDC00223BA1 /* InfoPlist.strings */; };
+		ED818F4D18961BDC00223BA1 /* DinoDocTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED818F4C18961BDC00223BA1 /* DinoDocTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED818F4418961BDC00223BA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED818F1618961BDC00223BA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED818F1D18961BDC00223BA1;
+			remoteInfo = DinoDoc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED818F1E18961BDC00223BA1 /* DinoDoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinoDoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED818F2118961BDC00223BA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ED818F2318961BDC00223BA1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ED818F2518961BDC00223BA1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		ED818F2918961BDC00223BA1 /* DinoDoc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DinoDoc-Info.plist"; sourceTree = "<group>"; };
+		ED818F2B18961BDC00223BA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ED818F2D18961BDC00223BA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ED818F2F18961BDC00223BA1 /* DinoDoc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DinoDoc-Prefix.pch"; sourceTree = "<group>"; };
+		ED818F3018961BDC00223BA1 /* DDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDAppDelegate.h; sourceTree = "<group>"; };
+		ED818F3118961BDC00223BA1 /* DDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDAppDelegate.m; sourceTree = "<group>"; };
+		ED818F3418961BDC00223BA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED818F3618961BDC00223BA1 /* DDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDViewController.h; sourceTree = "<group>"; };
+		ED818F3718961BDC00223BA1 /* DDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDViewController.m; sourceTree = "<group>"; };
+		ED818F3918961BDC00223BA1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ED818F3F18961BDC00223BA1 /* DinoDocTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DinoDocTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED818F4018961BDC00223BA1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		ED818F4818961BDC00223BA1 /* DinoDocTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DinoDocTests-Info.plist"; sourceTree = "<group>"; };
+		ED818F4A18961BDC00223BA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ED818F4C18961BDC00223BA1 /* DinoDocTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinoDocTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED818F1B18961BDC00223BA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED818F2418961BDC00223BA1 /* CoreGraphics.framework in Frameworks */,
+				ED818F2618961BDC00223BA1 /* UIKit.framework in Frameworks */,
+				ED818F2218961BDC00223BA1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED818F3C18961BDC00223BA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED818F4118961BDC00223BA1 /* XCTest.framework in Frameworks */,
+				ED818F4318961BDC00223BA1 /* UIKit.framework in Frameworks */,
+				ED818F4218961BDC00223BA1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED818F1518961BDC00223BA1 = {
+			isa = PBXGroup;
+			children = (
+				ED818F2718961BDC00223BA1 /* DinoDoc */,
+				ED818F4618961BDC00223BA1 /* DinoDocTests */,
+				ED818F2018961BDC00223BA1 /* Frameworks */,
+				ED818F1F18961BDC00223BA1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED818F1F18961BDC00223BA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED818F1E18961BDC00223BA1 /* DinoDoc.app */,
+				ED818F3F18961BDC00223BA1 /* DinoDocTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED818F2018961BDC00223BA1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED818F2118961BDC00223BA1 /* Foundation.framework */,
+				ED818F2318961BDC00223BA1 /* CoreGraphics.framework */,
+				ED818F2518961BDC00223BA1 /* UIKit.framework */,
+				ED818F4018961BDC00223BA1 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED818F2718961BDC00223BA1 /* DinoDoc */ = {
+			isa = PBXGroup;
+			children = (
+				ED818F3018961BDC00223BA1 /* DDAppDelegate.h */,
+				ED818F3118961BDC00223BA1 /* DDAppDelegate.m */,
+				ED818F3318961BDC00223BA1 /* Main.storyboard */,
+				ED818F3618961BDC00223BA1 /* DDViewController.h */,
+				ED818F3718961BDC00223BA1 /* DDViewController.m */,
+				ED818F3918961BDC00223BA1 /* Images.xcassets */,
+				ED818F2818961BDC00223BA1 /* Supporting Files */,
+			);
+			path = DinoDoc;
+			sourceTree = "<group>";
+		};
+		ED818F2818961BDC00223BA1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED818F2918961BDC00223BA1 /* DinoDoc-Info.plist */,
+				ED818F2A18961BDC00223BA1 /* InfoPlist.strings */,
+				ED818F2D18961BDC00223BA1 /* main.m */,
+				ED818F2F18961BDC00223BA1 /* DinoDoc-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ED818F4618961BDC00223BA1 /* DinoDocTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED818F4C18961BDC00223BA1 /* DinoDocTests.m */,
+				ED818F4718961BDC00223BA1 /* Supporting Files */,
+			);
+			path = DinoDocTests;
+			sourceTree = "<group>";
+		};
+		ED818F4718961BDC00223BA1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED818F4818961BDC00223BA1 /* DinoDocTests-Info.plist */,
+				ED818F4918961BDC00223BA1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED818F1D18961BDC00223BA1 /* DinoDoc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED818F5018961BDD00223BA1 /* Build configuration list for PBXNativeTarget "DinoDoc" */;
+			buildPhases = (
+				ED818F1A18961BDC00223BA1 /* Sources */,
+				ED818F1B18961BDC00223BA1 /* Frameworks */,
+				ED818F1C18961BDC00223BA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DinoDoc;
+			productName = DinoDoc;
+			productReference = ED818F1E18961BDC00223BA1 /* DinoDoc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED818F3E18961BDC00223BA1 /* DinoDocTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED818F5318961BDD00223BA1 /* Build configuration list for PBXNativeTarget "DinoDocTests" */;
+			buildPhases = (
+				ED818F3B18961BDC00223BA1 /* Sources */,
+				ED818F3C18961BDC00223BA1 /* Frameworks */,
+				ED818F3D18961BDC00223BA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED818F4518961BDC00223BA1 /* PBXTargetDependency */,
+			);
+			name = DinoDocTests;
+			productName = DinoDocTests;
+			productReference = ED818F3F18961BDC00223BA1 /* DinoDocTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED818F1618961BDC00223BA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DD;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = 09Apps;
+				TargetAttributes = {
+					ED818F3E18961BDC00223BA1 = {
+						TestTargetID = ED818F1D18961BDC00223BA1;
+					};
+				};
+			};
+			buildConfigurationList = ED818F1918961BDC00223BA1 /* Build configuration list for PBXProject "DinoDoc" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED818F1518961BDC00223BA1;
+			productRefGroup = ED818F1F18961BDC00223BA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED818F1D18961BDC00223BA1 /* DinoDoc */,
+				ED818F3E18961BDC00223BA1 /* DinoDocTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED818F1C18961BDC00223BA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED818F3A18961BDC00223BA1 /* Images.xcassets in Resources */,
+				ED818F2C18961BDC00223BA1 /* InfoPlist.strings in Resources */,
+				ED818F3518961BDC00223BA1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED818F3D18961BDC00223BA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED818F4B18961BDC00223BA1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED818F1A18961BDC00223BA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED818F3218961BDC00223BA1 /* DDAppDelegate.m in Sources */,
+				ED818F3818961BDC00223BA1 /* DDViewController.m in Sources */,
+				ED818F2E18961BDC00223BA1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED818F3B18961BDC00223BA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED818F4D18961BDC00223BA1 /* DinoDocTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED818F4518961BDC00223BA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED818F1D18961BDC00223BA1 /* DinoDoc */;
+			targetProxy = ED818F4418961BDC00223BA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED818F2A18961BDC00223BA1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED818F2B18961BDC00223BA1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		ED818F3318961BDC00223BA1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED818F3418961BDC00223BA1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED818F4918961BDC00223BA1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED818F4A18961BDC00223BA1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED818F4E18961BDD00223BA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ED818F4F18961BDD00223BA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED818F5118961BDD00223BA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DinoDoc/DinoDoc-Prefix.pch";
+				INFOPLIST_FILE = "DinoDoc/DinoDoc-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		ED818F5218961BDD00223BA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DinoDoc/DinoDoc-Prefix.pch";
+				INFOPLIST_FILE = "DinoDoc/DinoDoc-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		ED818F5418961BDD00223BA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DinoDoc.app/DinoDoc";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DinoDoc/DinoDoc-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DinoDocTests/DinoDocTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		ED818F5518961BDD00223BA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DinoDoc.app/DinoDoc";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DinoDoc/DinoDoc-Prefix.pch";
+				INFOPLIST_FILE = "DinoDocTests/DinoDocTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED818F1918961BDC00223BA1 /* Build configuration list for PBXProject "DinoDoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED818F4E18961BDD00223BA1 /* Debug */,
+				ED818F4F18961BDD00223BA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED818F5018961BDD00223BA1 /* Build configuration list for PBXNativeTarget "DinoDoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED818F5118961BDD00223BA1 /* Debug */,
+				ED818F5218961BDD00223BA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED818F5318961BDD00223BA1 /* Build configuration list for PBXNativeTarget "DinoDocTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED818F5418961BDD00223BA1 /* Debug */,
+				ED818F5518961BDD00223BA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED818F1618961BDC00223BA1 /* Project object */;
+}
