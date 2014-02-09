@@ -36,14 +36,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    NSLog(@"I got this animal %d",self.animaltype);
-    
     NSString* plistPath = [self getPlistPath:@"TRexQA"];
     
     // read property list into memory as an NSData object
     NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
     NSString *errorDesc = nil;
     NSPropertyListFormat format;
+    
     // convert static property list into dictionary object
     NSDictionary *temp = (NSDictionary *)[NSPropertyListSerialization propertyListFromData:plistXML mutabilityOption:NSPropertyListMutableContainersAndLeaves format:&format errorDescription:&errorDesc];
     
@@ -52,10 +51,29 @@
         NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
     }
     
-    NSMutableArray* questionarray = [temp objectForKey:@"QArr"];;
+    self.opt1.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.opt2.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.opt3.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.opt4.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
-    NSLog(@"Array %@",questionarray);
+    self.questions = [temp objectForKey:@"QArr"];
+    
+    for (NSDictionary* que in self.questions)
+    {
+        BOOL userknows = [[que objectForKey:@"UserGaveAns"] boolValue];
+        
+        if ( userknows == NO )
+        {
+            self.quetxt.text = [que objectForKey:@"Question"];
+            
+            [self.opt1 setTitle:[que objectForKey:@"Option1"] forState:UIControlStateNormal];
+            [self.opt2 setTitle:[que objectForKey:@"Option2"] forState:UIControlStateNormal];
+            [self.opt3 setTitle:[que objectForKey:@"Option3"] forState:UIControlStateNormal];
+            [self.opt4 setTitle:[que objectForKey:@"Option4"] forState:UIControlStateNormal];
 
+            break;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning

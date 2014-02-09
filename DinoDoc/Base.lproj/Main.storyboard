@@ -136,7 +136,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6P8-GF-O5J">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="6P8-GF-O5J">
                                 <rect key="frame" x="20" y="98" width="280" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -175,6 +175,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="aEW-2I-l1w"/>
+                    <connections>
+                        <outlet property="Quetxt" destination="6P8-GF-O5J" id="8Ie-sC-Hv9"/>
+                        <outlet property="opt1" destination="eNg-9l-ptQ" id="vIz-Zs-mVA"/>
+                        <outlet property="opt2" destination="TeW-f9-xBS" id="TCD-bV-J1h"/>
+                        <outlet property="opt3" destination="Sza-31-Qdz" id="tl6-f1-Hrl"/>
+                        <outlet property="opt4" destination="efH-BP-bBA" id="Yd6-kV-y1e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFY-pC-nhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

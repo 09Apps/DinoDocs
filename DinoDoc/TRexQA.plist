@@ -5,6 +5,8 @@
 	<key>QArr</key>
 	<array>
 		<dict>
+			<key>Complexity</key>
+			<integer>0</integer>
 			<key>Details</key>
 			<string>Dinosaurs had replaceable teeth; as teeth became worn or broken they fell out and new ones grew in their places.</string>
 			<key>UserGaveAns</key>
@@ -25,6 +27,8 @@
 			<string>Did Dinosaurs lose their tooth when they grew old?</string>
 		</dict>
 		<dict>
+			<key>Complexity</key>
+			<integer>0</integer>
 			<key>Details</key>
 			<string>There are only speculations. The giant ones would have hard time getting back up again, given their weight and size. But most dinosaurs were not enormous and didn&apos;t have tiny arms so there wouldn&apos;t be a physical problem lying down, but no one knows how they slept.</string>
 			<key>UserGaveAns</key>
@@ -45,6 +49,8 @@
 			<string>Dinosaurs slept standing up or lying down?</string>
 		</dict>
 		<dict>
+			<key>Complexity</key>
+			<integer>0</integer>
 			<key>Details</key>
 			<string>The term dinosaur was coined by the English anatomist Sir Richard Owen in 1842, who derived it from green words &quot;deinos&quot; (means terrifying) and &quot;sauros&quot; (means lizard).</string>
 			<key>UserGaveAns</key>
