@@ -5,6 +5,13 @@
 	<key>QArr</key>
 	<array>
 		<dict>
+			<key>Options</key>
+			<array>
+				<string>They had really strong teeth, never lost it.</string>
+				<string>Yes, the poor old dinos were toothless.</string>
+				<string>They got new teeth when old one fell out.</string>
+				<string>Who said Dinosaurs had teeth?</string>
+			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
@@ -14,15 +21,7 @@
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
-			<integer>3</integer>
-			<key>Option4</key>
-			<string>Who said Dinosaurs had teeth?</string>
-			<key>Option3</key>
-			<string>They got new teeth when old one fell out.</string>
-			<key>Option2</key>
-			<string>Yes, the old dino had to crush their food to be able eat.</string>
-			<key>Option1</key>
-			<string>Oh no, they had really strong teeth!</string>
+			<integer>2</integer>
 			<key>Question</key>
 			<string>Did Dinosaurs lose their tooth when they grew old?</string>
 		</dict>
@@ -36,7 +35,7 @@
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
-			<integer>4</integer>
+			<integer>3</integer>
 			<key>Option4</key>
 			<string>No one knows for sure, whoever went to check out did not come back.</string>
 			<key>Option3</key>
@@ -58,7 +57,7 @@
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
-			<integer>4</integer>
+			<integer>3</integer>
 			<key>Option4</key>
 			<string>It means terrifying lizards in greek.</string>
 			<key>Option3</key>

@@ -10,13 +10,12 @@
 
 @interface DDSelectViewController : UIViewController
 
+- (void)showQuestions;
+
 @property NSUInteger animaltype;
+@property NSUInteger answernum;
+@property NSUInteger currentqnum;
 @property (nonatomic, strong) NSArray* questions;
 @property (weak, nonatomic) IBOutlet UILabel *quetxt;
-@property (weak, nonatomic) IBOutlet UIButton *opt1;
-@property (weak, nonatomic) IBOutlet UIButton *opt2;
-@property (weak, nonatomic) IBOutlet UIButton *opt3;
-@property (weak, nonatomic) IBOutlet UIButton *opt4;
 
-//-(id) initWithAnimalType:(NSUInteger) type;
 @end

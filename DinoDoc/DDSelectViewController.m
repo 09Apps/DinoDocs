@@ -7,6 +7,8 @@
 //
 
 #import "DDSelectViewController.h"
+#import "DDDefines.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface DDSelectViewController ()
 
@@ -23,14 +25,6 @@
     return self;
 }
 
-/*
-- (id)initWithAnimalType:(NSUInteger)type
-{
-    self.animaltype = type;
-    return self;
-}
- */
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -38,40 +32,113 @@
     
     NSString* plistPath = [self getPlistPath:@"TRexQA"];
     
+//    NSLog(@"plistPath %@",plistPath);
+    
     // read property list into memory as an NSData object
     NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
     NSString *errorDesc = nil;
     NSPropertyListFormat format;
+//    self.currentqnum = 0;
     
     // convert static property list into dictionary object
-    NSDictionary *temp = (NSDictionary *)[NSPropertyListSerialization propertyListFromData:plistXML mutabilityOption:NSPropertyListMutableContainersAndLeaves format:&format errorDescription:&errorDesc];
+    NSDictionary *dict = (NSDictionary *)[NSPropertyListSerialization propertyListFromData:plistXML mutabilityOption:NSPropertyListMutableContainersAndLeaves format:&format errorDescription:&errorDesc];
     
-    if (!temp)
+    if (!dict)
     {
         NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
     }
     
-    self.opt1.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.opt2.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.opt3.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.opt4.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    
-    self.questions = [temp objectForKey:@"QArr"];
-    
-    for (NSDictionary* que in self.questions)
+    self.questions = [dict objectForKey:@"QArr"];
+    [self showQuestions];
+}
+
+- (void)buttonClicked:(UIButton*) sender
+{
+    if (sender.tag == self.answernum)
     {
+        [self rightAnswer];
+    }
+    else
+    {
+        [self wrongAnswer];
+    }
+    
+    [self showQuestions];
+}
+
+- (void)rightAnswer
+{
+    SystemSoundID _rightsound;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"right_answer" ofType:@"wav"];
+    NSURL *pathURL = [NSURL fileURLWithPath:path];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)pathURL, &_rightsound);
+/*    AudioServicesAddSystemSoundCompletion(_rightsound, NULL, NULL, <#AudioServicesSystemSoundCompletionProc inCompletionRoutine#>, <#void *inClientData#>) */
+    AudioServicesPlaySystemSound(_rightsound);
+}
+
+- (void)wrongAnswer
+{
+    SystemSoundID _wrongsound;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"wrong_answer" ofType:@"wav"];
+    NSURL *pathURL = [NSURL fileURLWithPath:path];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)pathURL, &_wrongsound);
+    AudioServicesPlaySystemSound(_wrongsound);
+}
+
+- (void) soundCompleted
+{
+    [self showQuestions];
+}
+
+- (void)showQuestions
+{
+    // Start again from first if user has completed the quiz.
+    if (self.currentqnum == MAXNUM)
+    {
+        self.currentqnum = 0;
+    }
+    
+    for (int quect=self.currentqnum; quect < MAXNUM; quect++)
+    {
+        NSDictionary* que = [self.questions objectAtIndex:quect];
         BOOL userknows = [[que objectForKey:@"UserGaveAns"] boolValue];
         
         if ( userknows == NO )
         {
             self.quetxt.text = [que objectForKey:@"Question"];
             
-            [self.opt1 setTitle:[que objectForKey:@"Option1"] forState:UIControlStateNormal];
-            [self.opt2 setTitle:[que objectForKey:@"Option2"] forState:UIControlStateNormal];
-            [self.opt3 setTitle:[que objectForKey:@"Option3"] forState:UIControlStateNormal];
-            [self.opt4 setTitle:[que objectForKey:@"Option4"] forState:UIControlStateNormal];
-
+            NSArray* optarr = [que objectForKey:@"Options"];
+            
+            NSLog(@"optarr %@",optarr);
+            
+            for(int cnt=0;cnt<4;cnt++)
+            {
+                // Create 4 buttons using array and loop.
+                UIButton *theButton= [[UIButton alloc] initWithFrame:CGRectMake(20,(160+(65*cnt)), 275, 60)];
+                
+                theButton.backgroundColor = [UIColor grayColor];
+                theButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+                theButton.tag = cnt;
+                
+                NSString *buttontext = [optarr objectAtIndex:cnt];
+                
+                [theButton setTitle:buttontext forState:UIControlStateNormal];
+                
+                //set their selector using add selector
+                [theButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+                
+                [self.view addSubview:theButton];
+            }
+            
+            // Save tha answer key. It starts from 0.
+            self.answernum = [[que objectForKey:@"Answer"] integerValue];
+            self.currentqnum++;
+            
             break;
+        }
+        else
+        {
+            self.currentqnum++;
         }
     }
 }

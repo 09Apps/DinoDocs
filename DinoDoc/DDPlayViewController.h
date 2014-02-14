@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define TREX 100
-
 @interface DDPlayViewController : UIViewController
 @property NSUInteger selanimal;
 
