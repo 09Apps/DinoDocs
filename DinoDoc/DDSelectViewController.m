@@ -49,6 +49,7 @@
     }
     
     self.questions = [dict objectForKey:@"QArr"];
+    
     [self showQuestions];
 }
 
@@ -74,6 +75,10 @@
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)pathURL, &_rightsound);
 /*    AudioServicesAddSystemSoundCompletion(_rightsound, NULL, NULL, <#AudioServicesSystemSoundCompletionProc inCompletionRoutine#>, <#void *inClientData#>) */
     AudioServicesPlaySystemSound(_rightsound);
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Awesome !" message:self.ansdetails delegate:self cancelButtonTitle:@"Cool" otherButtonTitles: nil];
+    
+    [alert show];
 }
 
 - (void)wrongAnswer
@@ -83,6 +88,11 @@
     NSURL *pathURL = [NSURL fileURLWithPath:path];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)pathURL, &_wrongsound);
     AudioServicesPlaySystemSound(_wrongsound);
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Think harder !" message:@"Remember, Incorrect answer makes the dinosaurs really sad" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+    
+    [alert show];
+    
 }
 
 - (void) soundCompleted
@@ -109,8 +119,6 @@
             
             NSArray* optarr = [que objectForKey:@"Options"];
             
-            NSLog(@"optarr %@",optarr);
-            
             for(int cnt=0;cnt<4;cnt++)
             {
                 // Create 4 buttons using array and loop.
@@ -132,6 +140,7 @@
             
             // Save tha answer key. It starts from 0.
             self.answernum = [[que objectForKey:@"Answer"] integerValue];
+            self.ansdetails = [que objectForKey:@"Details"];
             self.currentqnum++;
             
             break;

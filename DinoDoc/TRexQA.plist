@@ -26,6 +26,13 @@
 			<string>Did Dinosaurs lose their tooth when they grew old?</string>
 		</dict>
 		<dict>
+			<key>Options</key>
+			<array>
+				<string>No one knows for sure, whoever went to check out did not come back.</string>
+				<string>Dinosaurs didn&apos;t sleep, they were always hunting or star-gazing.</string>
+				<string>They slept standing up and were sleep walking all the time!</string>
+				<string>They liked lying down on comfy beds made up of trees.</string>
+			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
@@ -35,19 +42,18 @@
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
-			<integer>3</integer>
-			<key>Option4</key>
-			<string>No one knows for sure, whoever went to check out did not come back.</string>
-			<key>Option3</key>
-			<string>Dinosaurs didn&apos;t sleep, they were always hunting or star-gazing.</string>
-			<key>Option2</key>
-			<string>They slept standing up and were sleep walking all the time!</string>
-			<key>Option1</key>
-			<string>They liked lying down on comfy beds made up of trees.</string>
+			<integer>0</integer>
 			<key>Question</key>
 			<string>Dinosaurs slept standing up or lying down?</string>
 		</dict>
 		<dict>
+			<key>Options</key>
+			<array>
+				<string>What else do you call a dinosaur?</string>
+				<string>Dinosaur were first discovered by Sir Richard Dinosaur, hence the name.</string>
+				<string>That&apos;s the name ancient romans gave them.</string>
+				<string>It means terrifying lizards in greek.</string>
+			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
@@ -58,14 +64,6 @@
 			<string></string>
 			<key>Answer</key>
 			<integer>3</integer>
-			<key>Option4</key>
-			<string>It means terrifying lizards in greek.</string>
-			<key>Option3</key>
-			<string>That&apos;s the name ancient romans gave them.</string>
-			<key>Option2</key>
-			<string>Dinosaur were first discovered by Sir Richard Dinosaur, hence the name.</string>
-			<key>Option1</key>
-			<string>What else do you call a dinosaur?</string>
 			<key>Question</key>
 			<string>Why are dinosaurs called dinosaurs?</string>
 		</dict>

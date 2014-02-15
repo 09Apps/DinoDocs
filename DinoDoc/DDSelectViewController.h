@@ -16,6 +16,7 @@
 @property NSUInteger answernum;
 @property NSUInteger currentqnum;
 @property (nonatomic, strong) NSArray* questions;
+@property (nonatomic, strong) NSString* ansdetails;
 @property (weak, nonatomic) IBOutlet UILabel *quetxt;
 
 @end
