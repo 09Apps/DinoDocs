@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface DDPlayViewController : UIViewController
 @property NSUInteger selanimal;
+@property (nonatomic, strong) AVAudioPlayer* playvcplayer;
 
 @end

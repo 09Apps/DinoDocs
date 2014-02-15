@@ -42,6 +42,10 @@
     {
         DDSelectViewController *selVC = (DDSelectViewController*)[segue destinationViewController];
         selVC.animaltype = self.selanimal;
+        
+        // Stop the backgrounf music now.
+        [self.playvcplayer stop];
+        self.playvcplayer = nil;
     }
 }
 
