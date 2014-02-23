@@ -10,7 +10,8 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface DDPlayViewController : UIViewController
-@property NSUInteger selanimal;
-@property (nonatomic, strong) AVAudioPlayer* playvcplayer;
+@property (nonatomic,strong) NSArray* options;
+@property (weak, nonatomic) IBOutlet UIButton *button1;
+
 
 @end

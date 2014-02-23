@@ -8,6 +8,7 @@
 
 #import "DDSelectViewController.h"
 #import "DDDefines.h"
+#import "DDUtils.h"
 #import <AudioToolbox/AudioToolbox.h>
 
 @interface DDSelectViewController ()
@@ -30,9 +31,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    NSString* plistPath = [self getPlistPath:@"TRexQA"];
-    
-//    NSLog(@"plistPath %@",plistPath);
+    // The name of the plist file with questions and answers for each option must match
+    // with the button title
+    NSString* plistPath = [DDUtils getPlistPath:self.optname];
     
     // read property list into memory as an NSData object
     NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
@@ -89,7 +90,7 @@
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)pathURL, &_wrongsound);
     AudioServicesPlaySystemSound(_wrongsound);
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Think harder !" message:@"Remember, Incorrect answer makes the dinosaurs really sad" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Think harder !" message:@"Remember, An incorrect answer makes the dinosaurs really sad" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
     
     [alert show];
     
@@ -158,37 +159,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString*) getPlistPath:(NSString*) pListName
-{
-    // get paths from root direcory
-    NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
-    // get documents path
-    NSString *documentsPath = [paths objectAtIndex:0];
-    
-    NSString *filename = [pListName stringByAppendingString:@".plist"];
-    
-    // get the path to our Data/plist file
-    NSString *plistPath = [documentsPath stringByAppendingPathComponent:filename];
-    
-    // check to see if Data.plist exists in documents
-    if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
-    {
-        NSError *err;
-        // if not in documents, get property list from main bundle
-        NSString* pBundlePath = [[NSBundle mainBundle] pathForResource:pListName ofType:@"plist"];
-        
-        // Copy Plist to document directory
-        NSFileManager* manager = [NSFileManager defaultManager];
-        [manager copyItemAtPath:pBundlePath toPath:plistPath error:&err];
-        
-        if(err)
-        {
-            NSLog(@"Error in saveData: %@", err);
-            return pBundlePath;
-        }
-    }
-    return plistPath;
-}
 
 
 @end

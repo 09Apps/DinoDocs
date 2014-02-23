@@ -24,14 +24,9 @@
     return self;
 }
 
-
-- (IBAction)typeSelected:(UIButton *)sender
+- (IBAction)button1touched:(UIButton *)senderbutton
 {
-    // It is essential that each tag for animal matches the #DEFINE for that animal
-    // we use button tags to identify which animal is selected
-    
-    self.selanimal = sender.tag;
-    [self performSegueWithIdentifier:@"selseg" sender:nil];
+    [self performSegueWithIdentifier:@"selseg" sender:senderbutton];
 }
 
 
@@ -41,18 +36,27 @@
     if ([segue.identifier isEqualToString:@"selseg"])
     {
         DDSelectViewController *selVC = (DDSelectViewController*)[segue destinationViewController];
-        selVC.animaltype = self.selanimal;
-        
+        selVC.optname = [(UIButton*)sender currentTitle];
+
         // Stop the backgrounf music now.
-        [self.playvcplayer stop];
-        self.playvcplayer = nil;
+
     }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view.
+    
+    NSUInteger optionscount = [self.options count];
+    
+    for (int i=0; i<optionscount; i++)
+    {
+        NSDictionary* dict = [self.options objectAtIndex:i];
+        [self.button1 setTitle:[dict objectForKey:@"name"] forState:UIControlStateNormal];
+        break;
+    }
 }
 
 - (void)didReceiveMemoryWarning

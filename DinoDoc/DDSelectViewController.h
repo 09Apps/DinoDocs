@@ -12,7 +12,8 @@
 
 - (void)showQuestions;
 
-@property NSUInteger animaltype;
+@property (weak, nonatomic) IBOutlet UILabel *timer;
+@property (nonatomic,strong) NSString* optname;
 @property NSUInteger answernum;
 @property NSUInteger currentqnum;
 @property (nonatomic, strong) NSArray* questions;

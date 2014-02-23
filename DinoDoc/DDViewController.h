@@ -11,6 +11,6 @@
 
 @interface DDViewController : UIViewController
 
-@property (nonatomic, strong) AVAudioPlayer* player;
+@property(nonatomic,strong) NSDictionary* mainparamdict;
 
 @end

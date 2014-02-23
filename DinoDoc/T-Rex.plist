@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>QArr</key>
+	<array>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>They had really strong teeth, never lost it.</string>
+				<string>Yes, the poor old dinos were toothless.</string>
+				<string>They got new teeth when old one fell out.</string>
+				<string>Who said Dinosaurs had teeth?</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Dinosaurs had replaceable teeth; as teeth became worn or broken they fell out and new ones grew in their places.</string>
+			<key>UserGaveAns</key>
+			<false/>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Did Dinosaurs lose their tooth when they grew old?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>No one knows for sure, whoever went to check out did not come back.</string>
+				<string>Dinosaurs didn&apos;t sleep, they were always hunting or star-gazing.</string>
+				<string>They slept standing up and were sleep walking all the time!</string>
+				<string>They liked lying down on comfy beds made up of trees.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>There are only speculations. The giant ones would have hard time getting back up again, given their weight and size. But most dinosaurs were not enormous and didn&apos;t have tiny arms so there wouldn&apos;t be a physical problem lying down, but no one knows how they slept.</string>
+			<key>UserGaveAns</key>
+			<false/>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>Dinosaurs slept standing up or lying down?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>What else do you call a dinosaur?</string>
+				<string>Dinosaur were first discovered by Sir Richard Dinosaur, hence the name.</string>
+				<string>That&apos;s the name ancient romans gave them.</string>
+				<string>It means terrifying lizards in greek.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>The term dinosaur was coined by the English anatomist Sir Richard Owen in 1842, who derived it from green words &quot;deinos&quot; (means terrifying) and &quot;sauros&quot; (means lizard).</string>
+			<key>UserGaveAns</key>
+			<false/>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>Why are dinosaurs called dinosaurs?</string>
+		</dict>
+	</array>
+</dict>
+</plist>

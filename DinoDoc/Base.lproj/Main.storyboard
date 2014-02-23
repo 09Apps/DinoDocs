@@ -105,11 +105,11 @@
                             <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyG-SG-t6S">
                                 <rect key="frame" x="27" y="126" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="T-Rex">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="typeSelected:" destination="qXi-1E-XE6" eventType="touchUpInside" id="tb8-gP-gZ8"/>
+                                    <action selector="button1touched:" destination="qXi-1E-XE6" eventType="touchUpInside" id="FdN-TT-0xi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -117,6 +117,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="hYL-kj-Zqj"/>
                     <connections>
+                        <outlet property="button1" destination="EyG-SG-t6S" id="Tkr-Tc-1hV"/>
                         <segue destination="vSe-Y9-s3x" kind="push" identifier="selseg" id="yv9-Yq-rLY"/>
                     </connections>
                 </viewController>
@@ -137,7 +138,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="6P8-GF-O5J">
-                                <rect key="frame" x="20" y="98" width="280" height="73"/>
+                                <rect key="frame" x="20" y="102" width="280" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOC-lb-msr">
+                                <rect key="frame" x="192" y="73" width="108" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -149,6 +157,7 @@
                     <navigationItem key="navigationItem" id="aEW-2I-l1w"/>
                     <connections>
                         <outlet property="Quetxt" destination="6P8-GF-O5J" id="8Ie-sC-Hv9"/>
+                        <outlet property="timer" destination="mOC-lb-msr" id="WBq-Ot-ddD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFY-pC-nhb" userLabel="First Responder" sceneMemberID="firstResponder"/>

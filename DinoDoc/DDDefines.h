@@ -9,7 +9,6 @@
 #ifndef DinoDoc_DDDefines_h
 #define DinoDoc_DDDefines_h
 
-#define TREX 100
 #define MAXNUM 3  // maximum number of questions
 
 #endif

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>options</key>
+	<array>
+		<dict>
+			<key>tag</key>
+			<integer>0</integer>
+			<key>image</key>
+			<string></string>
+			<key>name</key>
+			<string>T-Rex</string>
+		</dict>
+		<dict>
+			<key>tag</key>
+			<integer>0</integer>
+			<key>image</key>
+			<string></string>
+			<key>name</key>
+			<string>Velociraptor</string>
+		</dict>
+		<dict>
+			<key>tag</key>
+			<integer>0</integer>
+			<key>image</key>
+			<string></string>
+			<key>name</key>
+			<string>Brachiosaurus</string>
+		</dict>
+	</array>
+	<key>bgsound</key>
+	<string>dinosound</string>
+</dict>
+</plist>
