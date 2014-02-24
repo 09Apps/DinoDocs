@@ -144,7 +144,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOC-lb-msr">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOC-lb-msr">
                                 <rect key="frame" x="192" y="73" width="108" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -157,7 +157,7 @@
                     <navigationItem key="navigationItem" id="aEW-2I-l1w"/>
                     <connections>
                         <outlet property="Quetxt" destination="6P8-GF-O5J" id="8Ie-sC-Hv9"/>
-                        <outlet property="timer" destination="mOC-lb-msr" id="WBq-Ot-ddD"/>
+                        <outlet property="timerlabel" destination="mOC-lb-msr" id="2gA-DI-fOs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFY-pC-nhb" userLabel="First Responder" sceneMemberID="firstResponder"/>

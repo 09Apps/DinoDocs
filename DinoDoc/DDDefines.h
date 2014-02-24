@@ -9,6 +9,8 @@
 #ifndef DinoDoc_DDDefines_h
 #define DinoDoc_DDDefines_h
 
-#define MAXNUM 3  // maximum number of questions
+#define WRONGANS 0      // alert tag for wrong answer UIAlert
+#define RIGHTANS 100    // alert tag for right answer UIAlert
+#define TIMESUP 200     // alert tag for Time's up UIAlert
 
 #endif
