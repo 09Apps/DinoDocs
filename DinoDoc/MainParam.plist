@@ -13,28 +13,44 @@
 	<key>options</key>
 	<array>
 		<dict>
-			<key>tag</key>
-			<integer>0</integer>
+			<key>title</key>
+			<string>General</string>
 			<key>image</key>
 			<string></string>
-			<key>name</key>
+			<key>price</key>
+			<integer>0</integer>
+			<key>highscore</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>T-Rex</string>
-		</dict>
-		<dict>
-			<key>tag</key>
-			<integer>0</integer>
 			<key>image</key>
 			<string></string>
-			<key>name</key>
+			<key>price</key>
+			<integer>0</integer>
+			<key>highscore</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>Velociraptor</string>
-		</dict>
-		<dict>
-			<key>tag</key>
-			<integer>0</integer>
 			<key>image</key>
 			<string></string>
-			<key>name</key>
+			<key>price</key>
+			<integer>0</integer>
+			<key>highscore</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>Brachiosaurus</string>
+			<key>image</key>
+			<string></string>
+			<key>price</key>
+			<integer>0</integer>
+			<key>highscore</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 </dict>

@@ -39,7 +39,7 @@
         DDSelectViewController *selVC = (DDSelectViewController*)[segue destinationViewController];
         
         // Pass on required parameters from main file
-        selVC.optname = [(UIButton*)sender currentTitle];
+        selVC.opttitle = [(UIButton*)sender currentTitle];
         
         // Stop the backgrounf music now.
 
@@ -60,10 +60,10 @@
         NSDictionary* dict = [mainparam.options objectAtIndex:i];
         
         //create buttons for options at runtime
-        UIButton *playchoice = [[UIButton alloc] initWithFrame:CGRectMake(25,(80+(40*i)), 150, 25)];
+        UIButton *playchoice = [[UIButton alloc] initWithFrame:CGRectMake(25,(160+(40*i)), 150, 25)];
         playchoice.backgroundColor = [UIColor grayColor];
         
-        [playchoice setTitle:[dict objectForKey:@"name"] forState:UIControlStateNormal];
+        [playchoice setTitle:[dict objectForKey:@"title"] forState:UIControlStateNormal];
         
         //set their selector using add selector
         [playchoice addTarget:self action:@selector(choicemade:) forControlEvents:UIControlEventTouchUpInside];

@@ -18,14 +18,17 @@ extern
 
 
 @property (weak, nonatomic) IBOutlet UILabel *timerlabel;
-@property (nonatomic,strong) NSString* optname;
+@property (nonatomic,strong) NSString* opttitle;
 @property (nonatomic, strong) NSArray* questions;
 @property NSUInteger answernum;
 @property (nonatomic, strong) NSString* ansdetails;
 @property NSUInteger currentqnum;
 @property (weak, nonatomic) IBOutlet UILabel *quetxt;
 @property NSUInteger timesec;
+@property NSUInteger userscore;
 @property (nonatomic, strong) NSTimer *timer;
+@property (weak, nonatomic) IBOutlet UILabel *qcount;
+@property (weak, nonatomic) IBOutlet UILabel *scorelbl;
 
 @property (assign) SystemSoundID rightsnd;
 @property (assign) SystemSoundID wrongsnd;

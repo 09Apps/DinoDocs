@@ -35,7 +35,7 @@
     
     // The name of the plist file with questions and answers for each option must match
     // with the button title
-    NSString* plistPath = [DDUtils getPlistPath:self.optname];
+    NSString* plistPath = [DDUtils getPlistPath:self.opttitle];
     
     // read property list into memory as an NSData object
     NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
@@ -68,6 +68,7 @@
     NSURL *wrngpathURL = [NSURL fileURLWithPath:wrngpath];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)wrngpathURL, &_wrongsnd);
     
+    self.userscore = 0;
     [self showQuestions];
 }
 
@@ -75,6 +76,7 @@
 {
     [self.timer invalidate];
     self.timer = nil;
+    self.userscore = 0;
     // pop to root view controller
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -115,6 +117,11 @@
     AudioServicesPlaySystemSound(_rightsnd);
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Awesome !" message:self.ansdetails delegate:self cancelButtonTitle:@"Cool" otherButtonTitles: nil];
+
+    //Update and show score
+    self.userscore++;
+    NSString* scorestr = [NSString stringWithFormat:@"Score: %d",self.userscore];
+    self.scorelbl.text = scorestr;
     
     [alert setTag:RIGHTANS];
     [alert show];
@@ -146,6 +153,10 @@
     // start the timer
     self.timesec = self.ANSTIME;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
+    
+    // Show count of questions
+    NSString* qct = [NSString stringWithFormat:@"Q %d of %d",(self.currentqnum+1),self.QUIZCOUNT];
+    self.qcount.text = qct;
     
     // Start again from first if user has completed the quiz.
     if (self.currentqnum == self.QUIZCOUNT)
