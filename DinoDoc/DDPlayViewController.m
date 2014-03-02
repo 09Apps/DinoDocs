@@ -24,7 +24,7 @@
     return self;
 }
 
-- (IBAction)button1touched:(UIButton *)senderbutton
+- (void)choicemade:(UIButton *)senderbutton
 {
     [self performSegueWithIdentifier:@"selseg" sender:senderbutton];
 }
@@ -37,7 +37,12 @@
     {
         DDSelectViewController *selVC = (DDSelectViewController*)[segue destinationViewController];
         
+        // Pass on required parameters from main file
         selVC.optname = [(UIButton*)sender currentTitle];
+        selVC.rightsoundfile = self.rtsound;
+        selVC.wrongsoundfile = self.wrngsound;
+        selVC.ANSTIME = self.maxtime;
+        
         // Stop the backgrounf music now.
 
     }
@@ -54,8 +59,17 @@
     for (int i=0; i<optionscount; i++)
     {
         NSDictionary* dict = [self.options objectAtIndex:i];
-        [self.button1 setTitle:[dict objectForKey:@"name"] forState:UIControlStateNormal];
-        break;
+        
+        //create buttons for options at runtime
+        UIButton *playchoice = [[UIButton alloc] initWithFrame:CGRectMake(25,(80+(40*i)), 150, 25)];
+        playchoice.backgroundColor = [UIColor grayColor];
+        
+        [playchoice setTitle:[dict objectForKey:@"name"] forState:UIControlStateNormal];
+        
+        //set their selector using add selector
+        [playchoice addTarget:self action:@selector(choicemade:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.view addSubview:playchoice];
     }
 }
 

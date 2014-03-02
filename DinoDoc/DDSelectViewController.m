@@ -53,7 +53,6 @@
     
     self.WRNGANSTXT = [dict objectForKey:@"WrongAnsTxt"];
     self.QUIZCOUNT = [[dict objectForKey:@"Quizcount"] integerValue];
-    self.ANSTIME = [[dict objectForKey:@"AnsTime"] integerValue];
     
     // Keep the sounds ready, but don't play them
     
@@ -110,9 +109,6 @@
 
 - (void)rightAnswer
 {
-    NSString *rtpath = [[NSBundle mainBundle] pathForResource:@"right_answer" ofType:@"wav"];
-    NSURL *rtpathURL = [NSURL fileURLWithPath:rtpath];
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)rtpathURL, &_rightsound);
     AudioServicesPlaySystemSound(_rightsound);
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Awesome !" message:self.ansdetails delegate:self cancelButtonTitle:@"Cool" otherButtonTitles: nil];
@@ -123,9 +119,6 @@
 
 - (void)wrongAnswer
 {
-    NSString *wrngpath = [[NSBundle mainBundle] pathForResource:@"wrong_answer" ofType:@"wav"];
-    NSURL *wrngpathURL = [NSURL fileURLWithPath:wrngpath];
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)wrngpathURL, &_wrongsound);
     AudioServicesPlaySystemSound(_wrongsound);
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Think harder !" message:self.WRNGANSTXT delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
@@ -136,9 +129,6 @@
 
 - (void)timesUp
 {
-    NSString *wrngpath = [[NSBundle mainBundle] pathForResource:@"wrong_answer" ofType:@"wav"];
-    NSURL *wrngpathURL = [NSURL fileURLWithPath:wrngpath];
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)wrngpathURL, &_wrongsound);
     AudioServicesPlaySystemSound(_wrongsound);
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time's Up !" message:@"Let's move on" delegate:self cancelButtonTitle:@"Hmm.." otherButtonTitles: nil];
@@ -151,7 +141,7 @@
 - (void)showQuestions
 {
     // start the timer
-    self.timesec = 30;//self.ANSTIME;
+    self.timesec = self.ANSTIME;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
     
     // Start again from first if user has completed the quiz.

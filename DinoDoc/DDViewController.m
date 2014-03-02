@@ -42,6 +42,7 @@
 {
     DDPlayViewController *playVC = (DDPlayViewController*)[segue destinationViewController];
     playVC.options = [self.mainparamdict objectForKey:@"options"];
+    playVC.maxtime = [[self.mainparamdict objectForKey:@"AnsTime"] integerValue];
     
     // Get right & wrong sound file names
     playVC.rtsound = [self.mainparamdict objectForKey:@"rightsound"];

@@ -101,23 +101,10 @@
                     <view key="view" contentMode="scaleToFill" id="5BJ-Rn-OH2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyG-SG-t6S">
-                                <rect key="frame" x="27" y="126" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="button1touched:" destination="qXi-1E-XE6" eventType="touchUpInside" id="FdN-TT-0xi"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="hYL-kj-Zqj"/>
                     <connections>
-                        <outlet property="button1" destination="EyG-SG-t6S" id="Tkr-Tc-1hV"/>
                         <segue destination="vSe-Y9-s3x" kind="push" identifier="selseg" id="yv9-Yq-rLY"/>
                     </connections>
                 </viewController>

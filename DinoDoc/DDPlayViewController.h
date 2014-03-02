@@ -13,7 +13,6 @@
 @property (nonatomic,strong) NSArray* options;
 @property (nonatomic,strong) NSString* rtsound;
 @property (nonatomic,strong) NSString* wrngsound;
-@property (weak, nonatomic) IBOutlet UIButton *button1;
-
+@property NSUInteger const maxtime;
 
 @end
