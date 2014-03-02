@@ -28,7 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	// Overwritting back button, so I can clean up timer and other objects
+    UIBarButtonItem *backbutton = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(handleBack:)];
+    self.navigationItem.leftBarButtonItem = backbutton;
     
     // The name of the plist file with questions and answers for each option must match
     // with the button title
@@ -54,15 +56,25 @@
     self.ANSTIME = [[dict objectForKey:@"AnsTime"] integerValue];
     
     // Keep the sounds ready, but don't play them
-    NSString *rtpath = [[NSBundle mainBundle] pathForResource:@"right_answer" ofType:@"wav"];
+    
+    NSString *rtpath = [[NSBundle mainBundle] pathForResource:self.rightsoundfile ofType:@"wav"];
     NSURL *rtpathURL = [NSURL fileURLWithPath:rtpath];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)rtpathURL, &_rightsound);
     
-    NSString *wrngpath = [[NSBundle mainBundle] pathForResource:@"wrong_answer" ofType:@"wav"];
+    NSString *wrngpath = [[NSBundle mainBundle] pathForResource:self.wrongsoundfile ofType:@"wav"];
     NSURL *wrngpathURL = [NSURL fileURLWithPath:wrngpath];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)wrngpathURL, &_wrongsound);
     
     [self showQuestions];
+}
+
+- (void)handleBack:(id)sender
+{
+    [self.timer invalidate];
+    self.timer = nil;
+    // pop to root view controller
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 - (void)timerTick:(NSTimer *)timer
@@ -71,7 +83,7 @@
     {
         [self.timer invalidate];
         self.timer = nil;
-        
+        self.timerlabel.text = [NSString stringWithFormat:@"00:%d",[self timesec]];
         [self timesUp];
     }
     else
@@ -81,7 +93,7 @@
     }
 }
 
-- (void)buttonClicked:(UIButton*) sender
+- (void)answerClicked:(UIButton*) sender
 {
     [self.timer invalidate];
     self.timer = nil;
@@ -98,18 +110,23 @@
 
 - (void)rightAnswer
 {
-    AudioServicesPlaySystemSound(self.rightsound);
+    NSString *rtpath = [[NSBundle mainBundle] pathForResource:@"right_answer" ofType:@"wav"];
+    NSURL *rtpathURL = [NSURL fileURLWithPath:rtpath];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)rtpathURL, &_rightsound);
+    AudioServicesPlaySystemSound(_rightsound);
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Awesome !" message:self.ansdetails delegate:self cancelButtonTitle:@"Cool" otherButtonTitles: nil];
     
     [alert setTag:RIGHTANS];
-    
     [alert show];
 }
 
 - (void)wrongAnswer
 {
-    AudioServicesPlaySystemSound(self.wrongsound);
+    NSString *wrngpath = [[NSBundle mainBundle] pathForResource:@"wrong_answer" ofType:@"wav"];
+    NSURL *wrngpathURL = [NSURL fileURLWithPath:wrngpath];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)wrngpathURL, &_wrongsound);
+    AudioServicesPlaySystemSound(_wrongsound);
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Think harder !" message:self.WRNGANSTXT delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
     
@@ -119,7 +136,10 @@
 
 - (void)timesUp
 {
-    AudioServicesPlaySystemSound(self.wrongsound);
+    NSString *wrngpath = [[NSBundle mainBundle] pathForResource:@"wrong_answer" ofType:@"wav"];
+    NSURL *wrngpathURL = [NSURL fileURLWithPath:wrngpath];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)wrngpathURL, &_wrongsound);
+    AudioServicesPlaySystemSound(_wrongsound);
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time's Up !" message:@"Let's move on" delegate:self cancelButtonTitle:@"Hmm.." otherButtonTitles: nil];
     
@@ -131,7 +151,7 @@
 - (void)showQuestions
 {
     // start the timer
-    self.timesec = self.ANSTIME;
+    self.timesec = 30;//self.ANSTIME;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
     
     // Start again from first if user has completed the quiz.
@@ -165,7 +185,7 @@
                 [theButton setTitle:buttontext forState:UIControlStateNormal];
                 
                 //set their selector using add selector
-                [theButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+                [theButton addTarget:self action:@selector(answerClicked:) forControlEvents:UIControlEventTouchUpInside];
                 
                 [self.view addSubview:theButton];
             }
@@ -188,6 +208,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    if ([self.view window] == nil)
+    {
+        // Add code to preserve data stored in the views that might be
+        // needed later.
+        
+        // Add code to clean up other strong references to the view in
+        // the view hierarchy.
+        self.view = nil;
+        [self.timer invalidate];
+        self.timer = nil;
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

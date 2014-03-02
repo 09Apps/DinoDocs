@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>bgsound</key>
+	<string>dinosound</string>
+	<key>wrongsound</key>
+	<string>wrong_answer</string>
+	<key>rightsound</key>
+	<string>right_answer</string>
 	<key>options</key>
 	<array>
 		<dict>
@@ -29,7 +35,5 @@
 			<string>Brachiosaurus</string>
 		</dict>
 	</array>
-	<key>bgsound</key>
-	<string>dinosound</string>
 </dict>
 </plist>

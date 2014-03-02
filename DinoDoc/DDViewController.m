@@ -42,6 +42,11 @@
 {
     DDPlayViewController *playVC = (DDPlayViewController*)[segue destinationViewController];
     playVC.options = [self.mainparamdict objectForKey:@"options"];
+    
+    // Get right & wrong sound file names
+    playVC.rtsound = [self.mainparamdict objectForKey:@"rightsound"];
+    playVC.wrngsound = [self.mainparamdict objectForKey:@"wrongsound"];
+    
 }
 
 - (void)didReceiveMemoryWarning

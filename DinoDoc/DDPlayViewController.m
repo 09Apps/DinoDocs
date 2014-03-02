@@ -38,7 +38,6 @@
         DDSelectViewController *selVC = (DDSelectViewController*)[segue destinationViewController];
         
         selVC.optname = [(UIButton*)sender currentTitle];
-
         // Stop the backgrounf music now.
 
     }

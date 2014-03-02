@@ -25,11 +25,17 @@ extern
 @property (nonatomic, strong) NSString* ansdetails;
 @property (weak, nonatomic) IBOutlet UILabel *quetxt;
 @property (nonatomic, strong) NSTimer *timer;
+
+@property (nonatomic, strong) NSString* rightsoundfile;
+@property (nonatomic, strong) NSString* wrongsoundfile;
+
 @property (assign) SystemSoundID rightsound;
 @property (assign) SystemSoundID wrongsound;
 
 @property NSUInteger const QUIZCOUNT;
 @property NSUInteger const ANSTIME;
 @property NSString* const WRNGANSTXT;
+
+- (void) handleBack:(id)sender;
 
 @end
