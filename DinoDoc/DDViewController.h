@@ -11,6 +11,4 @@
 
 @interface DDViewController : UIViewController
 
-@property(nonatomic,strong) NSDictionary* mainparamdict;
-
 @end

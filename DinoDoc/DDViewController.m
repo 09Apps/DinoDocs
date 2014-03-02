@@ -8,7 +8,7 @@
 
 #import "DDViewController.h"
 #import "DDPlayViewController.h"
-#import "DDUtils.h"
+#import "DDMainParam.h"
 
 @interface DDViewController ()
 
@@ -20,34 +20,21 @@
 {
     [super viewDidLoad];
     
-	// Do any additional setup after loading the view, typically from a nib.
-    
-    // Read MainParam.plist to get all parameters such as background sound, list on PlayViewController
-    [self readMainParam];
-    
     // Play background sound
     SystemSoundID bgsound;
     
     // Read the name of background sound file from main param plist
     // Always use wav file less than 30 sec for bgsound
-    NSString* bgsoundname = [[self mainparamdict] objectForKey:@"bgsound"];
+    // Call the singleton object for main param file
+    
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+
+    NSString* bgsoundname = mainparam.bgsound;
     
     NSString *path = [[NSBundle mainBundle] pathForResource:bgsoundname ofType:@"wav"];
     NSURL *pathURL = [NSURL fileURLWithPath:path];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)pathURL, &bgsound);
     AudioServicesPlaySystemSound(bgsound);
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    DDPlayViewController *playVC = (DDPlayViewController*)[segue destinationViewController];
-    playVC.options = [self.mainparamdict objectForKey:@"options"];
-    playVC.maxtime = [[self.mainparamdict objectForKey:@"AnsTime"] integerValue];
-    
-    // Get right & wrong sound file names
-    playVC.rtsound = [self.mainparamdict objectForKey:@"rightsound"];
-    playVC.wrngsound = [self.mainparamdict objectForKey:@"wrongsound"];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,24 +43,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) readMainParam
-{
-    // The main plist file should always be named as MainParam.plist
-    NSString* plistPath = [DDUtils getPlistPath:@"MainParam"];
-    
-    // read property list into memory as an NSData object
-    NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
-    NSString *errorDesc = nil;
-    NSPropertyListFormat format;
-    
-    // convert static property list into dictionary object
-    self.mainparamdict = (NSDictionary *)[NSPropertyListSerialization propertyListFromData:plistXML mutabilityOption:NSPropertyListMutableContainersAndLeaves format:&format errorDescription:&errorDesc];
-    
-    if (! [self mainparamdict])
-    {
-        NSLog(@"readMainParam: error reading MainParam, desc: %@, format: %d", errorDesc, format);
-    }
-}
 
 
 

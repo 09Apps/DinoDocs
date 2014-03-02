@@ -16,21 +16,19 @@ extern
 
 - (void)showQuestions;
 
+
 @property (weak, nonatomic) IBOutlet UILabel *timerlabel;
 @property (nonatomic,strong) NSString* optname;
-@property NSUInteger answernum;
-@property NSUInteger currentqnum;
-@property NSUInteger timesec;
 @property (nonatomic, strong) NSArray* questions;
+@property NSUInteger answernum;
 @property (nonatomic, strong) NSString* ansdetails;
+@property NSUInteger currentqnum;
 @property (weak, nonatomic) IBOutlet UILabel *quetxt;
+@property NSUInteger timesec;
 @property (nonatomic, strong) NSTimer *timer;
 
-@property (nonatomic, strong) NSString* rightsoundfile;
-@property (nonatomic, strong) NSString* wrongsoundfile;
-
-@property (assign) SystemSoundID rightsound;
-@property (assign) SystemSoundID wrongsound;
+@property (assign) SystemSoundID rightsnd;
+@property (assign) SystemSoundID wrongsnd;
 
 @property NSUInteger const QUIZCOUNT;
 @property NSUInteger const ANSTIME;

@@ -7,6 +7,7 @@
 //
 
 #import "DDSelectViewController.h"
+#import "DDMainParam.h"
 #import "DDDefines.h"
 #import "DDUtils.h"
 
@@ -54,15 +55,18 @@
     self.WRNGANSTXT = [dict objectForKey:@"WrongAnsTxt"];
     self.QUIZCOUNT = [[dict objectForKey:@"Quizcount"] integerValue];
     
+    // get the mainparam singleton
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    self.ANSTIME = mainparam.anstime;
+    
     // Keep the sounds ready, but don't play them
-    
-    NSString *rtpath = [[NSBundle mainBundle] pathForResource:self.rightsoundfile ofType:@"wav"];
+    NSString *rtpath = [[NSBundle mainBundle] pathForResource:mainparam.rightsound ofType:@"wav"];
     NSURL *rtpathURL = [NSURL fileURLWithPath:rtpath];
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)rtpathURL, &_rightsound);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)rtpathURL, &_rightsnd);
     
-    NSString *wrngpath = [[NSBundle mainBundle] pathForResource:self.wrongsoundfile ofType:@"wav"];
+    NSString *wrngpath = [[NSBundle mainBundle] pathForResource:mainparam.wrongsound ofType:@"wav"];
     NSURL *wrngpathURL = [NSURL fileURLWithPath:wrngpath];
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)wrngpathURL, &_wrongsound);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)wrngpathURL, &_wrongsnd);
     
     [self showQuestions];
 }
@@ -73,7 +77,6 @@
     self.timer = nil;
     // pop to root view controller
     [self.navigationController popViewControllerAnimated:YES];
-    
 }
 
 - (void)timerTick:(NSTimer *)timer
@@ -109,7 +112,7 @@
 
 - (void)rightAnswer
 {
-    AudioServicesPlaySystemSound(_rightsound);
+    AudioServicesPlaySystemSound(_rightsnd);
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Awesome !" message:self.ansdetails delegate:self cancelButtonTitle:@"Cool" otherButtonTitles: nil];
     
@@ -119,7 +122,7 @@
 
 - (void)wrongAnswer
 {
-    AudioServicesPlaySystemSound(_wrongsound);
+    AudioServicesPlaySystemSound(_wrongsnd);
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Think harder !" message:self.WRNGANSTXT delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
     
@@ -129,7 +132,7 @@
 
 - (void)timesUp
 {
-    AudioServicesPlaySystemSound(_wrongsound);
+    AudioServicesPlaySystemSound(_wrongsnd);
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time's Up !" message:@"Let's move on" delegate:self cancelButtonTitle:@"Hmm.." otherButtonTitles: nil];
     

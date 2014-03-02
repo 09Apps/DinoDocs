@@ -8,6 +8,7 @@
 
 #import "DDPlayViewController.h"
 #import "DDSelectViewController.h"
+#import "DDMainParam.h"    
 
 @interface DDPlayViewController ()
 
@@ -39,9 +40,6 @@
         
         // Pass on required parameters from main file
         selVC.optname = [(UIButton*)sender currentTitle];
-        selVC.rightsoundfile = self.rtsound;
-        selVC.wrongsoundfile = self.wrngsound;
-        selVC.ANSTIME = self.maxtime;
         
         // Stop the backgrounf music now.
 
@@ -52,13 +50,14 @@
 {
     [super viewDidLoad];
     
-	// Do any additional setup after loading the view.
+	// Get the singleton instance of main param
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
     
-    NSUInteger optionscount = [self.options count];
+    NSUInteger optionscount = [mainparam.options count];
     
     for (int i=0; i<optionscount; i++)
     {
-        NSDictionary* dict = [self.options objectAtIndex:i];
+        NSDictionary* dict = [mainparam.options objectAtIndex:i];
         
         //create buttons for options at runtime
         UIButton *playchoice = [[UIButton alloc] initWithFrame:CGRectMake(25,(80+(40*i)), 150, 25)];
