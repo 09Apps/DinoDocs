@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED1CAA68189F278500ED92FF /* Beginner.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED1CAA67189F278500ED92FF /* Beginner.plist */; };
+		ED20AECC1898A566005C6496 /* DDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED20AECB1898A566005C6496 /* DDSettingViewController.m */; };
+		ED20AECF1898A591005C6496 /* DDPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED20AECE1898A591005C6496 /* DDPlayViewController.m */; };
+		ED20AED21898A5B1005C6496 /* DDBadgesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED20AED11898A5B1005C6496 /* DDBadgesViewController.m */; };
+		ED474F5D18ADDFB500F49B07 /* right_answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = ED474F5B18ADDFB500F49B07 /* right_answer.wav */; };
+		ED494137189CA2CA00A42098 /* DDSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED494136189CA2CA00A42098 /* DDSelectViewController.m */; };
+		ED5807C618B9C76200AE18FB /* dinosound.wav in Resources */ = {isa = PBXBuildFile; fileRef = ED5807C518B9C76100AE18FB /* dinosound.wav */; };
+		ED5807C818B9CACF00AE18FB /* MainParam.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED5807C718B9CACF00AE18FB /* MainParam.plist */; };
+		ED5807CE18B9CD9F00AE18FB /* DDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5807CD18B9CD9F00AE18FB /* DDUtils.m */; };
 		ED818F2218961BDC00223BA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED818F2118961BDC00223BA1 /* Foundation.framework */; };
 		ED818F2418961BDC00223BA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED818F2318961BDC00223BA1 /* CoreGraphics.framework */; };
 		ED818F2618961BDC00223BA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED818F2518961BDC00223BA1 /* UIKit.framework */; };
@@ -21,6 +30,8 @@
 		ED818F4318961BDC00223BA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED818F2518961BDC00223BA1 /* UIKit.framework */; };
 		ED818F4B18961BDC00223BA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED818F4918961BDC00223BA1 /* InfoPlist.strings */; };
 		ED818F4D18961BDC00223BA1 /* DinoDocTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED818F4C18961BDC00223BA1 /* DinoDocTests.m */; };
+		ED9BEF6B18C2ECED00741468 /* DDMainParam.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9BEF6A18C2ECED00741468 /* DDMainParam.m */; };
+		EDCC46F018BA6F7D00B781C9 /* wrong_answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = EDCC46EF18BA6F7D00B781C9 /* wrong_answer.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +45,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED1CAA67189F278500ED92FF /* Beginner.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Beginner.plist; sourceTree = "<group>"; };
+		ED2004F618A831DD005F2833 /* DDDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDefines.h; sourceTree = "<group>"; };
+		ED20AECA1898A566005C6496 /* DDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSettingViewController.h; sourceTree = "<group>"; };
+		ED20AECB1898A566005C6496 /* DDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSettingViewController.m; sourceTree = "<group>"; };
+		ED20AECD1898A591005C6496 /* DDPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayViewController.h; sourceTree = "<group>"; };
+		ED20AECE1898A591005C6496 /* DDPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayViewController.m; sourceTree = "<group>"; };
+		ED20AED01898A5B1005C6496 /* DDBadgesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDBadgesViewController.h; sourceTree = "<group>"; };
+		ED20AED11898A5B1005C6496 /* DDBadgesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDBadgesViewController.m; sourceTree = "<group>"; };
+		ED474F5B18ADDFB500F49B07 /* right_answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = right_answer.wav; sourceTree = "<group>"; };
+		ED494135189CA2CA00A42098 /* DDSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSelectViewController.h; sourceTree = "<group>"; };
+		ED494136189CA2CA00A42098 /* DDSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSelectViewController.m; sourceTree = "<group>"; };
+		ED5807C518B9C76100AE18FB /* dinosound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dinosound.wav; path = ../dinosound.wav; sourceTree = "<group>"; };
+		ED5807C718B9CACF00AE18FB /* MainParam.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MainParam.plist; sourceTree = "<group>"; };
+		ED5807CC18B9CD9F00AE18FB /* DDUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDUtils.h; sourceTree = "<group>"; };
+		ED5807CD18B9CD9F00AE18FB /* DDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDUtils.m; sourceTree = "<group>"; };
 		ED818F1E18961BDC00223BA1 /* DinoDoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinoDoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED818F2118961BDC00223BA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ED818F2318961BDC00223BA1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +79,9 @@
 		ED818F4818961BDC00223BA1 /* DinoDocTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DinoDocTests-Info.plist"; sourceTree = "<group>"; };
 		ED818F4A18961BDC00223BA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ED818F4C18961BDC00223BA1 /* DinoDocTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinoDocTests.m; sourceTree = "<group>"; };
+		ED9BEF6918C2ECED00741468 /* DDMainParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMainParam.h; sourceTree = "<group>"; };
+		ED9BEF6A18C2ECED00741468 /* DDMainParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMainParam.m; sourceTree = "<group>"; };
+		EDCC46EF18BA6F7D00B781C9 /* wrong_answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong_answer.wav; path = ../wrong_answer.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +108,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED5807C918B9CD0600AE18FB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED818F3618961BDC00223BA1 /* DDViewController.h */,
+				ED818F3718961BDC00223BA1 /* DDViewController.m */,
+				ED20AECD1898A591005C6496 /* DDPlayViewController.h */,
+				ED20AECE1898A591005C6496 /* DDPlayViewController.m */,
+				ED20AED01898A5B1005C6496 /* DDBadgesViewController.h */,
+				ED20AED11898A5B1005C6496 /* DDBadgesViewController.m */,
+				ED20AECA1898A566005C6496 /* DDSettingViewController.h */,
+				ED20AECB1898A566005C6496 /* DDSettingViewController.m */,
+				ED494135189CA2CA00A42098 /* DDSelectViewController.h */,
+				ED494136189CA2CA00A42098 /* DDSelectViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ED5807CA18B9CD3300AE18FB /* soundfiles */ = {
+			isa = PBXGroup;
+			children = (
+				EDCC46EF18BA6F7D00B781C9 /* wrong_answer.wav */,
+				ED5807C518B9C76100AE18FB /* dinosound.wav */,
+				ED474F5B18ADDFB500F49B07 /* right_answer.wav */,
+			);
+			name = soundfiles;
+			sourceTree = "<group>";
+		};
+		ED5807CB18B9CD5500AE18FB /* plists */ = {
+			isa = PBXGroup;
+			children = (
+				ED818F2918961BDC00223BA1 /* DinoDoc-Info.plist */,
+				ED1CAA67189F278500ED92FF /* Beginner.plist */,
+				ED5807C718B9CACF00AE18FB /* MainParam.plist */,
+			);
+			name = plists;
+			sourceTree = "<group>";
+		};
 		ED818F1518961BDC00223BA1 = {
 			isa = PBXGroup;
 			children = (
@@ -115,8 +181,13 @@
 				ED818F3018961BDC00223BA1 /* DDAppDelegate.h */,
 				ED818F3118961BDC00223BA1 /* DDAppDelegate.m */,
 				ED818F3318961BDC00223BA1 /* Main.storyboard */,
-				ED818F3618961BDC00223BA1 /* DDViewController.h */,
-				ED818F3718961BDC00223BA1 /* DDViewController.m */,
+				ED2004F618A831DD005F2833 /* DDDefines.h */,
+				ED818F2D18961BDC00223BA1 /* main.m */,
+				ED5807CC18B9CD9F00AE18FB /* DDUtils.h */,
+				ED5807CD18B9CD9F00AE18FB /* DDUtils.m */,
+				ED9BEF6918C2ECED00741468 /* DDMainParam.h */,
+				ED9BEF6A18C2ECED00741468 /* DDMainParam.m */,
+				ED5807C918B9CD0600AE18FB /* ViewControllers */,
 				ED818F3918961BDC00223BA1 /* Images.xcassets */,
 				ED818F2818961BDC00223BA1 /* Supporting Files */,
 			);
@@ -126,9 +197,9 @@
 		ED818F2818961BDC00223BA1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				ED818F2918961BDC00223BA1 /* DinoDoc-Info.plist */,
+				ED5807CA18B9CD3300AE18FB /* soundfiles */,
+				ED5807CB18B9CD5500AE18FB /* plists */,
 				ED818F2A18961BDC00223BA1 /* InfoPlist.strings */,
-				ED818F2D18961BDC00223BA1 /* main.m */,
 				ED818F2F18961BDC00223BA1 /* DinoDoc-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -231,7 +302,12 @@
 			files = (
 				ED818F3A18961BDC00223BA1 /* Images.xcassets in Resources */,
 				ED818F2C18961BDC00223BA1 /* InfoPlist.strings in Resources */,
+				EDCC46F018BA6F7D00B781C9 /* wrong_answer.wav in Resources */,
 				ED818F3518961BDC00223BA1 /* Main.storyboard in Resources */,
+				ED1CAA68189F278500ED92FF /* Beginner.plist in Resources */,
+				ED5807C618B9C76200AE18FB /* dinosound.wav in Resources */,
+				ED474F5D18ADDFB500F49B07 /* right_answer.wav in Resources */,
+				ED5807C818B9CACF00AE18FB /* MainParam.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,8 +326,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED20AED21898A5B1005C6496 /* DDBadgesViewController.m in Sources */,
+				ED494137189CA2CA00A42098 /* DDSelectViewController.m in Sources */,
 				ED818F3218961BDC00223BA1 /* DDAppDelegate.m in Sources */,
+				ED20AECC1898A566005C6496 /* DDSettingViewController.m in Sources */,
 				ED818F3818961BDC00223BA1 /* DDViewController.m in Sources */,
+				ED9BEF6B18C2ECED00741468 /* DDMainParam.m in Sources */,
+				ED5807CE18B9CD9F00AE18FB /* DDUtils.m in Sources */,
+				ED20AECF1898A591005C6496 /* DDPlayViewController.m in Sources */,
 				ED818F2E18961BDC00223BA1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +464,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DinoDoc/DinoDoc-Prefix.pch";
 				INFOPLIST_FILE = "DinoDoc/DinoDoc-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -395,6 +478,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DinoDoc/DinoDoc-Prefix.pch";
 				INFOPLIST_FILE = "DinoDoc/DinoDoc-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -461,6 +545,7 @@
 				ED818F5218961BDD00223BA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED818F5318961BDD00223BA1 /* Build configuration list for PBXNativeTarget "DinoDocTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +554,7 @@
 				ED818F5518961BDD00223BA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

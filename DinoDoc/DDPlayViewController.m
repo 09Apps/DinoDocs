@@ -42,7 +42,8 @@
         selVC.opttitle = [(UIButton*)sender currentTitle];
         
         // Stop the backgrounf music now.
-
+        AudioServicesRemoveSystemSoundCompletion(self.bgplaysound);
+        AudioServicesDisposeSystemSoundID(self.bgplaysound);
     }
 }
 
