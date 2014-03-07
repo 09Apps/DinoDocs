@@ -48,4 +48,11 @@
     return plistPath;
 }
 
++ (NSInteger) randomIntegerFrom:(NSInteger)min
+                            To :(NSInteger)max
+{
+    NSUInteger range = max - min + 1;
+    return (min + (arc4random() % range));
+}
+
 @end

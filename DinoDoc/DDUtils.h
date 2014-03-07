@@ -11,5 +11,6 @@
 @interface DDUtils : NSObject
 
 + (NSString*) getPlistPath:(NSString*) pListName;
++ (NSInteger) randomIntegerFrom:(NSInteger)min To :(NSInteger)max;
 
 @end

@@ -69,11 +69,13 @@
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)wrngpathURL, &_wrongsnd);
     
     self.userscore = 0;
+    self.currentqnum = 0;
     [self showQuestions];
 }
 
 - (void)handleBack:(id)sender
 {
+    // we need to clean up timer on back , so wrote custom back button function
     [self.timer invalidate];
     self.timer = nil;
     self.userscore = 0;
@@ -116,9 +118,9 @@
 {
     AudioServicesPlaySystemSound(_rightsnd);
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Awesome !" message:self.ansdetails delegate:self cancelButtonTitle:@"Cool" otherButtonTitles: nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"That's correct !" message:self.ansdetails delegate:self cancelButtonTitle:@"Cool" otherButtonTitles: nil];
 
-    //Update and show score
+    // Update and show score
     self.userscore++;
     NSString* scorestr = [NSString stringWithFormat:@"Score: %d",self.userscore];
     self.scorelbl.text = scorestr;
@@ -148,63 +150,65 @@
     
 }
 
+
+- (void) quizCompleted
+{
+    NSString* scorestr = [NSString stringWithFormat:@"You scored %d",self.userscore];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Quiz completed !" message:scorestr delegate:self cancelButtonTitle:@"Alright" otherButtonTitles: nil];
+    
+    [alert setTag:DONEQUIZ];
+    [alert show];
+}
+
 - (void)showQuestions
 {
-    // start the timer
-    self.timesec = self.ANSTIME;
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
-    
-    // Show count of questions
-    NSString* qct = [NSString stringWithFormat:@"Q %d of %d",(self.currentqnum+1),self.QUIZCOUNT];
-    self.qcount.text = qct;
-    
-    // Start again from first if user has completed the quiz.
-    if (self.currentqnum == self.QUIZCOUNT)
+    if (self.currentqnum < self.QUIZCOUNT)
     {
-        self.currentqnum = 0;
-    }
-    
-    for (int quect=self.currentqnum; quect < self.QUIZCOUNT; quect++)
-    {
-        NSDictionary* que = [self.questions objectAtIndex:quect];
-        BOOL userknows = [[que objectForKey:@"UserGaveAns"] boolValue];
+        // start the timer
+        self.timesec = self.ANSTIME;
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
         
-        if ( userknows == NO )
+        // Show count of questions
+        NSString* qct = [NSString stringWithFormat:@"Q %d of %d",(self.currentqnum+1),self.QUIZCOUNT];
+        self.qcount.text = qct;
+        
+        // Generate a random question number
+        NSUInteger rand = [DDUtils randomIntegerFrom:1 To:([self.questions count]-1)];
+        
+        NSDictionary* que = [self.questions objectAtIndex:rand];
+        
+        self.quetxt.text = [que objectForKey:@"Question"];
+        NSArray* optarr = [que objectForKey:@"Options"];
+            
+        for(int cnt=0;cnt<4;cnt++)
         {
-            self.quetxt.text = [que objectForKey:@"Question"];
+            // Create 4 buttons using array and loop.
+            UIButton *theButton= [[UIButton alloc] initWithFrame:CGRectMake(20,(160+(65*cnt)), 275, 60)];
+                
+            theButton.backgroundColor = [UIColor grayColor];
+            theButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            theButton.tag = cnt;
             
-            NSArray* optarr = [que objectForKey:@"Options"];
-            
-            for(int cnt=0;cnt<4;cnt++)
-            {
-                // Create 4 buttons using array and loop.
-                UIButton *theButton= [[UIButton alloc] initWithFrame:CGRectMake(20,(160+(65*cnt)), 275, 60)];
+            NSString *buttontext = [optarr objectAtIndex:cnt];
                 
-                theButton.backgroundColor = [UIColor grayColor];
-                theButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-                theButton.tag = cnt;
+            [theButton setTitle:buttontext forState:UIControlStateNormal];
                 
-                NSString *buttontext = [optarr objectAtIndex:cnt];
+            //set their selector using add selector
+            [theButton addTarget:self action:@selector(answerClicked:) forControlEvents:UIControlEventTouchUpInside];
                 
-                [theButton setTitle:buttontext forState:UIControlStateNormal];
-                
-                //set their selector using add selector
-                [theButton addTarget:self action:@selector(answerClicked:) forControlEvents:UIControlEventTouchUpInside];
-                
-                [self.view addSubview:theButton];
-            }
-            
-            // Save tha answer key. It starts from 0.
-            self.answernum = [[que objectForKey:@"Answer"] integerValue];
-            self.ansdetails = [que objectForKey:@"Details"];
-            self.currentqnum++;
-            
-            break;
+            [self.view addSubview:theButton];
         }
-        else
-        {
-            self.currentqnum++;
-        }
+            
+        // Save tha answer key. It starts from 0.
+        self.answernum = [[que objectForKey:@"Answer"] integerValue];
+        self.ansdetails = [que objectForKey:@"Details"];
+        
+        self.currentqnum++;
+    }
+    else
+    {
+        // Quiz ended
+        [self quizCompleted];
     }
 }
 
@@ -227,7 +231,27 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    [self showQuestions];
+    switch (alertView.tag)
+    {
+        case DONEQUIZ:
+            break;
+            
+        case RIGHTANS:
+            [self showQuestions];
+            break;
+            
+        case WRONGANS:
+            [self showQuestions];
+            break;
+
+        case TIMESUP:
+            [self showQuestions];
+            break;
+            
+        default:
+            break;
+    }
 }
+
 
 @end
