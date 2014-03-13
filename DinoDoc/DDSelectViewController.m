@@ -10,6 +10,7 @@
 #import "DDMainParam.h"
 #import "DDDefines.h"
 #import "DDUtils.h"
+#import "DDResultViewController.h"
 
 @interface DDSelectViewController ()
 
@@ -70,6 +71,9 @@
     
     self.userscore = 0;
     self.currentqnum = 0;
+    
+    // get an array of unique random numbers to be used to pulls questions at random
+    self.qindexes = [DDUtils randomIntegerArrayFrom:0 To:([self.questions count]-1) Count:self.QUIZCOUNT];
     [self showQuestions];
 }
 
@@ -147,17 +151,23 @@
     
     [alert setTag:TIMESUP];
     [alert show];
-    
 }
 
 
 - (void) quizCompleted
 {
-    NSString* scorestr = [NSString stringWithFormat:@"You scored %d",self.userscore];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Quiz completed !" message:scorestr delegate:self cancelButtonTitle:@"Alright" otherButtonTitles: nil];
-    
-    [alert setTag:DONEQUIZ];
-    [alert show];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self performSegueWithIdentifier:@"showresult" sender:nil];
+}
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showresult"])
+    {
+        DDResultViewController *resultVC = (DDResultViewController *)[segue destinationViewController];
+        resultVC.score = self.userscore;
+    }
 }
 
 - (void)showQuestions
@@ -172,18 +182,17 @@
         NSString* qct = [NSString stringWithFormat:@"Q %d of %d",(self.currentqnum+1),self.QUIZCOUNT];
         self.qcount.text = qct;
         
-        // Generate a random question number
-        NSUInteger rand = [DDUtils randomIntegerFrom:1 To:([self.questions count]-1)];
+        NSUInteger qindex = [[self.qindexes objectAtIndex:self.currentqnum] integerValue];
         
-        NSDictionary* que = [self.questions objectAtIndex:rand];
+        NSDictionary* que = [self.questions objectAtIndex:qindex];
         
         self.quetxt.text = [que objectForKey:@"Question"];
         NSArray* optarr = [que objectForKey:@"Options"];
             
-        for(int cnt=0;cnt<4;cnt++)
+        for(int cnt=0;cnt< optarr.count;cnt++)
         {
             // Create 4 buttons using array and loop.
-            UIButton *theButton= [[UIButton alloc] initWithFrame:CGRectMake(20,(160+(65*cnt)), 275, 60)];
+            UIButton *theButton= [[UIButton alloc] initWithFrame:CGRectMake(20,(165+(65*cnt)), 275, 60)];
                 
             theButton.backgroundColor = [UIColor grayColor];
             theButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -233,9 +242,6 @@
 {
     switch (alertView.tag)
     {
-        case DONEQUIZ:
-            break;
-            
         case RIGHTANS:
             [self showQuestions];
             break;

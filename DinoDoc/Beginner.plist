@@ -5,11 +5,30 @@
 	<key>newverupdate</key>
 	<false/>
 	<key>Quizcount</key>
-	<integer>2</integer>
+	<integer>5</integer>
 	<key>WrongAnsTxt</key>
 	<string>Remember, An incorrect answer makes the dinosaurs really sad!</string>
 	<key>QArr</key>
 	<array>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>So far, it’s a tie. so, let’s see.</string>
+				<string>Can’t say, scientists are busy counting.</string>
+				<string>Dinosaurs - they lived for millions of years.</string>
+				<string>Off course humans, We are here and dinosaurs are not!</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>The dinosaurs dominated the Earth for over 165 million years, Homo sapiens, the species to which we belong, has existed for about 200,000 years.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Who lived longer on earth - Dinosaurs or Humans?</string>
+		</dict>
 		<dict>
 			<key>Options</key>
 			<array>
@@ -66,6 +85,214 @@
 			<integer>3</integer>
 			<key>Question</key>
 			<string>Why are dinosaurs called dinosaurs?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Green, so they could hide behind trees.</string>
+				<string>Brown, and they didn’t need to hide.</string>
+				<string>Brown on front, green on back.</string>
+				<string>Everybody is just guessing, nobody knows.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>The only remains of the dinosaurs are fossils. The pigmentation (the color) of dinosaurs&apos; skin is not preserved in the fossils, so no one knows what color they were.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>What colors the dinosaurs were?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Carnivores (meat eaters)</string>
+				<string>Omnivore (ate whatever came their way)</string>
+				<string>Herbivores (plant eaters)</string>
+				<string>Coffee addicts.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Many dinosaurs such as Brachiosaurus, Protoceratops, Stegosaurus, Triceratops, Diplodocus, Apatosaurus were plant eaters.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Most dinosaurs were..</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Hunting area of each T-Rex</string>
+				<string>Kenya - Tanzania border where oldest dinosaur fossils were found</string>
+				<string>The time when Dinosaurs became extinct.</string>
+				<string>There is no such term.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Alvarez theory explains dinosaurs became exticts at the K-T boundary due to asteroid hitting earth. That impact, combined with geological changes and volcanic eruptions, most likely led to extinction of dinosaurs and about 50 percent of other species on Earth.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>What is referred as K-T boundary?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>230 millions years ago</string>
+				<string>165 million years ago</string>
+				<string>200,000 years ago</string>
+				<string>10 million years ago</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Dinosaurs got their start as small, meat-eating creatures 230 million years ago.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>When did dinosaurs first appear?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Amphibians</string>
+				<string>Mammals</string>
+				<string>Imaginary</string>
+				<string>Reptiles</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Reptiles are a group of animals that includes lizards , snakes , turtles , dinosaurs , and in some classifications, birds.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>Dinosaurs belonged to which group of animals</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Frogs</string>
+				<string>Birds</string>
+				<string>Crocodiles</string>
+				<string>Humans</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Most paleontologists believe that the birds  probably evolved from the maniraptors, a branch of bird-like dinosaurs.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Which modern day species are evolved from Dinosaurs?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>They were fighting, and killed each other.</string>
+				<string>There was a flu outbreak and they never took flu shots.</string>
+				<string>An asteroid colliding with the Earth.</string>
+				<string>They ate poisonous stuff and there were no vets around.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>A widely accepted theory is that an asteroid 4-9 miles in diameter hit the Earth  about 65 million years ago. The impact, off the Yucatan peninsula, would have penetrated the Earth&apos;s crust, scattered dust and debris into the atmosphere, and caused huge fires, volcanic activity , tsunamis, severe storms with high winds and highly acidic rain.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>What probably caused the extinction of the dinosaurs?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Nope.</string>
+				<string>Yes. as seen in movies.</string>
+				<string>Scientists are not sure yet.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>There were a lot of flying reptiles that lived at the same time the dinosaurs did, but the Dinosaurs lived their entire lives on land. </string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>Were there any flying dinosaurs?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>woolly mammoth</string>
+				<string>Maiasaura</string>
+				<string>Geocoma</string>
+				<string>Pterodactyl</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Maiasauras were duck-billed dinosaurs that grew to be about 30 feet long &amp; weighed 3-4 tons</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Which of the following is a dinosaur</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Spinosaurus</string>
+				<string>Tyrannosaurus Rex</string>
+				<string>Anaconda</string>
+				<string>Sauroposeidon</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Spinosaurus, which also had the longest head of the meat eating dinosaurs, weighed up to 9.9 tons.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>What dinosaur is the world&apos;s largest carnivore?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Stegosaurus</string>
+				<string>Compsognathus</string>
+				<string>Sauroposeidon</string>
+				<string>Quetzalcoatlus</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Compsognathus was a chicken-sized, carnivorous dinosaur from the Jurassic period.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>What is the smallest dinosaur known yet?</string>
 		</dict>
 	</array>
 </dict>

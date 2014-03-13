@@ -51,8 +51,42 @@
 + (NSInteger) randomIntegerFrom:(NSInteger)min
                             To :(NSInteger)max
 {
+    // Gives a single random number
     NSUInteger range = max - min + 1;
     return (min + (arc4random() % range));
+}
+
++ (NSArray*) randomIntegerArrayFrom:(NSInteger)min
+                               To :(NSInteger)max
+                             Count:(NSUInteger)size
+{
+    // This method gives an array of unique random numbers. Arraysize = size
+    NSUInteger range = max - min + 1;
+    NSUInteger szctr = 0;
+    NSMutableArray* randomarr = [[NSMutableArray alloc] init];
+    
+    while (szctr < size)
+    {
+        BOOL numrepeated = NO;
+        NSUInteger randnum = (min + (arc4random() % range));
+
+        for (id rnd in randomarr)
+        {
+            if ([rnd integerValue] == randnum)
+            {
+                numrepeated = YES;
+                break;
+            }
+        }
+        
+        if (numrepeated == NO)
+        {
+            [randomarr addObject:[NSNumber numberWithInteger:randnum]];
+            szctr++;
+        }
+    }
+    
+    return randomarr;
 }
 
 @end

@@ -31,6 +31,7 @@
 		ED818F4B18961BDC00223BA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED818F4918961BDC00223BA1 /* InfoPlist.strings */; };
 		ED818F4D18961BDC00223BA1 /* DinoDocTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED818F4C18961BDC00223BA1 /* DinoDocTests.m */; };
 		ED9BEF6B18C2ECED00741468 /* DDMainParam.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9BEF6A18C2ECED00741468 /* DDMainParam.m */; };
+		EDA43ACE18CB02480038BCDB /* DDResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA43ACD18CB02480038BCDB /* DDResultViewController.m */; };
 		EDCC46F018BA6F7D00B781C9 /* wrong_answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = EDCC46EF18BA6F7D00B781C9 /* wrong_answer.wav */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,8 @@
 		ED818F4C18961BDC00223BA1 /* DinoDocTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinoDocTests.m; sourceTree = "<group>"; };
 		ED9BEF6918C2ECED00741468 /* DDMainParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMainParam.h; sourceTree = "<group>"; };
 		ED9BEF6A18C2ECED00741468 /* DDMainParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMainParam.m; sourceTree = "<group>"; };
+		EDA43ACC18CB02480038BCDB /* DDResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDResultViewController.h; sourceTree = "<group>"; };
+		EDA43ACD18CB02480038BCDB /* DDResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDResultViewController.m; sourceTree = "<group>"; };
 		EDCC46EF18BA6F7D00B781C9 /* wrong_answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong_answer.wav; path = ../wrong_answer.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +124,8 @@
 				ED20AECB1898A566005C6496 /* DDSettingViewController.m */,
 				ED494135189CA2CA00A42098 /* DDSelectViewController.h */,
 				ED494136189CA2CA00A42098 /* DDSelectViewController.m */,
+				EDA43ACC18CB02480038BCDB /* DDResultViewController.h */,
+				EDA43ACD18CB02480038BCDB /* DDResultViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 				ED20AED21898A5B1005C6496 /* DDBadgesViewController.m in Sources */,
 				ED494137189CA2CA00A42098 /* DDSelectViewController.m in Sources */,
 				ED818F3218961BDC00223BA1 /* DDAppDelegate.m in Sources */,
+				EDA43ACE18CB02480038BCDB /* DDResultViewController.m in Sources */,
 				ED20AECC1898A566005C6496 /* DDSettingViewController.m in Sources */,
 				ED818F3818961BDC00223BA1 /* DDViewController.m in Sources */,
 				ED9BEF6B18C2ECED00741468 /* DDMainParam.m in Sources */,

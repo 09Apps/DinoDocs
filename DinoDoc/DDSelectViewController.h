@@ -20,6 +20,7 @@ extern
 @property (weak, nonatomic) IBOutlet UILabel *timerlabel;
 @property (nonatomic,strong) NSString* opttitle;
 @property (nonatomic, strong) NSMutableArray* questions;
+@property (nonatomic, strong) NSArray* qindexes;
 @property NSUInteger answernum;
 @property (nonatomic, strong) NSString* ansdetails;
 @property NSUInteger currentqnum;
