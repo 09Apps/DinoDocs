@@ -8,6 +8,7 @@
 
 #import "DDViewController.h"
 #import "DDPlayViewController.h"
+#import "DDSettingTblViewController.h"
 #import "DDMainParam.h"
 
 @interface DDViewController ()
@@ -47,10 +48,13 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    DDPlayViewController *playVC = (DDPlayViewController*)[segue destinationViewController];
+    if ([segue.identifier compare:@"playseg"] == NSOrderedSame)
+    {
+        DDPlayViewController *playVC = (DDPlayViewController*)[segue destinationViewController];
         
-    // Pass on soundid to Play VC as we will stop it at exit of play VC
-    playVC.bgplaysound = self.bgsound;
+        // Pass on soundid to Play VC as we will stop it at exit of play VC
+        playVC.bgplaysound = self.bgsound;
+    }
 }
 
 

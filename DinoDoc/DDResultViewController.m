@@ -7,6 +7,7 @@
 //
 
 #import "DDResultViewController.h"
+#import "DDSelectViewController.h"
 
 @interface DDResultViewController ()
 
@@ -40,7 +41,6 @@
 
 - (IBAction)playAgain:(UIButton *)sender
 {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
-
 @end
