@@ -294,6 +294,24 @@
 			<key>Question</key>
 			<string>What is the smallest dinosaur known yet?</string>
 		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>It is a lingering question on which scientists have not agreed yet.</string>
+				<string>Warm blooded, like birds.</string>
+				<string>Cold blooded, like lizards.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Any definite conclusions about dinosaur metabolism will have to await future discoveries</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string> Were dinosaurs cold or warm blooded?</string>
+		</dict>
 	</array>
 </dict>
 </plist>

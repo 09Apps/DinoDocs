@@ -16,7 +16,6 @@ extern
 
 - (void)showQuestions;
 
-
 @property (weak, nonatomic) IBOutlet UILabel *timerlabel;
 @property (nonatomic,strong) NSString* opttitle;
 @property (nonatomic, strong) NSMutableArray* questions;
@@ -37,6 +36,7 @@ extern
 @property NSUInteger const QUIZCOUNT;
 @property NSUInteger const ANSTIME;
 @property NSString* const WRNGANSTXT;
+@property BOOL showansdetails;
 
 - (void) handleBack:(id)sender;
 

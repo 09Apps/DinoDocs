@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
 	// Overwritting back button, so I can clean up timer and other objects
-    UIBarButtonItem *backbutton = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(handleBack:)];
+    UIBarButtonItem *backbutton = [[UIBarButtonItem alloc] initWithTitle:@"Quit" style:UIBarButtonItemStylePlain target:self action:@selector(handleBack:)];
     self.navigationItem.leftBarButtonItem = backbutton;
     
     // The name of the plist file with questions and answers for each option must match
@@ -59,6 +59,7 @@
     // get the mainparam singleton
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     self.ANSTIME = mainparam.anstime;
+    self.showansdetails = mainparam.showansdetails;
     
     // Keep the sounds ready, but don't play them
     NSString *rtpath = [[NSBundle mainBundle] pathForResource:mainparam.rightsound ofType:@"wav"];
@@ -122,44 +123,63 @@
 {
     AudioServicesPlaySystemSound(_rightsnd);
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"That's correct !" message:self.ansdetails delegate:self cancelButtonTitle:@"Cool" otherButtonTitles: nil];
-
     // Update and show score
     self.userscore++;
     NSString* scorestr = [NSString stringWithFormat:@"Score: %d",self.userscore];
     self.scorelbl.text = scorestr;
     
-    [alert setTag:RIGHTANS];
-    [alert show];
+    if (self.showansdetails)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"That's correct !" message:self.ansdetails delegate:self cancelButtonTitle:@"Cool" otherButtonTitles: nil];
+        
+        [alert setTag:RIGHTANS];
+        [alert show];
+    }
+    else
+    {
+        [self showQuestions];
+    }
 }
 
 - (void)wrongAnswer
 {
     AudioServicesPlaySystemSound(_wrongsnd);
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Think harder !" message:self.WRNGANSTXT delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+    if (self.showansdetails)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Think harder !" message:self.WRNGANSTXT delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
     
-    [alert setTag:WRONGANS];
-    [alert show];
+        [alert setTag:WRONGANS];
+        [alert show];
+    }
+    else
+    {
+        [self showQuestions];
+    }
 }
 
 - (void)timesUp
 {
     AudioServicesPlaySystemSound(_wrongsnd);
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time's Up !" message:@"Let's move on" delegate:self cancelButtonTitle:@"Hmm.." otherButtonTitles: nil];
+    if (self.showansdetails)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time's Up !" message:@"Let's move on" delegate:self cancelButtonTitle:@"Hmm.." otherButtonTitles: nil];
     
-    [alert setTag:TIMESUP];
-    [alert show];
+        [alert setTag:TIMESUP];
+        [alert show];
+    }
+    else
+    {
+        [self showQuestions];
+    }
 }
-
 
 - (void) quizCompleted
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
     [self performSegueWithIdentifier:@"showresult" sender:nil];
 }
-
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -189,21 +209,28 @@
         self.quetxt.text = [que objectForKey:@"Question"];
         NSArray* optarr = [que objectForKey:@"Options"];
             
-        for(int cnt=0;cnt< optarr.count;cnt++)
+        for(int cnt=0;cnt< OPTCT;cnt++)
         {
             // Create 4 buttons using array and loop.
             UIButton *theButton= [[UIButton alloc] initWithFrame:CGRectMake(20,(165+(65*cnt)), 275, 60)];
+
+            if (cnt < optarr.count)
+            {
+                theButton.backgroundColor = [UIColor grayColor];
                 
-            theButton.backgroundColor = [UIColor grayColor];
-            theButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-            theButton.tag = cnt;
+                //set their selector using add selector
+                [theButton addTarget:self action:@selector(answerClicked:) forControlEvents:UIControlEventTouchUpInside];
+                NSString *buttontext = [optarr objectAtIndex:cnt];
+                [theButton setTitle:buttontext forState:UIControlStateNormal];
+                theButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            }
+            else
+            {
+                theButton.backgroundColor = [UIColor whiteColor];
+                [theButton setTitle:@" " forState:UIControlStateNormal];
+            }
             
-            NSString *buttontext = [optarr objectAtIndex:cnt];
-                
-            [theButton setTitle:buttontext forState:UIControlStateNormal];
-                
-            //set their selector using add selector
-            [theButton addTarget:self action:@selector(answerClicked:) forControlEvents:UIControlEventTouchUpInside];
+            theButton.tag = cnt;
                 
             [self.view addSubview:theButton];
         }

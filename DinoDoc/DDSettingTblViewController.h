@@ -10,4 +10,7 @@
 
 @interface DDSettingTblViewController : UITableViewController
 
+@property BOOL soundon;
+@property BOOL showansdetails;
+
 @end

@@ -12,6 +12,10 @@
 	<string>wrong_answer</string>
 	<key>rightsound</key>
 	<string>right_answer</string>
+	<key>soundon</key>
+	<true/>
+	<key>showansdetails</key>
+	<true/>
 	<key>options</key>
 	<array>
 		<dict>

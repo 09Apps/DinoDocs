@@ -49,6 +49,8 @@
             self.anstime = [[mainparamdict objectForKey:@"anstime"] integerValue];
             self.rightsound = [mainparamdict objectForKey:@"rightsound"];
             self.wrongsound = [mainparamdict objectForKey:@"wrongsound"];
+            self.soundon = [[mainparamdict objectForKey:@"soundon"] boolValue];
+            self.showansdetails = [[mainparamdict objectForKey:@"showansdetails"] boolValue];            
         }
     }
     

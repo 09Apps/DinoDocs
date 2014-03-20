@@ -7,6 +7,7 @@
 //
 
 #import "DDSettingTblViewController.h"
+#import "DDMainParam.h" 
 
 @interface DDSettingTblViewController ()
 
@@ -26,6 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Get the singleton instance of main param
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    self.soundon = mainparam.soundon;
+    self.showansdetails = mainparam.showansdetails;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -66,6 +72,10 @@
     }
 
     UISwitch * ddswitch = [[UISwitch alloc] init];
+    ddswitch.tag = indexPath.row;
+
+    
+    [ddswitch addTarget:self action:@selector(settingChanged:) forControlEvents:UIControlEventValueChanged];
     cell.accessoryView = ddswitch;
     
     switch (indexPath.row)
@@ -73,11 +83,13 @@
         case 0:
             [cell.textLabel setText:@"Sound"];
             [cell.detailTextLabel setText:@"Sound On/Off"];
+            [ddswitch setOn:self.soundon];
             break;
             
         case 1:
             [cell.textLabel setText:@"Answer Details"];
             [cell.detailTextLabel setText:@"Show Answer details"];
+            [ddswitch setOn:self.showansdetails];
             break;
 
         case 2:
@@ -89,6 +101,42 @@
     }
     
     return cell;
+}
+
+- (void)settingChanged:(UISwitch*)sender
+{
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    
+    if([sender isOn])
+    {
+        // This means switch turned ON
+        if (sender.tag == 0)
+        {
+            // This means volume changed
+            self.soundon = TRUE;
+            [mainparam setSoundon:self.soundon];
+        }
+        else
+        {
+            self.showansdetails = TRUE;
+            [mainparam setShowansdetails:self.showansdetails];
+        }
+    }
+    else
+    {
+        // Execute any code when the switch is OFF
+        if (sender.tag == 0)
+        {
+            // This means volume changed
+            self.soundon = FALSE;
+            [mainparam setSoundon:self.soundon];            
+        }
+        else
+        {
+            self.showansdetails = FALSE;
+            [mainparam setShowansdetails:self.showansdetails];
+        }
+    }
 }
 
 /*

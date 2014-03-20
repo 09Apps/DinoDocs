@@ -15,6 +15,9 @@
 @property (nonatomic,retain) NSString* wrongsound;
 @property (nonatomic,strong) NSArray* options;
 @property NSUInteger anstime;
+@property BOOL soundon;
+@property BOOL showansdetails;
+@property BOOL paramchanged;
 
 + (DDMainParam*)sharedInstance;
 
