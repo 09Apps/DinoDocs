@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED08C77E18E18FE700C3A662 /* ticking.wav in Resources */ = {isa = PBXBuildFile; fileRef = ED08C77D18E18FE700C3A662 /* ticking.wav */; };
+		ED13CF7918D25EBB000CC71A /* DDSettingTblViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED13CF7818D25EBB000CC71A /* DDSettingTblViewController.m */; };
 		ED1CAA68189F278500ED92FF /* Beginner.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED1CAA67189F278500ED92FF /* Beginner.plist */; };
-		ED20AECC1898A566005C6496 /* DDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED20AECB1898A566005C6496 /* DDSettingViewController.m */; };
 		ED20AECF1898A591005C6496 /* DDPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED20AECE1898A591005C6496 /* DDPlayViewController.m */; };
 		ED20AED21898A5B1005C6496 /* DDBadgesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED20AED11898A5B1005C6496 /* DDBadgesViewController.m */; };
 		ED474F5D18ADDFB500F49B07 /* right_answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = ED474F5B18ADDFB500F49B07 /* right_answer.wav */; };
@@ -46,10 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED08C77D18E18FE700C3A662 /* ticking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ticking.wav; sourceTree = "<group>"; };
+		ED13CF7718D25EBB000CC71A /* DDSettingTblViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSettingTblViewController.h; sourceTree = "<group>"; };
+		ED13CF7818D25EBB000CC71A /* DDSettingTblViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSettingTblViewController.m; sourceTree = "<group>"; };
 		ED1CAA67189F278500ED92FF /* Beginner.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Beginner.plist; sourceTree = "<group>"; };
 		ED2004F618A831DD005F2833 /* DDDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDefines.h; sourceTree = "<group>"; };
-		ED20AECA1898A566005C6496 /* DDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSettingViewController.h; sourceTree = "<group>"; };
-		ED20AECB1898A566005C6496 /* DDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSettingViewController.m; sourceTree = "<group>"; };
 		ED20AECD1898A591005C6496 /* DDPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayViewController.h; sourceTree = "<group>"; };
 		ED20AECE1898A591005C6496 /* DDPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayViewController.m; sourceTree = "<group>"; };
 		ED20AED01898A5B1005C6496 /* DDBadgesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDBadgesViewController.h; sourceTree = "<group>"; };
@@ -120,12 +122,12 @@
 				ED20AECE1898A591005C6496 /* DDPlayViewController.m */,
 				ED20AED01898A5B1005C6496 /* DDBadgesViewController.h */,
 				ED20AED11898A5B1005C6496 /* DDBadgesViewController.m */,
-				ED20AECA1898A566005C6496 /* DDSettingViewController.h */,
-				ED20AECB1898A566005C6496 /* DDSettingViewController.m */,
 				ED494135189CA2CA00A42098 /* DDSelectViewController.h */,
 				ED494136189CA2CA00A42098 /* DDSelectViewController.m */,
 				EDA43ACC18CB02480038BCDB /* DDResultViewController.h */,
 				EDA43ACD18CB02480038BCDB /* DDResultViewController.m */,
+				ED13CF7718D25EBB000CC71A /* DDSettingTblViewController.h */,
+				ED13CF7818D25EBB000CC71A /* DDSettingTblViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -133,6 +135,7 @@
 		ED5807CA18B9CD3300AE18FB /* soundfiles */ = {
 			isa = PBXGroup;
 			children = (
+				ED08C77D18E18FE700C3A662 /* ticking.wav */,
 				EDCC46EF18BA6F7D00B781C9 /* wrong_answer.wav */,
 				ED5807C518B9C76100AE18FB /* dinosound.wav */,
 				ED474F5B18ADDFB500F49B07 /* right_answer.wav */,
@@ -309,6 +312,7 @@
 				ED818F2C18961BDC00223BA1 /* InfoPlist.strings in Resources */,
 				EDCC46F018BA6F7D00B781C9 /* wrong_answer.wav in Resources */,
 				ED818F3518961BDC00223BA1 /* Main.storyboard in Resources */,
+				ED08C77E18E18FE700C3A662 /* ticking.wav in Resources */,
 				ED1CAA68189F278500ED92FF /* Beginner.plist in Resources */,
 				ED5807C618B9C76200AE18FB /* dinosound.wav in Resources */,
 				ED474F5D18ADDFB500F49B07 /* right_answer.wav in Resources */,
@@ -331,11 +335,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED13CF7918D25EBB000CC71A /* DDSettingTblViewController.m in Sources */,
 				ED20AED21898A5B1005C6496 /* DDBadgesViewController.m in Sources */,
 				ED494137189CA2CA00A42098 /* DDSelectViewController.m in Sources */,
 				ED818F3218961BDC00223BA1 /* DDAppDelegate.m in Sources */,
 				EDA43ACE18CB02480038BCDB /* DDResultViewController.m in Sources */,
-				ED20AECC1898A566005C6496 /* DDSettingViewController.m in Sources */,
 				ED818F3818961BDC00223BA1 /* DDViewController.m in Sources */,
 				ED9BEF6B18C2ECED00741468 /* DDMainParam.m in Sources */,
 				ED5807CE18B9CD9F00AE18FB /* DDUtils.m in Sources */,

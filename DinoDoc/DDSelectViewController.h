@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 
 extern
 
@@ -30,8 +31,11 @@ extern
 @property (weak, nonatomic) IBOutlet UILabel *qcount;
 @property (weak, nonatomic) IBOutlet UILabel *scorelbl;
 
+@property BOOL soundon;
+//@property (nonatomic,strong) AVAudioPlayer *player;
 @property (assign) SystemSoundID rightsnd;
 @property (assign) SystemSoundID wrongsnd;
+@property (assign) SystemSoundID qzbgsnd;
 
 @property NSUInteger const QUIZCOUNT;
 @property NSUInteger const ANSTIME;

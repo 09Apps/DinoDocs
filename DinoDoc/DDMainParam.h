@@ -11,6 +11,7 @@
 @interface DDMainParam : NSObject
 
 @property (nonatomic,retain) NSString* bgsound;
+@property (nonatomic,retain) NSString* quizbgsound;
 @property (nonatomic,retain) NSString* rightsound;
 @property (nonatomic,retain) NSString* wrongsound;
 @property (nonatomic,strong) NSArray* options;

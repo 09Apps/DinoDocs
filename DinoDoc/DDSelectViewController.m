@@ -61,7 +61,15 @@
     self.ANSTIME = mainparam.anstime;
     self.showansdetails = mainparam.showansdetails;
     
+    // play backgrund sound if not muted
+    self.soundon = mainparam.soundon;
+    NSString* qzbgsndname = mainparam.quizbgsound;
+    
     // Keep the sounds ready, but don't play them
+    NSString *qzsndpath = [[NSBundle mainBundle] pathForResource:qzbgsndname ofType:@"wav"];
+    NSURL *qzpathURL = [NSURL fileURLWithPath:qzsndpath];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)qzpathURL, &_qzbgsnd);
+    
     NSString *rtpath = [[NSBundle mainBundle] pathForResource:mainparam.rightsound ofType:@"wav"];
     NSURL *rtpathURL = [NSURL fileURLWithPath:rtpath];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)rtpathURL, &_rightsnd);
@@ -84,6 +92,17 @@
     [self.timer invalidate];
     self.timer = nil;
     self.userscore = 0;
+    
+    //clear all sounds
+    AudioServicesRemoveSystemSoundCompletion(self.rightsnd);
+    AudioServicesDisposeSystemSoundID(self.rightsnd);
+    
+    AudioServicesRemoveSystemSoundCompletion(self.wrongsnd);
+    AudioServicesDisposeSystemSoundID(self.wrongsnd);
+    
+    AudioServicesRemoveSystemSoundCompletion(self.qzbgsnd);
+    AudioServicesDisposeSystemSoundID(self.qzbgsnd);
+    
     // pop to root view controller
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -99,8 +118,12 @@
     }
     else
     {
-        self.timesec--;
+        if (self.soundon)
+        {
+            AudioServicesPlaySystemSound(_qzbgsnd);
+        }
         self.timerlabel.text = [NSString stringWithFormat:@"00:%d",[self timesec]];
+        self.timesec--;
     }
 }
 
@@ -108,6 +131,7 @@
 {
     [self.timer invalidate];
     self.timer = nil;
+    AudioServicesRemoveSystemSoundCompletion(self.qzbgsnd);
     
     if (sender.tag == self.answernum)
     {
@@ -121,7 +145,10 @@
 
 - (void)rightAnswer
 {
-    AudioServicesPlaySystemSound(_rightsnd);
+    if (self.soundon)
+    {
+        AudioServicesPlaySystemSound(_rightsnd);
+    }
     
     // Update and show score
     self.userscore++;
@@ -143,7 +170,10 @@
 
 - (void)wrongAnswer
 {
-    AudioServicesPlaySystemSound(_wrongsnd);
+    if (self.soundon)
+    {
+        AudioServicesPlaySystemSound(_wrongsnd);
+    }
     
     if (self.showansdetails)
     {
@@ -160,7 +190,10 @@
 
 - (void)timesUp
 {
-    AudioServicesPlaySystemSound(_wrongsnd);
+    if (self.soundon)
+    {
+        AudioServicesPlaySystemSound(_wrongsnd);
+    }
     
     if (self.showansdetails)
     {
@@ -177,6 +210,16 @@
 
 - (void) quizCompleted
 {
+    //clear all sounds
+    AudioServicesRemoveSystemSoundCompletion(self.rightsnd);
+    AudioServicesDisposeSystemSoundID(self.rightsnd);
+    
+    AudioServicesRemoveSystemSoundCompletion(self.wrongsnd);
+    AudioServicesDisposeSystemSoundID(self.wrongsnd);
+    
+    AudioServicesRemoveSystemSoundCompletion(self.qzbgsnd);
+    AudioServicesDisposeSystemSoundID(self.qzbgsnd);
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
     [self performSegueWithIdentifier:@"showresult" sender:nil];
 }

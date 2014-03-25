@@ -41,9 +41,8 @@
         // Pass on required parameters from main file
         selVC.opttitle = [(UIButton*)sender currentTitle];
         
-        // Stop the backgrounf music now.
-        AudioServicesRemoveSystemSoundCompletion(self.bgplaysound);
-        AudioServicesDisposeSystemSoundID(self.bgplaysound);
+        // Stop the background sound now.
+        [self.bgplayer stop];
     }
 }
 

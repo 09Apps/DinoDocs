@@ -45,6 +45,7 @@
         else
         {
             self.bgsound = [mainparamdict objectForKey:@"bgsound"];
+            self.quizbgsound = [mainparamdict objectForKey:@"quizbgsound"];
             self.options = [mainparamdict objectForKey:@"options"];
             self.anstime = [[mainparamdict objectForKey:@"anstime"] integerValue];
             self.rightsound = [mainparamdict objectForKey:@"rightsound"];

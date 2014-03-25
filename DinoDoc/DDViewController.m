@@ -27,13 +27,20 @@
     // Call the singleton object for main param file
     
     DDMainParam* mainparam = [DDMainParam sharedInstance];
-
+    self.soundon = mainparam.soundon;
+    
     NSString* bgsoundname = mainparam.bgsound;
     
     NSString *path = [[NSBundle mainBundle] pathForResource:bgsoundname ofType:@"wav"];
     NSURL *pathURL = [NSURL fileURLWithPath:path];
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)pathURL, &_bgsound);
-    AudioServicesPlaySystemSound(_bgsound);
+    
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:pathURL error:nil];
+    [self.player setNumberOfLoops:-1]; //infinite
+    
+    if (self.soundon)
+    {
+        [self.player play];
+    }
     
     // NEED TO IMPLEMENT
     // CHECK 'newverupdate' PARAMETER IN PLIST IF THERE WERE ANY UPDATES TO PLIST FILE
@@ -53,7 +60,14 @@
         DDPlayViewController *playVC = (DDPlayViewController*)[segue destinationViewController];
         
         // Pass on soundid to Play VC as we will stop it at exit of play VC
-        playVC.bgplaysound = self.bgsound;
+        playVC.bgplayer = self.player;
+    }
+    else if ([segue.identifier compare:@"settingseg"] == NSOrderedSame)
+    {
+        DDSettingTblViewController *settingTVC = (DDSettingTblViewController*)[segue destinationViewController];
+        
+        // Pass on soundid to Play VC as we will stop it at exit of play VC
+        settingTVC.bgplayer = self.player;
     }
 }
 

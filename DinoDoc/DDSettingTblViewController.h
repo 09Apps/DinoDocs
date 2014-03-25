@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface DDSettingTblViewController : UITableViewController
 
 @property BOOL soundon;
 @property BOOL showansdetails;
+@property (nonatomic,strong) AVAudioPlayer *bgplayer;
 
 @end

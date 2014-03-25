@@ -62,7 +62,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier;
+    UISwitch * ddswitch = [[UISwitch alloc] init];
+
+    if (indexPath.row == 2)
+    {
+        CellIdentifier = @"Cell2";
+    }
+    else
+    {
+        CellIdentifier = @"Cell1";
+        ddswitch.tag = indexPath.row;
+        [ddswitch addTarget:self action:@selector(settingChanged:) forControlEvents:UIControlEventValueChanged];
+    }
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     if (cell == nil)
@@ -70,13 +83,6 @@
         // Cell is prototyped in Storyboard, it won't be initialized here
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-
-    UISwitch * ddswitch = [[UISwitch alloc] init];
-    ddswitch.tag = indexPath.row;
-
-    
-    [ddswitch addTarget:self action:@selector(settingChanged:) forControlEvents:UIControlEventValueChanged];
-    cell.accessoryView = ddswitch;
     
     switch (indexPath.row)
     {
@@ -84,16 +90,17 @@
             [cell.textLabel setText:@"Sound"];
             [cell.detailTextLabel setText:@"Sound On/Off"];
             [ddswitch setOn:self.soundon];
+            cell.accessoryView = ddswitch;
             break;
             
         case 1:
             [cell.textLabel setText:@"Answer Details"];
             [cell.detailTextLabel setText:@"Show Answer details"];
             [ddswitch setOn:self.showansdetails];
+            cell.accessoryView = ddswitch;
             break;
 
         case 2:
-            cell.textLabel.text = @"Volume";
             break;
             
         default:
@@ -112,9 +119,10 @@
         // This means switch turned ON
         if (sender.tag == 0)
         {
-            // This means volume changed
+            // This means sound made ON
             self.soundon = TRUE;
             [mainparam setSoundon:self.soundon];
+            [self.bgplayer stop];
         }
         else
         {
@@ -127,9 +135,12 @@
         // Execute any code when the switch is OFF
         if (sender.tag == 0)
         {
-            // This means volume changed
+            // This means sound muted
             self.soundon = FALSE;
-            [mainparam setSoundon:self.soundon];            
+            [mainparam setSoundon:self.soundon];
+            
+            // Stop the background music now.
+            [self.bgplayer stop];
         }
         else
         {
@@ -137,6 +148,18 @@
             [mainparam setShowansdetails:self.showansdetails];
         }
     }
+    
+    [mainparam setParamchanged:TRUE];
+}
+
+- (IBAction)restorePurchases:(UIButton *)sender
+{
+    NSLog(@"Restore Purchases");
+}
+
+- (IBAction)donePressed:(UIButton *)sender
+{
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 /*

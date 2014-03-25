@@ -11,5 +11,5 @@
 
 @interface DDPlayViewController : UIViewController
 @property (nonatomic,strong) NSArray* options;
-@property SystemSoundID bgplaysound;
+@property (nonatomic,strong) AVAudioPlayer *bgplayer;
 @end

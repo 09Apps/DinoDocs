@@ -11,6 +11,7 @@
 
 @interface DDViewController : UIViewController
 
-@property SystemSoundID bgsound;
+@property (nonatomic,strong) AVAudioPlayer *player;
+@property BOOL soundon;
 
 @end

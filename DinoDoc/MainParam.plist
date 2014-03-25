@@ -8,6 +8,8 @@
 	<integer>20</integer>
 	<key>bgsound</key>
 	<string>dinosound</string>
+	<key>quizbgsound</key>
+	<string>ticking</string>
 	<key>wrongsound</key>
 	<string>wrong_answer</string>
 	<key>rightsound</key>
