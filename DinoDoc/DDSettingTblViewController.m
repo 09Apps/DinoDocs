@@ -159,6 +159,13 @@
 
 - (IBAction)donePressed:(UIButton *)sender
 {
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    
+    if ([mainparam paramchanged])
+    {
+        [mainparam updateMainParam];
+    }
+
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 

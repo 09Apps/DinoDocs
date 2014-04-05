@@ -8,6 +8,7 @@
 
 #import "DDMainParam.h"
 #import "DDUtils.h"
+#import "DDDefines.h"
 
 @implementation DDMainParam
 
@@ -28,7 +29,7 @@
     if (self = [super init])
     {
         // The main plist file should always be named as MainParam.plist
-        NSString* plistPath = [DDUtils getPlistPath:@"MainParam"];
+        NSString* plistPath = [DDUtils getPlistPath:MAINPARAM];
         
         // read property list into memory as an NSData object
         NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
@@ -44,18 +45,65 @@
         }
         else
         {
+            self.newverupd = [[mainparamdict objectForKey:@"newverupdate"] boolValue];
+            self.anstime = [[mainparamdict objectForKey:@"anstime"] integerValue];
             self.bgsound = [mainparamdict objectForKey:@"bgsound"];
             self.quizbgsound = [mainparamdict objectForKey:@"quizbgsound"];
-            self.options = [mainparamdict objectForKey:@"options"];
-            self.anstime = [[mainparamdict objectForKey:@"anstime"] integerValue];
-            self.rightsound = [mainparamdict objectForKey:@"rightsound"];
             self.wrongsound = [mainparamdict objectForKey:@"wrongsound"];
+            self.rightsound = [mainparamdict objectForKey:@"rightsound"];
             self.soundon = [[mainparamdict objectForKey:@"soundon"] boolValue];
-            self.showansdetails = [[mainparamdict objectForKey:@"showansdetails"] boolValue];            
+            self.showansdetails = [[mainparamdict objectForKey:@"showansdetails"] boolValue];
+            self.options = [mainparamdict objectForKey:@"options"];
         }
     }
-    
     return self;
 }
 
+- (void) updateMainParam
+{
+    NSArray* keyarr = [[NSArray alloc] initWithObjects: @"newverupdate",
+                                                        @"anstime",
+                                                        @"bgsound",
+                                                        @"quizbgsound",
+                                                        @"wrongsound",
+                                                        @"rightsound",
+                                                        @"soundon",
+                                                        @"showansdetails",
+                                                        @"options", nil];
+
+    NSString* nsnewver = [DDUtils stringFromBool:self.newverupd];
+    NSString* nssndon = [DDUtils stringFromBool:self.soundon];
+    NSString* nsansdet = [DDUtils stringFromBool:self.showansdetails];
+    NSString* nsanstime = [NSString stringWithFormat:@"%d",self.anstime];
+    
+    NSArray* valarr = [NSArray arrayWithObjects: nsnewver,
+                                                nsanstime,
+                                                self.bgsound,
+                                                self.quizbgsound,
+                                                self.wrongsound,
+                                                self.rightsound,
+                                                nssndon,
+                                                nsansdet,
+                                                self.options, nil];
+    
+    NSDictionary* mainparam = [[NSDictionary alloc] initWithObjects:valarr forKeys:keyarr];
+    
+    NSString* plistPath = [DDUtils getPlistPath:MAINPARAM];
+    
+    NSString *error = nil;
+    
+    // create NSData from dictionary
+    NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:mainparam format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
+    
+    // check is plistData exists
+    if(plistData)
+    {
+        // write plistData to our Data.plist file
+        [plistData writeToFile:plistPath atomically:YES];
+    }
+    else
+    {
+        NSLog(@"Error in saveData: %@", error);
+    }
+}
 @end

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface DDUtils : NSObject
-
++ (NSString*) stringFromBool:(BOOL) boolvar;
 + (NSString*) getPlistPath:(NSString*) pListName;
 + (NSInteger) randomIntegerFrom:(NSInteger)min To :(NSInteger)max;
 + (NSArray*) randomIntegerArrayFrom:(NSInteger)min To:(NSInteger)max Count:(NSUInteger)size;

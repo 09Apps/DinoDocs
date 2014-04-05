@@ -10,6 +10,11 @@
 
 @implementation DDUtils
 
++ (NSString*) stringFromBool:(BOOL) boolvar
+{
+    return boolvar? @"YES" : @"NO";
+}
+    
 + (NSString*) getPlistPath:(NSString*) pListName
 {
     // get paths from root direcory
@@ -44,7 +49,6 @@
         }
     }
 //    NSLog(@"plistPath %@",plistPath);
-    
     return plistPath;
 }
 

@@ -19,7 +19,9 @@
 @property BOOL soundon;
 @property BOOL showansdetails;
 @property BOOL paramchanged;
+@property BOOL newverupd;
 
 + (DDMainParam*)sharedInstance;
+- (void) updateMainParam;
 
 @end
