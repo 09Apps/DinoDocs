@@ -28,7 +28,7 @@
 {
     if (self = [super init])
     {
-        // The main plist file should always be named as MainParam.plist
+        // The main plist file 
         NSString* plistPath = [DDUtils getPlistPath:MAINPARAM];
         
         // read property list into memory as an NSData object

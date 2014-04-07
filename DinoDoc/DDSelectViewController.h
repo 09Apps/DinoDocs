@@ -26,13 +26,13 @@ extern
 @property NSUInteger currentqnum;
 @property (weak, nonatomic) IBOutlet UILabel *quetxt;
 @property NSUInteger timesec;
+@property NSUInteger pausedtimesec;
 @property NSUInteger userscore;
 @property (nonatomic, strong) NSTimer *timer;
 @property (weak, nonatomic) IBOutlet UILabel *qcount;
 @property (weak, nonatomic) IBOutlet UILabel *scorelbl;
 
 @property BOOL soundon;
-//@property (nonatomic,strong) AVAudioPlayer *player;
 @property (assign) SystemSoundID rightsnd;
 @property (assign) SystemSoundID wrongsnd;
 @property (assign) SystemSoundID qzbgsnd;

@@ -10,4 +10,6 @@
 
 @interface DDBadgesViewController : UIViewController
 
+@property (strong, nonatomic) NSArray* badges;
+
 @end

@@ -88,23 +88,12 @@
 
 - (void)handleBack:(id)sender
 {
-    // we need to clean up timer on back , so wrote custom back button function
-    [self.timer invalidate];
-    self.timer = nil;
-    self.userscore = 0;
+    [self pauseTimer];
     
-    //clear all sounds
-    AudioServicesRemoveSystemSoundCompletion(self.rightsnd);
-    AudioServicesDisposeSystemSoundID(self.rightsnd);
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Quit?" message:@"Do you want to quit the quiz?" delegate:self cancelButtonTitle:@"Nope" otherButtonTitles: @"Yes",nil];
     
-    AudioServicesRemoveSystemSoundCompletion(self.wrongsnd);
-    AudioServicesDisposeSystemSoundID(self.wrongsnd);
-    
-    AudioServicesRemoveSystemSoundCompletion(self.qzbgsnd);
-    AudioServicesDisposeSystemSoundID(self.qzbgsnd);
-    
-    // pop to root view controller
-    [self.navigationController popViewControllerAnimated:YES];
+    [alert setTag:QUITQUIZ];
+    [alert show];
 }
 
 - (void)timerTick:(NSTimer *)timer
@@ -211,17 +200,24 @@
 - (void) quizCompleted
 {
     //clear all sounds
-    AudioServicesRemoveSystemSoundCompletion(self.rightsnd);
-    AudioServicesDisposeSystemSoundID(self.rightsnd);
+    [self cleanUpNGo];
     
-    AudioServicesRemoveSystemSoundCompletion(self.wrongsnd);
-    AudioServicesDisposeSystemSoundID(self.wrongsnd);
-    
-    AudioServicesRemoveSystemSoundCompletion(self.qzbgsnd);
-    AudioServicesDisposeSystemSoundID(self.qzbgsnd);
-    
-    [self.navigationController popToRootViewControllerAnimated:YES];
     [self performSegueWithIdentifier:@"showresult" sender:nil];
+}
+
+- (void) pauseTimer
+{
+    self.pausedtimesec = self.timesec;
+    [self.timer invalidate];
+    self.timer = nil;
+    AudioServicesRemoveSystemSoundCompletion(self.qzbgsnd);
+}
+
+- (void) unpausedTimer
+{
+    // Restart the timer
+    self.timesec = self.pausedtimesec ;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -323,10 +319,42 @@
         case TIMESUP:
             [self showQuestions];
             break;
+
+        case QUITQUIZ:
+            if (buttonIndex == 1)
+            { // User presses Yes to Quit?
+                self.userscore = 0;
+                [self cleanUpNGo];
+            }
+            else
+            { // User presses No to Quit?
+                [self unpausedTimer];
+            }
+            break;
             
         default:
             break;
     }
+}
+
+- (void) cleanUpNGo
+{
+    // we need to clean up timer
+    [self.timer invalidate];
+    self.timer = nil;
+    
+    //clear all sounds
+    AudioServicesRemoveSystemSoundCompletion(self.rightsnd);
+    AudioServicesDisposeSystemSoundID(self.rightsnd);
+    
+    AudioServicesRemoveSystemSoundCompletion(self.wrongsnd);
+    AudioServicesDisposeSystemSoundID(self.wrongsnd);
+    
+    AudioServicesRemoveSystemSoundCompletion(self.qzbgsnd);
+    AudioServicesDisposeSystemSoundID(self.qzbgsnd);
+    
+    // pop to root view controller
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
