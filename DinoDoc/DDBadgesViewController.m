@@ -43,7 +43,7 @@
     
     if (! dict)
     {
-        NSLog(@"readMainParam: error reading MainParam, desc: %@, format: %d", errorDesc, format);
+        NSLog(@"readMainParam: error reading Badge plist, desc: %@, format: %d", errorDesc, format);
     }
     else
     {
@@ -55,9 +55,22 @@
         {
             NSDictionary* bgdict = [self.badges objectAtIndex:i];
             
-            //create buttons for options at runtime
-            UILabel *badgelbl = [[UILabel alloc] initWithFrame:CGRectMake(25,(160+(40*i)), 150, 25)];
+            //create labels for badges
+            UILabel *badgelbl = [[UILabel alloc] initWithFrame:CGRectMake(25,(160+(90*i)), 50, 50)];
             
+            BOOL isenabled = [[bgdict objectForKey:@"enabled"] boolValue];
+            
+            if (isenabled)
+            {
+                NSString* img = [bgdict objectForKey:@"enabledimg"];
+                badgelbl.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:img]];
+            }
+            else
+            {
+                NSString* img = [bgdict objectForKey:@"disabledimg"];
+                badgelbl.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:img]];
+            }
+
             [badgelbl setText:[bgdict objectForKey:@"title"]];
             
             [self.view addSubview:badgelbl];

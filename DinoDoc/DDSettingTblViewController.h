@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface DDSettingTblViewController : UITableViewController
+@interface DDSettingTblViewController : UITableViewController <UITextFieldDelegate>
 
 @property BOOL soundon;
 @property BOOL showansdetails;
 @property (nonatomic,strong) AVAudioPlayer *bgplayer;
+@property (nonatomic,strong) NSString* playername;
 
 @end

@@ -46,8 +46,11 @@
         else
         {
             self.newverupd = [[mainparamdict objectForKey:@"newverupdate"] boolValue];
+            self.maintitle = [mainparamdict objectForKey:@"maintitle"];
+            self.playername = [mainparamdict objectForKey:@"playername"];
             self.anstime = [[mainparamdict objectForKey:@"anstime"] integerValue];
             self.bgsound = [mainparamdict objectForKey:@"bgsound"];
+            self.showads = [[mainparamdict objectForKey:@"showads"] boolValue];
             self.quizbgsound = [mainparamdict objectForKey:@"quizbgsound"];
             self.wrongsound = [mainparamdict objectForKey:@"wrongsound"];
             self.rightsound = [mainparamdict objectForKey:@"rightsound"];
@@ -62,8 +65,11 @@
 - (void) updateMainParam
 {
     NSArray* keyarr = [[NSArray alloc] initWithObjects: @"newverupdate",
+                                                        @"maintitle",
+                                                        @"playername",
                                                         @"anstime",
                                                         @"bgsound",
+                                                        @"showads",
                                                         @"quizbgsound",
                                                         @"wrongsound",
                                                         @"rightsound",
@@ -74,11 +80,15 @@
     NSString* nsnewver = [DDUtils stringFromBool:self.newverupd];
     NSString* nssndon = [DDUtils stringFromBool:self.soundon];
     NSString* nsansdet = [DDUtils stringFromBool:self.showansdetails];
+    NSString* nsshowads = [DDUtils stringFromBool:self.showads];
     NSString* nsanstime = [NSString stringWithFormat:@"%d",self.anstime];
     
     NSArray* valarr = [NSArray arrayWithObjects: nsnewver,
+                                                self.maintitle,
+                                                self.playername,
                                                 nsanstime,
                                                 self.bgsound,
+                                                nsshowads,
                                                 self.quizbgsound,
                                                 self.wrongsound,
                                                 self.rightsound,

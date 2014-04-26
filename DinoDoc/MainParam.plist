@@ -4,10 +4,16 @@
 <dict>
 	<key>newverupdate</key>
 	<false/>
+	<key>maintitle</key>
+	<string>DinoDoc</string>
+	<key>playername</key>
+	<string>Aryan</string>
 	<key>anstime</key>
 	<integer>20</integer>
 	<key>bgsound</key>
 	<string>dinosound</string>
+	<key>showads</key>
+	<true/>
 	<key>quizbgsound</key>
 	<string>ticking</string>
 	<key>wrongsound</key>

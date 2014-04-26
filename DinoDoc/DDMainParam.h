@@ -9,13 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface DDMainParam : NSObject
-
+@property (nonatomic,retain) NSString* maintitle;
+@property (nonatomic,retain) NSString* playername;
 @property (nonatomic,retain) NSString* bgsound;
 @property (nonatomic,retain) NSString* quizbgsound;
 @property (nonatomic,retain) NSString* rightsound;
 @property (nonatomic,retain) NSString* wrongsound;
 @property (nonatomic,strong) NSArray* options;
 @property NSUInteger anstime;
+@property BOOL showads;
 @property BOOL soundon;
 @property BOOL showansdetails;
 @property BOOL paramchanged;

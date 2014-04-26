@@ -9,7 +9,7 @@
 #import "DDSettingTblViewController.h"
 #import "DDMainParam.h" 
 
-@interface DDSettingTblViewController ()
+@interface DDSettingTblViewController () 
 
 @end
 
@@ -32,6 +32,7 @@
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     self.soundon = mainparam.soundon;
     self.showansdetails = mainparam.showansdetails;
+    self.playername = mainparam.playername;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -57,25 +58,44 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 3;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier;
-    UISwitch * ddswitch = [[UISwitch alloc] init];
-
-    if (indexPath.row == 2)
-    {
-        CellIdentifier = @"Cell2";
-    }
-    else
-    {
-        CellIdentifier = @"Cell1";
-        ddswitch.tag = indexPath.row;
-        [ddswitch addTarget:self action:@selector(settingChanged:) forControlEvents:UIControlEventValueChanged];
-    }
+    UISwitch* ddswitch = [[UISwitch alloc] init];
+    UIButton* ddbuttons = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    ddbuttons.frame = CGRectMake(0, 0, 260, 40);
     
+    UITextField* txtfld = [[UITextField alloc] initWithFrame:CGRectMake(120, 0, 180, 40)];
+
+    switch (indexPath.row)
+    {
+        case 0:
+            CellIdentifier = @"Cell1";
+            break;
+            
+        case 1:
+            CellIdentifier = @"Cell2";
+            break;
+            
+        case 2:
+            CellIdentifier = @"Cell2";
+            break;
+            
+        case 3:
+            CellIdentifier = @"Cell3";
+            break;
+            
+        case 4:
+            CellIdentifier = @"Cell3";
+            break;
+            
+        default:
+            break;
+    }
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     if (cell == nil)
@@ -87,20 +107,45 @@
     switch (indexPath.row)
     {
         case 0:
+            [cell.textLabel setText:@"Enter Name : "];
+            txtfld.text= self.playername;
+            txtfld.delegate = self;
+            txtfld.tag = indexPath.row;
+            cell.accessoryView = txtfld;
+            break;
+            
+        case 1:
             [cell.textLabel setText:@"Sound"];
             [cell.detailTextLabel setText:@"Sound On/Off"];
+            
+            ddswitch.tag = indexPath.row;
+            [ddswitch addTarget:self action:@selector(settingChanged:) forControlEvents:UIControlEventValueChanged];
             [ddswitch setOn:self.soundon];
             cell.accessoryView = ddswitch;
             break;
             
-        case 1:
+        case 2:
             [cell.textLabel setText:@"Answer Details"];
             [cell.detailTextLabel setText:@"Show Answer details"];
+            
+            ddswitch.tag = indexPath.row;
+            [ddswitch addTarget:self action:@selector(settingChanged:) forControlEvents:UIControlEventValueChanged];
             [ddswitch setOn:self.showansdetails];
             cell.accessoryView = ddswitch;
             break;
 
-        case 2:
+        case 3:
+            [ddbuttons setTitle:@"Remove Ads" forState:UIControlStateNormal];
+            [ddbuttons addTarget:self action:@selector(removeAds) forControlEvents:UIControlEventTouchUpInside];
+            ddbuttons.tag = indexPath.row;
+            [cell addSubview:ddbuttons];
+            break;
+
+        case 4:
+            [ddbuttons setTitle:@"Restore Purchases" forState:UIControlStateNormal];
+            [ddbuttons addTarget:self action:@selector(restorePurchases:) forControlEvents:UIControlEventTouchUpInside];
+            ddbuttons.tag = indexPath.row;
+            [cell addSubview:ddbuttons];
             break;
             
         default:
@@ -117,7 +162,7 @@
     if([sender isOn])
     {
         // This means switch turned ON
-        if (sender.tag == 0)
+        if (sender.tag == 1)
         {
             // This means sound made ON
             self.soundon = TRUE;
@@ -133,7 +178,7 @@
     else
     {
         // Execute any code when the switch is OFF
-        if (sender.tag == 0)
+        if (sender.tag == 1)
         {
             // This means sound muted
             self.soundon = FALSE;
@@ -155,6 +200,27 @@
 - (IBAction)restorePurchases:(UIButton *)sender
 {
     NSLog(@"Restore Purchases");
+}
+
+- (void)removeAds
+{
+    NSLog(@"Remove Ads");
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    NSLog(@"textViewShouldReturn");
+    return TRUE;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    NSLog(@"textFieldDidEndEditing");
+    self.playername = textField.text;
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    [mainparam setPlayername:self.playername];
+    [mainparam setParamchanged:TRUE];
 }
 
 - (IBAction)donePressed:(UIButton *)sender
