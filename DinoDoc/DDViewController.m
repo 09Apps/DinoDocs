@@ -57,6 +57,8 @@
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     NSString* playernm = @"Hello ";
     self.playername.text = [playernm stringByAppendingString:mainparam.playername];
+    
+    self.soundon = mainparam.soundon;
 }
 
 - (void)didReceiveMemoryWarning

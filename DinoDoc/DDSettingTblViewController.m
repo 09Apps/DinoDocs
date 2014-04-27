@@ -165,7 +165,7 @@
             // This means sound made ON
             self.soundon = TRUE;
             [mainparam setSoundon:self.soundon];
-            [self.bgplayer stop];
+            [self.bgplayer play];
         }
         else
         {

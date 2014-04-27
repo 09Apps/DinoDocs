@@ -14,7 +14,7 @@
 #define TIMESUP 200             // alert tag for Time's up UIAlert
 #define DONEQUIZ 300            // alert tag for Quiz completed UIAlert
 #define QUITQUIZ 400            // alert tag for Quiz quit UIAlert
-#define QUITQUIZ 400            // alert tag for Quiz quit UIAlert
+#define OPTCT 4                 // Number of Answer options
 #define BENCHMARKFACTOR 0.6     // The multiplier for score benchmarking
 #define MAINPARAM @"MainParam"  // Name of main parameter file
 #define BADGES @"badges"        // Name of badges plist file
