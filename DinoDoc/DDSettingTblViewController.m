@@ -117,7 +117,6 @@
         case 1:
             [cell.textLabel setText:@"Sound"];
             [cell.detailTextLabel setText:@"Sound On/Off"];
-            
             ddswitch.tag = indexPath.row;
             [ddswitch addTarget:self action:@selector(settingChanged:) forControlEvents:UIControlEventValueChanged];
             [ddswitch setOn:self.soundon];
@@ -127,7 +126,6 @@
         case 2:
             [cell.textLabel setText:@"Answer Details"];
             [cell.detailTextLabel setText:@"Show Answer details"];
-            
             ddswitch.tag = indexPath.row;
             [ddswitch addTarget:self action:@selector(settingChanged:) forControlEvents:UIControlEventValueChanged];
             [ddswitch setOn:self.showansdetails];
@@ -210,13 +208,11 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    NSLog(@"textViewShouldReturn");
     return TRUE;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    NSLog(@"textFieldDidEndEditing");
     self.playername = textField.text;
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     [mainparam setPlayername:self.playername];

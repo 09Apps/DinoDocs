@@ -11,7 +11,10 @@
 @interface DDResultViewController : UIViewController
 
 @property NSUInteger score;
+@property NSUInteger quizcount;
 @property NSUInteger time;
 @property (weak, nonatomic) IBOutlet UILabel *scorelbl;
+@property (weak, nonatomic) IBOutlet UILabel *titlelbl;
+@property (weak, nonatomic) IBOutlet UILabel *namelbl;
 
 @end

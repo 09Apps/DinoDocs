@@ -45,12 +45,18 @@
     self.quiztitle.text = mainparam.maintitle;
     
     NSString* playernm = @"Hello ";
-    
     self.playername.text = [playernm stringByAppendingString:mainparam.playername];
     
     // NEED TO IMPLEMENT
     // CHECK 'newverupdate' PARAMETER IN PLIST IF THERE WERE ANY UPDATES TO PLIST FILE
     // IF 'YES' UPDATE NEW PLIST WITH CONTENTS OF OLD PLIST
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    NSString* playernm = @"Hello ";
+    self.playername.text = [playernm stringByAppendingString:mainparam.playername];
 }
 
 - (void)didReceiveMemoryWarning
