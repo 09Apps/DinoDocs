@@ -9,6 +9,7 @@
 #import "DDPlayViewController.h"
 #import "DDSelectViewController.h"
 #import "DDMainParam.h"    
+#import "DDSettingTblViewController.h"
 
 @interface DDPlayViewController ()
 
@@ -44,11 +45,21 @@
         // Stop the background sound now.
         [self.bgplayer stop];
     }
+    else if ([segue.identifier isEqualToString:@"selsetting"])
+    {
+        DDSettingTblViewController *settingTVC = (DDSettingTblViewController*)[segue destinationViewController];
+        
+        // Pass on soundid to Play VC as we will stop it at exit of play VC
+        settingTVC.bgplayer = self.bgplayer;
+    }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *settingbutton = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(handleSettings:)];
+    self.navigationItem.rightBarButtonItem = settingbutton;
     
 	// Get the singleton instance of main param
     DDMainParam* mainparam = [DDMainParam sharedInstance];
@@ -76,6 +87,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)handleSettings:(id)navbarbutton
+{
+    [self performSegueWithIdentifier:@"selsetting" sender:navbarbutton];
 }
 
 @end

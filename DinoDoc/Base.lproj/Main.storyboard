@@ -209,6 +209,7 @@
                     <navigationItem key="navigationItem" id="hYL-kj-Zqj"/>
                     <connections>
                         <segue destination="vSe-Y9-s3x" kind="push" identifier="selseg" id="yv9-Yq-rLY"/>
+                        <segue destination="PGO-AR-tWc" kind="modal" identifier="selsetting" modalTransitionStyle="coverVertical" id="VVj-qZ-vpE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIc-jh-Amq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -336,4 +337,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="VVj-qZ-vpE"/>
+    </inferredMetricsTieBreakers>
 </document>

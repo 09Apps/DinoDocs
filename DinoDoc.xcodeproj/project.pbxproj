@@ -35,6 +35,11 @@
 		ED9BEF6B18C2ECED00741468 /* DDMainParam.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9BEF6A18C2ECED00741468 /* DDMainParam.m */; };
 		EDA43ACE18CB02480038BCDB /* DDResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA43ACD18CB02480038BCDB /* DDResultViewController.m */; };
 		EDCC46F018BA6F7D00B781C9 /* wrong_answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = EDCC46EF18BA6F7D00B781C9 /* wrong_answer.wav */; };
+		EDF62E3418F30C9F00AE9817 /* 4-in-row.png in Resources */ = {isa = PBXBuildFile; fileRef = EDF62E2F18F30C9F00AE9817 /* 4-in-row.png */; };
+		EDF62E3518F30C9F00AE9817 /* best-answer.png in Resources */ = {isa = PBXBuildFile; fileRef = EDF62E3018F30C9F00AE9817 /* best-answer.png */; };
+		EDF62E3618F30C9F00AE9817 /* best-of-month.png in Resources */ = {isa = PBXBuildFile; fileRef = EDF62E3118F30C9F00AE9817 /* best-of-month.png */; };
+		EDF62E3718F30C9F00AE9817 /* best-week.png in Resources */ = {isa = PBXBuildFile; fileRef = EDF62E3218F30C9F00AE9817 /* best-week.png */; };
+		EDF62E3818F30C9F00AE9817 /* questionaire.png in Resources */ = {isa = PBXBuildFile; fileRef = EDF62E3318F30C9F00AE9817 /* questionaire.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +94,11 @@
 		EDA43ACC18CB02480038BCDB /* DDResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDResultViewController.h; sourceTree = "<group>"; };
 		EDA43ACD18CB02480038BCDB /* DDResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDResultViewController.m; sourceTree = "<group>"; };
 		EDCC46EF18BA6F7D00B781C9 /* wrong_answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong_answer.wav; path = ../wrong_answer.wav; sourceTree = "<group>"; };
+		EDF62E2F18F30C9F00AE9817 /* 4-in-row.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4-in-row.png"; sourceTree = "<group>"; };
+		EDF62E3018F30C9F00AE9817 /* best-answer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "best-answer.png"; sourceTree = "<group>"; };
+		EDF62E3118F30C9F00AE9817 /* best-of-month.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "best-of-month.png"; sourceTree = "<group>"; };
+		EDF62E3218F30C9F00AE9817 /* best-week.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "best-week.png"; sourceTree = "<group>"; };
+		EDF62E3318F30C9F00AE9817 /* questionaire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = questionaire.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +218,7 @@
 		ED818F2818961BDC00223BA1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EDF62E3918F30CB200AE9817 /* Badges */,
 				ED5807CA18B9CD3300AE18FB /* soundfiles */,
 				ED5807CB18B9CD5500AE18FB /* plists */,
 				ED818F2A18961BDC00223BA1 /* InfoPlist.strings */,
@@ -232,6 +243,18 @@
 				ED818F4918961BDC00223BA1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EDF62E3918F30CB200AE9817 /* Badges */ = {
+			isa = PBXGroup;
+			children = (
+				EDF62E2F18F30C9F00AE9817 /* 4-in-row.png */,
+				EDF62E3018F30C9F00AE9817 /* best-answer.png */,
+				EDF62E3118F30C9F00AE9817 /* best-of-month.png */,
+				EDF62E3218F30C9F00AE9817 /* best-week.png */,
+				EDF62E3318F30C9F00AE9817 /* questionaire.png */,
+			);
+			name = Badges;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,13 +336,18 @@
 			files = (
 				ED818F3A18961BDC00223BA1 /* Images.xcassets in Resources */,
 				ED818F2C18961BDC00223BA1 /* InfoPlist.strings in Resources */,
+				EDF62E3418F30C9F00AE9817 /* 4-in-row.png in Resources */,
+				EDF62E3718F30C9F00AE9817 /* best-week.png in Resources */,
 				ED09FA4618F0710700B75327 /* badges.plist in Resources */,
 				ED9233A618F26DCF00412957 /* dinosound.wav in Resources */,
+				EDF62E3518F30C9F00AE9817 /* best-answer.png in Resources */,
 				EDCC46F018BA6F7D00B781C9 /* wrong_answer.wav in Resources */,
 				ED818F3518961BDC00223BA1 /* Main.storyboard in Resources */,
 				ED08C77E18E18FE700C3A662 /* ticking.wav in Resources */,
 				ED1CAA68189F278500ED92FF /* Beginner.plist in Resources */,
 				ED474F5D18ADDFB500F49B07 /* right_answer.wav in Resources */,
+				EDF62E3818F30C9F00AE9817 /* questionaire.png in Resources */,
+				EDF62E3618F30C9F00AE9817 /* best-of-month.png in Resources */,
 				ED5807C818B9CACF00AE18FB /* MainParam.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

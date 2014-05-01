@@ -34,6 +34,10 @@
     UIBarButtonItem *backbutton = [[UIBarButtonItem alloc] initWithTitle:@"Quit" style:UIBarButtonItemStylePlain target:self action:@selector(handleBack:)];
     self.navigationItem.leftBarButtonItem = backbutton;
     
+/*  This will be done in next release
+    UIBarButtonItem *settingbutton = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(handleSettings:)];
+    self.navigationItem.rightBarButtonItem = settingbutton;
+*/
     // The name of the plist file with questions and answers for each option must match
     // with the button title
     NSString* plistPath = [DDUtils getPlistPath:self.opttitle];
@@ -95,6 +99,16 @@
     [alert setTag:QUITQUIZ];
     [alert show];
 }
+
+/*  This will be done in next release
+- (void)handleSettings:(id)sender
+{
+    [self pauseTimer];
+    DDSettingTblViewController* settingvc = [[DDSettingTblViewController alloc] init];
+    settingvc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:settingvc animated:YES completion:nil];
+}
+*/
 
 - (void)timerTick:(NSTimer *)timer
 {
