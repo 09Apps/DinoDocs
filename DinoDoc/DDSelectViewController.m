@@ -30,14 +30,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // get the mainparam singleton
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    
+//    self.view.backgroundColor = [UIColor clearColor];
+//    self.view.opaque = NO;
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
+    
 	// Overwritting back button, so I can clean up timer and other objects
     UIBarButtonItem *backbutton = [[UIBarButtonItem alloc] initWithTitle:@"Quit" style:UIBarButtonItemStylePlain target:self action:@selector(handleBack:)];
     self.navigationItem.leftBarButtonItem = backbutton;
     
-/*  This will be done in next release
-    UIBarButtonItem *settingbutton = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(handleSettings:)];
-    self.navigationItem.rightBarButtonItem = settingbutton;
-*/
+    self.navigationItem.title = mainparam.maintitle;    
+    
     // The name of the plist file with questions and answers for each option must match
     // with the button title
     NSString* plistPath = [DDUtils getPlistPath:self.opttitle];
@@ -59,9 +65,7 @@
     
     self.WRNGANSTXT = [dict objectForKey:@"WrongAnsTxt"];
     self.QUIZCOUNT = [[dict objectForKey:@"Quizcount"] integerValue];
-    
-    // get the mainparam singleton
-    DDMainParam* mainparam = [DDMainParam sharedInstance];
+
     self.ANSTIME = mainparam.anstime;
     self.showansdetails = mainparam.showansdetails;
     
@@ -89,7 +93,13 @@
     self.qindexes = [DDUtils randomIntegerArrayFrom:0 To:([self.questions count]-1) Count:self.QUIZCOUNT];
     [self showQuestions];
 }
+/*
+- (void)viewWillAppear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushToPlay) name:@"pushToPlay" object:nil];
+}
 
+*/
 - (void)handleBack:(id)sender
 {
     [self pauseTimer];
@@ -214,8 +224,7 @@
 - (void) quizCompleted
 {
     //clear all sounds
-    [self cleanUpNGo];
-    
+    [self cleanUp];
     [self performSegueWithIdentifier:@"showresult" sender:nil];
 }
 
@@ -266,7 +275,7 @@
         for(int cnt=0;cnt< OPTCT;cnt++)
         {
             // Create 4 buttons using array and loop.
-            UIButton *theButton= [[UIButton alloc] initWithFrame:CGRectMake(20,(165+(65*cnt)), 275, 60)];
+            UIButton *theButton= [[UIButton alloc] initWithFrame:CGRectMake(30,(165+(65*cnt)), 270, 60)];
 
             if (cnt < optarr.count)
             {
@@ -280,7 +289,7 @@
             }
             else
             {
-                theButton.backgroundColor = [UIColor whiteColor];
+                theButton.backgroundColor = [UIColor clearColor];
                 [theButton setTitle:@" " forState:UIControlStateNormal];
             }
             
@@ -339,7 +348,9 @@
             if (buttonIndex == 1)
             { // User presses Yes to Quit?
                 self.userscore = 0;
-                [self cleanUpNGo];
+                [self cleanUp];
+                // pop to root view controller
+                [self.navigationController popViewControllerAnimated:YES];
             }
             else
             { // User presses No to Quit?
@@ -352,7 +363,7 @@
     }
 }
 
-- (void) cleanUpNGo
+- (void) cleanUp
 {
     // we need to clean up timer
     [self.timer invalidate];
@@ -369,7 +380,7 @@
     AudioServicesDisposeSystemSoundID(self.qzbgsnd);
     
     // pop to root view controller
-    [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popViewControllerAnimated:YES];
 }
 
 

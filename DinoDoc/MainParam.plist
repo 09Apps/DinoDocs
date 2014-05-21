@@ -12,6 +12,8 @@
 	<integer>20</integer>
 	<key>bgsound</key>
 	<string>dinosound</string>
+	<key>bgimg</key>
+	<string>dinodoc_bg.png</string>
 	<key>showads</key>
 	<true/>
 	<key>quizbgsound</key>

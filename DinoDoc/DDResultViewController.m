@@ -10,6 +10,7 @@
 #import "DDSelectViewController.h"
 #import "DDMainParam.h"
 #import "DDDefines.h"
+#import "DDPlayViewController.h"
 
 @interface DDResultViewController ()
 
@@ -29,9 +30,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
+//    self.view.backgroundColor = [UIColor clearColor];
+//    self.view.opaque = NO;
+    
+// get the mainparam singleton
     DDMainParam* mainparam = [DDMainParam sharedInstance];
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
+    
+    self.navigationItem.title = mainparam.maintitle;
     
     // Change headings as per score
     NSUInteger benchmark = self.quizcount * BENCHMARKFACTOR;
@@ -40,6 +47,11 @@
     {
         NSString* playernm = @"Excellent score ";
         self.namelbl.text = [playernm stringByAppendingString:mainparam.playername];
+        
+        if (self.score == self.quizcount)
+        {
+            // call gotfull score
+        }
     }
     else
     {
@@ -47,8 +59,10 @@
         self.namelbl.text = [playernm stringByAppendingString:mainparam.playername];
     }
     
-    self.titlelbl.text = mainparam.maintitle;
+    self.titlelbl.text = @"Game Over!";
     self.scorelbl.text = [NSString stringWithFormat:@" %d of %d",self.score,self.quizcount];
+    
+    [self.navigationItem setHidesBackButton:YES animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,8 +71,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)playAgain:(UIButton *)sender
+- (IBAction)playAgain:(UIButton *)senderbutton
 {
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    [self performSegueWithIdentifier:@"goplay" sender:senderbutton];
+    
+/*    [self dismissViewControllerAnimated:YES completion:^{}];
+ */
 }
 @end

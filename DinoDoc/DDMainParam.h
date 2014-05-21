@@ -12,6 +12,7 @@
 @property (nonatomic,retain) NSString* maintitle;
 @property (nonatomic,retain) NSString* playername;
 @property (nonatomic,retain) NSString* bgsound;
+@property (nonatomic,retain) NSString* bgimg;
 @property (nonatomic,retain) NSString* quizbgsound;
 @property (nonatomic,retain) NSString* rightsound;
 @property (nonatomic,retain) NSString* wrongsound;

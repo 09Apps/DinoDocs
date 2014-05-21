@@ -30,6 +30,9 @@
     
     // Get the singleton instance of main param
     DDMainParam* mainparam = [DDMainParam sharedInstance];
+    
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
+    
     self.soundon = mainparam.soundon;
     self.showansdetails = mainparam.showansdetails;
     self.playername = mainparam.playername;
@@ -68,7 +71,7 @@
     UIButton* ddbuttons = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     ddbuttons.frame = CGRectMake(0, 0, 260, 40);
     
-    UITextField* txtfld = [[UITextField alloc] initWithFrame:CGRectMake(120, 0, 180, 40)];
+    UITextField* txtfld = [[UITextField alloc] initWithFrame:CGRectMake(150, 0, 150, 40)];
 
     switch (indexPath.row)
     {
@@ -104,10 +107,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
+    cell.backgroundColor = [UIColor clearColor];
+    self.view.opaque = NO;
+    
     switch (indexPath.row)
     {
         case 0:
-            [cell.textLabel setText:@"Enter Name : "];
+            [cell.textLabel setText:@"   Enter Name : "];
             txtfld.text= self.playername;
             txtfld.delegate = self;
             txtfld.tag = indexPath.row;
@@ -115,8 +121,8 @@
             break;
             
         case 1:
-            [cell.textLabel setText:@"Sound"];
-            [cell.detailTextLabel setText:@"Sound On/Off"];
+            [cell.textLabel setText:@"   Sound"];
+            [cell.detailTextLabel setText:@"    Sound On/Off"];
             ddswitch.tag = indexPath.row;
             [ddswitch addTarget:self action:@selector(settingChanged:) forControlEvents:UIControlEventValueChanged];
             [ddswitch setOn:self.soundon];
@@ -124,8 +130,8 @@
             break;
             
         case 2:
-            [cell.textLabel setText:@"Answer Details"];
-            [cell.detailTextLabel setText:@"Show Answer details"];
+            [cell.textLabel setText:@"   Answer Details"];
+            [cell.detailTextLabel setText:@"    Show Answer details"];
             ddswitch.tag = indexPath.row;
             [ddswitch addTarget:self action:@selector(settingChanged:) forControlEvents:UIControlEventValueChanged];
             [ddswitch setOn:self.showansdetails];
@@ -133,14 +139,14 @@
             break;
 
         case 3:
-            [ddbuttons setTitle:@"Remove Ads" forState:UIControlStateNormal];
+            [ddbuttons setTitle:@"   Remove Ads" forState:UIControlStateNormal];
             [ddbuttons addTarget:self action:@selector(removeAds) forControlEvents:UIControlEventTouchUpInside];
             ddbuttons.tag = indexPath.row;
             [cell addSubview:ddbuttons];
             break;
 
         case 4:
-            [ddbuttons setTitle:@"Restore Purchases" forState:UIControlStateNormal];
+            [ddbuttons setTitle:@"   Restore Purchases" forState:UIControlStateNormal];
             [ddbuttons addTarget:self action:@selector(restorePurchases:) forControlEvents:UIControlEventTouchUpInside];
             ddbuttons.tag = indexPath.row;
             [cell addSubview:ddbuttons];

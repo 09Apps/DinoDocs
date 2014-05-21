@@ -61,8 +61,18 @@
     UIBarButtonItem *settingbutton = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(handleSettings:)];
     self.navigationItem.rightBarButtonItem = settingbutton;
     
+    // Overwritting back button, so it goes to home screen even caled from anywhere
+    UIBarButtonItem *homebutton = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStylePlain target:self action:@selector(goHome:)];
+    self.navigationItem.leftBarButtonItem = homebutton;
+    
+    self.navigationItem.title = @"Select Quiz";
+    
 	// Get the singleton instance of main param
     DDMainParam* mainparam = [DDMainParam sharedInstance];
+    
+//    self.view.backgroundColor = [UIColor clearColor];
+//    self.view.opaque = NO;
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
     
     NSUInteger optionscount = [mainparam.options count];
     
@@ -83,6 +93,13 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+//    NSLog(@"viewWillAppear");
+    UIBarButtonItem *settingbutton = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(handleSettings:)];
+    self.navigationItem.rightBarButtonItem = settingbutton;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -92,6 +109,11 @@
 - (void)handleSettings:(id)navbarbutton
 {
     [self performSegueWithIdentifier:@"selsetting" sender:navbarbutton];
+}
+
+- (void)goHome:(id)navbarbutton
+{
+    [self performSegueWithIdentifier:@"gohome" sender:navbarbutton];
 }
 
 @end

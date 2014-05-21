@@ -13,6 +13,8 @@
 		ED1CAA68189F278500ED92FF /* Beginner.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED1CAA67189F278500ED92FF /* Beginner.plist */; };
 		ED20AECF1898A591005C6496 /* DDPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED20AECE1898A591005C6496 /* DDPlayViewController.m */; };
 		ED20AED21898A5B1005C6496 /* DDBadgesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED20AED11898A5B1005C6496 /* DDBadgesViewController.m */; };
+		ED38D016192B6F46002D0FF8 /* dinodoc_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = ED38D014192B6F46002D0FF8 /* dinodoc_bg.png */; };
+		ED38D017192B6F46002D0FF8 /* dinodoc_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED38D015192B6F46002D0FF8 /* dinodoc_bg@2x.png */; };
 		ED474F5D18ADDFB500F49B07 /* right_answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = ED474F5B18ADDFB500F49B07 /* right_answer.wav */; };
 		ED494137189CA2CA00A42098 /* DDSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED494136189CA2CA00A42098 /* DDSelectViewController.m */; };
 		ED5807C818B9CACF00AE18FB /* MainParam.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED5807C718B9CACF00AE18FB /* MainParam.plist */; };
@@ -34,6 +36,12 @@
 		ED9233A618F26DCF00412957 /* dinosound.wav in Resources */ = {isa = PBXBuildFile; fileRef = ED9233A518F26DCF00412957 /* dinosound.wav */; };
 		ED9BEF6B18C2ECED00741468 /* DDMainParam.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9BEF6A18C2ECED00741468 /* DDMainParam.m */; };
 		EDA43ACE18CB02480038BCDB /* DDResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA43ACD18CB02480038BCDB /* DDResultViewController.m */; };
+		EDB7265E191239CE002F7EFB /* MBInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB7265C191239CE002F7EFB /* MBInfoVC.m */; };
+		EDB7265F191239CE002F7EFB /* MBInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDB7265D191239CE002F7EFB /* MBInfoVC.xib */; };
+		EDB7266419123AC1002F7EFB /* fb1.png in Resources */ = {isa = PBXBuildFile; fileRef = EDB7266019123AC1002F7EFB /* fb1.png */; };
+		EDB7266519123AC1002F7EFB /* linkedin1.png in Resources */ = {isa = PBXBuildFile; fileRef = EDB7266119123AC1002F7EFB /* linkedin1.png */; };
+		EDB7266619123AC1002F7EFB /* mail1.png in Resources */ = {isa = PBXBuildFile; fileRef = EDB7266219123AC1002F7EFB /* mail1.png */; };
+		EDB7266719123AC1002F7EFB /* www_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EDB7266319123AC1002F7EFB /* www_icon.png */; };
 		EDCC46F018BA6F7D00B781C9 /* wrong_answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = EDCC46EF18BA6F7D00B781C9 /* wrong_answer.wav */; };
 		EDF62E3418F30C9F00AE9817 /* 4-in-row.png in Resources */ = {isa = PBXBuildFile; fileRef = EDF62E2F18F30C9F00AE9817 /* 4-in-row.png */; };
 		EDF62E3518F30C9F00AE9817 /* best-answer.png in Resources */ = {isa = PBXBuildFile; fileRef = EDF62E3018F30C9F00AE9817 /* best-answer.png */; };
@@ -63,6 +71,8 @@
 		ED20AECE1898A591005C6496 /* DDPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayViewController.m; sourceTree = "<group>"; };
 		ED20AED01898A5B1005C6496 /* DDBadgesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDBadgesViewController.h; sourceTree = "<group>"; };
 		ED20AED11898A5B1005C6496 /* DDBadgesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDBadgesViewController.m; sourceTree = "<group>"; };
+		ED38D014192B6F46002D0FF8 /* dinodoc_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinodoc_bg.png; sourceTree = "<group>"; };
+		ED38D015192B6F46002D0FF8 /* dinodoc_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dinodoc_bg@2x.png"; sourceTree = "<group>"; };
 		ED474F5B18ADDFB500F49B07 /* right_answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = right_answer.wav; sourceTree = "<group>"; };
 		ED494135189CA2CA00A42098 /* DDSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSelectViewController.h; sourceTree = "<group>"; };
 		ED494136189CA2CA00A42098 /* DDSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSelectViewController.m; sourceTree = "<group>"; };
@@ -93,6 +103,13 @@
 		ED9BEF6A18C2ECED00741468 /* DDMainParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMainParam.m; sourceTree = "<group>"; };
 		EDA43ACC18CB02480038BCDB /* DDResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDResultViewController.h; sourceTree = "<group>"; };
 		EDA43ACD18CB02480038BCDB /* DDResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDResultViewController.m; sourceTree = "<group>"; };
+		EDB7265B191239CE002F7EFB /* MBInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBInfoVC.h; sourceTree = "<group>"; };
+		EDB7265C191239CE002F7EFB /* MBInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBInfoVC.m; sourceTree = "<group>"; };
+		EDB7265D191239CE002F7EFB /* MBInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBInfoVC.xib; sourceTree = "<group>"; };
+		EDB7266019123AC1002F7EFB /* fb1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb1.png; sourceTree = "<group>"; };
+		EDB7266119123AC1002F7EFB /* linkedin1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedin1.png; sourceTree = "<group>"; };
+		EDB7266219123AC1002F7EFB /* mail1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail1.png; sourceTree = "<group>"; };
+		EDB7266319123AC1002F7EFB /* www_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = www_icon.png; sourceTree = "<group>"; };
 		EDCC46EF18BA6F7D00B781C9 /* wrong_answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong_answer.wav; path = ../wrong_answer.wav; sourceTree = "<group>"; };
 		EDF62E2F18F30C9F00AE9817 /* 4-in-row.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4-in-row.png"; sourceTree = "<group>"; };
 		EDF62E3018F30C9F00AE9817 /* best-answer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "best-answer.png"; sourceTree = "<group>"; };
@@ -128,6 +145,9 @@
 		ED5807C918B9CD0600AE18FB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				EDB7265B191239CE002F7EFB /* MBInfoVC.h */,
+				EDB7265C191239CE002F7EFB /* MBInfoVC.m */,
+				EDB7265D191239CE002F7EFB /* MBInfoVC.xib */,
 				ED818F3618961BDC00223BA1 /* DDViewController.h */,
 				ED818F3718961BDC00223BA1 /* DDViewController.m */,
 				ED20AECD1898A591005C6496 /* DDPlayViewController.h */,
@@ -218,6 +238,7 @@
 		ED818F2818961BDC00223BA1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EDB7266819123AEA002F7EFB /* Images */,
 				EDF62E3918F30CB200AE9817 /* Badges */,
 				ED5807CA18B9CD3300AE18FB /* soundfiles */,
 				ED5807CB18B9CD5500AE18FB /* plists */,
@@ -243,6 +264,19 @@
 				ED818F4918961BDC00223BA1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EDB7266819123AEA002F7EFB /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				ED38D014192B6F46002D0FF8 /* dinodoc_bg.png */,
+				ED38D015192B6F46002D0FF8 /* dinodoc_bg@2x.png */,
+				EDB7266319123AC1002F7EFB /* www_icon.png */,
+				EDB7266019123AC1002F7EFB /* fb1.png */,
+				EDB7266119123AC1002F7EFB /* linkedin1.png */,
+				EDB7266219123AC1002F7EFB /* mail1.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		EDF62E3918F30CB200AE9817 /* Badges */ = {
@@ -334,19 +368,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDB7266419123AC1002F7EFB /* fb1.png in Resources */,
+				EDB7266619123AC1002F7EFB /* mail1.png in Resources */,
 				ED818F3A18961BDC00223BA1 /* Images.xcassets in Resources */,
+				EDB7265F191239CE002F7EFB /* MBInfoVC.xib in Resources */,
+				EDB7266519123AC1002F7EFB /* linkedin1.png in Resources */,
 				ED818F2C18961BDC00223BA1 /* InfoPlist.strings in Resources */,
 				EDF62E3418F30C9F00AE9817 /* 4-in-row.png in Resources */,
 				EDF62E3718F30C9F00AE9817 /* best-week.png in Resources */,
 				ED09FA4618F0710700B75327 /* badges.plist in Resources */,
 				ED9233A618F26DCF00412957 /* dinosound.wav in Resources */,
+				ED38D017192B6F46002D0FF8 /* dinodoc_bg@2x.png in Resources */,
 				EDF62E3518F30C9F00AE9817 /* best-answer.png in Resources */,
 				EDCC46F018BA6F7D00B781C9 /* wrong_answer.wav in Resources */,
 				ED818F3518961BDC00223BA1 /* Main.storyboard in Resources */,
 				ED08C77E18E18FE700C3A662 /* ticking.wav in Resources */,
 				ED1CAA68189F278500ED92FF /* Beginner.plist in Resources */,
 				ED474F5D18ADDFB500F49B07 /* right_answer.wav in Resources */,
+				EDB7266719123AC1002F7EFB /* www_icon.png in Resources */,
 				EDF62E3818F30C9F00AE9817 /* questionaire.png in Resources */,
+				ED38D016192B6F46002D0FF8 /* dinodoc_bg.png in Resources */,
 				EDF62E3618F30C9F00AE9817 /* best-of-month.png in Resources */,
 				ED5807C818B9CACF00AE18FB /* MainParam.plist in Resources */,
 			);
@@ -370,6 +411,7 @@
 				ED13CF7918D25EBB000CC71A /* DDSettingTblViewController.m in Sources */,
 				ED20AED21898A5B1005C6496 /* DDBadgesViewController.m in Sources */,
 				ED494137189CA2CA00A42098 /* DDSelectViewController.m in Sources */,
+				EDB7265E191239CE002F7EFB /* MBInfoVC.m in Sources */,
 				ED818F3218961BDC00223BA1 /* DDAppDelegate.m in Sources */,
 				EDA43ACE18CB02480038BCDB /* DDResultViewController.m in Sources */,
 				ED818F3818961BDC00223BA1 /* DDViewController.m in Sources */,

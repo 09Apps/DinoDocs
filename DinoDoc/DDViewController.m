@@ -10,6 +10,7 @@
 #import "DDPlayViewController.h"
 #import "DDSettingTblViewController.h"
 #import "DDMainParam.h"
+#import "MBInfoVC.h"
 
 @interface DDViewController ()
 
@@ -29,8 +30,11 @@
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     self.soundon = mainparam.soundon;
     
-    NSString* bgsoundname = mainparam.bgsound;
+//    self.view.backgroundColor = [UIColor clearColor];
+//    self.view.opaque = NO;
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
     
+    NSString* bgsoundname = mainparam.bgsound;
     NSString *path = [[NSBundle mainBundle] pathForResource:bgsoundname ofType:@"wav"];
     NSURL *pathURL = [NSURL fileURLWithPath:path];
     
@@ -42,7 +46,7 @@
         [self.player play];
     }
     
-    self.quiztitle.text = mainparam.maintitle;
+    self.navigationItem.title = mainparam.maintitle;
     
     NSString* playernm = @"Hello ";
     self.playername.text = [playernm stringByAppendingString:mainparam.playername];
@@ -50,6 +54,8 @@
     // NEED TO IMPLEMENT
     // CHECK 'newverupdate' PARAMETER IN PLIST IF THERE WERE ANY UPDATES TO PLIST FILE
     // IF 'YES' UPDATE NEW PLIST WITH CONTENTS OF OLD PLIST
+    
+    [self.navigationItem setHidesBackButton:YES animated:NO];    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -83,6 +89,11 @@
         // Pass on soundid to Play VC as we will stop it at exit of play VC
         settingTVC.bgplayer = self.player;
     }
+}
+- (IBAction)infoPressed:(UIButton *)sender
+{
+    MBInfoVC* infoVC = [[MBInfoVC alloc] init];
+    [self.navigationController pushViewController:infoVC animated:YES];
 }
 
 
