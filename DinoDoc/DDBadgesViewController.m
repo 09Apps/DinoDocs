@@ -37,7 +37,6 @@
 //    self.view.backgroundColor = [UIColor clearColor];
 //    self.view.opaque = NO;
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
-    
     self.navigationItem.title = @"Badges";
     
     // The badges plist file

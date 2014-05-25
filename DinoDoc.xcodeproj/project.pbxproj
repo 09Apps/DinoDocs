@@ -11,6 +11,9 @@
 		ED09FA4618F0710700B75327 /* badges.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED09FA4518F0710700B75327 /* badges.plist */; };
 		ED13CF7918D25EBB000CC71A /* DDSettingTblViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED13CF7818D25EBB000CC71A /* DDSettingTblViewController.m */; };
 		ED1CAA68189F278500ED92FF /* Beginner.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED1CAA67189F278500ED92FF /* Beginner.plist */; };
+		ED1FAC651931D4C400FEC937 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED1FAC641931D4C400FEC937 /* StoreKit.framework */; };
+		ED1FAC681931D56100FEC937 /* NavBar-Leather.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1FAC661931D56100FEC937 /* NavBar-Leather.png */; };
+		ED1FAC691931D56100FEC937 /* NavBar-Leather@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1FAC671931D56100FEC937 /* NavBar-Leather@2x.png */; };
 		ED20AECF1898A591005C6496 /* DDPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED20AECE1898A591005C6496 /* DDPlayViewController.m */; };
 		ED20AED21898A5B1005C6496 /* DDBadgesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED20AED11898A5B1005C6496 /* DDBadgesViewController.m */; };
 		ED38D016192B6F46002D0FF8 /* dinodoc_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = ED38D014192B6F46002D0FF8 /* dinodoc_bg.png */; };
@@ -66,6 +69,9 @@
 		ED13CF7718D25EBB000CC71A /* DDSettingTblViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSettingTblViewController.h; sourceTree = "<group>"; };
 		ED13CF7818D25EBB000CC71A /* DDSettingTblViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSettingTblViewController.m; sourceTree = "<group>"; };
 		ED1CAA67189F278500ED92FF /* Beginner.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Beginner.plist; sourceTree = "<group>"; };
+		ED1FAC641931D4C400FEC937 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		ED1FAC661931D56100FEC937 /* NavBar-Leather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NavBar-Leather.png"; path = "../../Resources/img/NavBar-Leather.png"; sourceTree = "<group>"; };
+		ED1FAC671931D56100FEC937 /* NavBar-Leather@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NavBar-Leather@2x.png"; path = "../../Resources/img/NavBar-Leather@2x.png"; sourceTree = "<group>"; };
 		ED2004F618A831DD005F2833 /* DDDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDefines.h; sourceTree = "<group>"; };
 		ED20AECD1898A591005C6496 /* DDPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayViewController.h; sourceTree = "<group>"; };
 		ED20AECE1898A591005C6496 /* DDPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayViewController.m; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED1FAC651931D4C400FEC937 /* StoreKit.framework in Frameworks */,
 				ED818F2418961BDC00223BA1 /* CoreGraphics.framework in Frameworks */,
 				ED818F2618961BDC00223BA1 /* UIKit.framework in Frameworks */,
 				ED818F2218961BDC00223BA1 /* Foundation.framework in Frameworks */,
@@ -208,6 +215,7 @@
 		ED818F2018961BDC00223BA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED1FAC641931D4C400FEC937 /* StoreKit.framework */,
 				ED818F2118961BDC00223BA1 /* Foundation.framework */,
 				ED818F2318961BDC00223BA1 /* CoreGraphics.framework */,
 				ED818F2518961BDC00223BA1 /* UIKit.framework */,
@@ -269,6 +277,8 @@
 		EDB7266819123AEA002F7EFB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				ED1FAC661931D56100FEC937 /* NavBar-Leather.png */,
+				ED1FAC671931D56100FEC937 /* NavBar-Leather@2x.png */,
 				ED38D014192B6F46002D0FF8 /* dinodoc_bg.png */,
 				ED38D015192B6F46002D0FF8 /* dinodoc_bg@2x.png */,
 				EDB7266319123AC1002F7EFB /* www_icon.png */,
@@ -376,11 +386,13 @@
 				ED818F2C18961BDC00223BA1 /* InfoPlist.strings in Resources */,
 				EDF62E3418F30C9F00AE9817 /* 4-in-row.png in Resources */,
 				EDF62E3718F30C9F00AE9817 /* best-week.png in Resources */,
+				ED1FAC681931D56100FEC937 /* NavBar-Leather.png in Resources */,
 				ED09FA4618F0710700B75327 /* badges.plist in Resources */,
 				ED9233A618F26DCF00412957 /* dinosound.wav in Resources */,
 				ED38D017192B6F46002D0FF8 /* dinodoc_bg@2x.png in Resources */,
 				EDF62E3518F30C9F00AE9817 /* best-answer.png in Resources */,
 				EDCC46F018BA6F7D00B781C9 /* wrong_answer.wav in Resources */,
+				ED1FAC691931D56100FEC937 /* NavBar-Leather@2x.png in Resources */,
 				ED818F3518961BDC00223BA1 /* Main.storyboard in Resources */,
 				ED08C77E18E18FE700C3A662 /* ticking.wav in Resources */,
 				ED1CAA68189F278500ED92FF /* Beginner.plist in Resources */,

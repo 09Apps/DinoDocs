@@ -96,8 +96,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 //    NSLog(@"viewWillAppear");
-    UIBarButtonItem *settingbutton = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(handleSettings:)];
-    self.navigationItem.rightBarButtonItem = settingbutton;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -113,6 +112,8 @@
 
 - (void)goHome:(id)navbarbutton
 {
+    // Stop the background sound now.
+    [self.bgplayer stop];
     [self performSegueWithIdentifier:@"gohome" sender:navbarbutton];
 }
 

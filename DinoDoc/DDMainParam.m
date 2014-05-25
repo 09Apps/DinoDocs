@@ -51,6 +51,7 @@
             self.anstime = [[mainparamdict objectForKey:@"anstime"] integerValue];
             self.bgsound = [mainparamdict objectForKey:@"bgsound"];
             self.bgimg = [mainparamdict objectForKey:@"bgimg"];
+            self.navimg = [mainparamdict objectForKey:@"navimg"];
             self.showads = [[mainparamdict objectForKey:@"showads"] boolValue];
             self.quizbgsound = [mainparamdict objectForKey:@"quizbgsound"];
             self.wrongsound = [mainparamdict objectForKey:@"wrongsound"];
@@ -71,6 +72,7 @@
                                                         @"anstime",
                                                         @"bgsound",
                                                         @"bgimg",
+                                                        @"navimg",
                                                         @"showads",
                                                         @"quizbgsound",
                                                         @"wrongsound",
@@ -91,6 +93,7 @@
                                                 nsanstime,
                                                 self.bgsound,
                                                 self.bgimg,
+                                                self.navimg,
                                                 nsshowads,
                                                 self.quizbgsound,
                                                 self.wrongsound,

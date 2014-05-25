@@ -40,6 +40,10 @@
     
     self.navigationItem.title = mainparam.maintitle;
     
+    UIImage *image = [UIImage imageNamed: mainparam.navimg];
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics: UIBarMetricsDefault];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
     // Change headings as per score
     NSUInteger benchmark = self.quizcount * BENCHMARKFACTOR;
     

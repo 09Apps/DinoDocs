@@ -41,7 +41,6 @@
 	// Overwritting back button, so I can clean up timer and other objects
     UIBarButtonItem *backbutton = [[UIBarButtonItem alloc] initWithTitle:@"Quit" style:UIBarButtonItemStylePlain target:self action:@selector(handleBack:)];
     self.navigationItem.leftBarButtonItem = backbutton;
-    
     self.navigationItem.title = mainparam.maintitle;    
     
     // The name of the plist file with questions and answers for each option must match

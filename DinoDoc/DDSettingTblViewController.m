@@ -33,6 +33,10 @@
     
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
     
+    UIImage *image = [UIImage imageNamed: mainparam.navimg];
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics: UIBarMetricsDefault];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
     self.soundon = mainparam.soundon;
     self.showansdetails = mainparam.showansdetails;
     self.playername = mainparam.playername;

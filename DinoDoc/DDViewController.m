@@ -34,12 +34,16 @@
 //    self.view.opaque = NO;
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
     
+    UIImage *image = [UIImage imageNamed: mainparam.navimg];
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics: UIBarMetricsDefault];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
     NSString* bgsoundname = mainparam.bgsound;
     NSString *path = [[NSBundle mainBundle] pathForResource:bgsoundname ofType:@"wav"];
     NSURL *pathURL = [NSURL fileURLWithPath:path];
     
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:pathURL error:nil];
-    [self.player setNumberOfLoops:-1]; //infinite
+//  [self.player setNumberOfLoops:-1]; //infinite
     
     if (self.soundon)
     {
@@ -55,7 +59,16 @@
     // CHECK 'newverupdate' PARAMETER IN PLIST IF THERE WERE ANY UPDATES TO PLIST FILE
     // IF 'YES' UPDATE NEW PLIST WITH CONTENTS OF OLD PLIST
     
-    [self.navigationItem setHidesBackButton:YES animated:NO];    
+    [self.navigationItem setHidesBackButton:YES animated:NO];
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 1);
+    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                                      [UIColor colorWithRed:205.0/255.0 green:192.0/255.0 blue:176.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                                      shadow, NSShadowAttributeName,
+                                                                      [UIFont boldSystemFontOfSize:20.0], NSFontAttributeName, nil]];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated

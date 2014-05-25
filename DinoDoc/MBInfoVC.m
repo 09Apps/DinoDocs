@@ -35,7 +35,7 @@
     // get the mainparam singleton
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
-    
+
     self.scrollview.contentSize = CGSizeMake(self.scrollview.frame.size.width, 600);
     self.navigationItem.title = @"Info";
 }
