@@ -14,6 +14,7 @@
 @property (nonatomic,retain) NSString* bgsound;
 @property (nonatomic,retain) NSString* bgimg;
 @property (nonatomic,retain) NSString* navimg;
+@property (nonatomic,retain) NSString* btnbgimg;
 @property (nonatomic,retain) NSString* quizbgsound;
 @property (nonatomic,retain) NSString* rightsound;
 @property (nonatomic,retain) NSString* wrongsound;

@@ -16,6 +16,8 @@
 	<string>dinodoc_bg.png</string>
 	<key>navimg</key>
 	<string>NavBar-Leather.png</string>
+	<key>btnbgimg</key>
+	<string>rockbg.png</string>
 	<key>showads</key>
 	<true/>
 	<key>quizbgsound</key>

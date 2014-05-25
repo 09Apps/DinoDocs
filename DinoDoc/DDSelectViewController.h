@@ -23,6 +23,7 @@ extern
 @property (nonatomic, strong) NSArray* qindexes;
 @property NSUInteger answernum;
 @property (nonatomic, strong) NSString* ansdetails;
+@property (nonatomic, strong) NSString* btnbgimg;
 @property NSUInteger currentqnum;
 @property (weak, nonatomic) IBOutlet UILabel *quetxt;
 @property NSUInteger timesec;

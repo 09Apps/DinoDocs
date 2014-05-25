@@ -43,6 +43,8 @@
     self.navigationItem.leftBarButtonItem = backbutton;
     self.navigationItem.title = mainparam.maintitle;    
     
+    self.btnbgimg = mainparam.btnbgimg;
+    
     // The name of the plist file with questions and answers for each option must match
     // with the button title
     NSString* plistPath = [DDUtils getPlistPath:self.opttitle];
@@ -274,11 +276,11 @@
         for(int cnt=0;cnt< OPTCT;cnt++)
         {
             // Create 4 buttons using array and loop.
-            UIButton *theButton= [[UIButton alloc] initWithFrame:CGRectMake(30,(165+(65*cnt)), 270, 60)];
+            UIButton *theButton= [[UIButton alloc] initWithFrame:CGRectMake(37,(170+(70*cnt)), 261, 64)];
 
             if (cnt < optarr.count)
             {
-                theButton.backgroundColor = [UIColor grayColor];
+                [theButton setBackgroundImage:[UIImage imageNamed:self.btnbgimg] forState:UIControlStateNormal];
                 
                 //set their selector using add selector
                 [theButton addTarget:self action:@selector(answerClicked:) forControlEvents:UIControlEventTouchUpInside];
