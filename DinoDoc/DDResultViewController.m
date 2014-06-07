@@ -49,7 +49,7 @@
     
     if(self.score > benchmark)
     {
-        NSString* playernm = @"Excellent score ";
+        NSString* playernm = @"Excellent score, ";
         self.namelbl.text = [playernm stringByAppendingString:mainparam.playername];
         
         if (self.score == self.quizcount)
@@ -59,12 +59,12 @@
     }
     else
     {
-        NSString* playernm = @"Nice Try ";
+        NSString* playernm = @"Nice Try, ";
         self.namelbl.text = [playernm stringByAppendingString:mainparam.playername];
     }
     
     self.titlelbl.text = @"Game Over!";
-    self.scorelbl.text = [NSString stringWithFormat:@" %d of %d",self.score,self.quizcount];
+    self.scorelbl.text = [NSString stringWithFormat:@" %lu of %lu",(unsigned long)self.score,(unsigned long)self.quizcount];
     
     [self.navigationItem setHidesBackButton:YES animated:NO];
 }
