@@ -41,7 +41,7 @@
         
         if (! mainparamdict)
         {
-            NSLog(@"readMainParam: error reading MainParam, desc: %@, format: %d", errorDesc, format);
+            NSLog(@"readMainParam: error reading MainParam, desc: %@", errorDesc);
         }
         else
         {
@@ -87,7 +87,7 @@
     NSString* nssndon = [DDUtils stringFromBool:self.soundon];
     NSString* nsansdet = [DDUtils stringFromBool:self.showansdetails];
     NSString* nsshowads = [DDUtils stringFromBool:self.showads];
-    NSString* nsanstime = [NSString stringWithFormat:@"%d",self.anstime];
+    NSString* nsanstime = [NSString stringWithFormat:@"%lu",(unsigned long)self.anstime];
     
     NSArray* valarr = [NSArray arrayWithObjects: nsnewver,
                                                 self.maintitle,
