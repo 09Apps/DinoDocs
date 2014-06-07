@@ -52,7 +52,7 @@
     
     if (! dict)
     {
-        NSLog(@"readMainParam: error reading Badge plist, desc: %@, format: %d", errorDesc, format);
+        NSLog(@"readMainParam: error reading Badge plist, desc: %@", errorDesc);
     }
     else
     {
