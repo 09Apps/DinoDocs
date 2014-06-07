@@ -59,7 +59,7 @@
     
     if (!dict)
     {
-        NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
+        NSLog(@"Error reading plist: %@", errorDesc);
     }
     
     self.questions = [dict objectForKey:@"QArr"];
@@ -127,7 +127,7 @@
     {
         [self.timer invalidate];
         self.timer = nil;
-        self.timerlabel.text = [NSString stringWithFormat:@"00:%d",[self timesec]];
+        self.timerlabel.text = [NSString stringWithFormat:@"00:%lu",(unsigned long)[self timesec]];
         [self timesUp];
     }
     else
@@ -136,7 +136,7 @@
         {
             AudioServicesPlaySystemSound(_qzbgsnd);
         }
-        self.timerlabel.text = [NSString stringWithFormat:@"00:%d",[self timesec]];
+        self.timerlabel.text = [NSString stringWithFormat:@"00:%lu",(unsigned long)[self timesec]];
         self.timesec--;
     }
 }
@@ -166,7 +166,7 @@
     
     // Update and show score
     self.userscore++;
-    NSString* scorestr = [NSString stringWithFormat:@"Score: %d",self.userscore];
+    NSString* scorestr = [NSString stringWithFormat:@"Score: %lu",(unsigned long)self.userscore];
     self.scorelbl.text = scorestr;
     
     if (self.showansdetails)
@@ -263,7 +263,7 @@
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
         
         // Show count of questions
-        NSString* qct = [NSString stringWithFormat:@"Q %d of %d",(self.currentqnum+1),self.QUIZCOUNT];
+        NSString* qct = [NSString stringWithFormat:@"Q %u of %lu",(self.currentqnum+1),(unsigned long)self.QUIZCOUNT];
         self.qcount.text = qct;
         
         NSUInteger qindex = [[self.qindexes objectAtIndex:self.currentqnum] integerValue];
