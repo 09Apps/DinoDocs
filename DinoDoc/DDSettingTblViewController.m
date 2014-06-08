@@ -8,6 +8,7 @@
 
 #import "DDSettingTblViewController.h"
 #import "DDMainParam.h" 
+#import "DDIAPUse.h"
 
 @interface DDSettingTblViewController () 
 
@@ -207,7 +208,7 @@
 
 - (IBAction)restorePurchases:(UIButton *)sender
 {
-    NSLog(@"Restore Purchases");
+    [[DDIAPUse sharedInstance] restoreCompletedTransactions];
 }
 
 - (void)removeAds

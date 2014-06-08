@@ -10,8 +10,12 @@
 #import "DDSelectViewController.h"
 #import "DDMainParam.h"    
 #import "DDSettingTblViewController.h"
+#import "DDIAPUse.h"
 
 @interface DDPlayViewController ()
+{
+    NSArray *_products;
+}
 
 @end
 
@@ -20,17 +24,47 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    
+    if (self)
+    {
         // Custom initialization
     }
     return self;
 }
 
-- (void)choicemade:(UIButton *)senderbutton
+- (void)choiceMade:(UIButton *)senderbutton
 {
-    [self performSegueWithIdentifier:@"selseg" sender:senderbutton];
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    NSDictionary* dict = [mainparam.options objectAtIndex:senderbutton.tag];
+    NSString* prodid = [dict objectForKey:@"productid"];
+    
+    if ([[DDIAPUse sharedInstance] productPurchased:prodid])
+    {
+        [self performSegueWithIdentifier:@"selseg" sender:senderbutton];
+    }
+    else
+    {
+        SKProduct *product = _products[senderbutton.tag];
+        NSString* alertmsg = [NSString stringWithFormat:@"Do you wish to buy the %@ quiz for %@ ?",product.localizedTitle,product.price];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"In-App Purchase" message:alertmsg delegate:self cancelButtonTitle:@"No" otherButtonTitles: @"Yippee",nil];
+        
+        [alert setTag:senderbutton.tag];
+        [alert show];
+    }
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    //Alert should not be used for anything else in this class, as alert tag is linked to
+    // product index to be purchased
+    
+    if (buttonIndex == 1)
+    {
+        SKProduct *product = _products[alertView.tag];
+        NSLog(@"Buying %@...", product.productIdentifier);
+        [[DDIAPUse sharedInstance] buyProduct:product];
+    }
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -65,7 +99,7 @@
     UIBarButtonItem *homebutton = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStylePlain target:self action:@selector(goHome:)];
     self.navigationItem.leftBarButtonItem = homebutton;
     
-    self.navigationItem.title = @"Select Quiz";
+    self.navigationItem.title = @"Discover";
     
 	// Get the singleton instance of main param
     DDMainParam* mainparam = [DDMainParam sharedInstance];
@@ -80,25 +114,56 @@
     {
         NSDictionary* dict = [mainparam.options objectAtIndex:i];
         
-        //create buttons for options at runtime
-        UIButton *playchoice = [[UIButton alloc] initWithFrame:CGRectMake(25,(160+(40*i)), 150, 25)];
-        playchoice.backgroundColor = [UIColor grayColor];
-        
-        [playchoice setTitle:[dict objectForKey:@"title"] forState:UIControlStateNormal];
-        
-        //set their selector using add selector
-        [playchoice addTarget:self action:@selector(choicemade:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [self.view addSubview:playchoice];
+        if ([[dict objectForKey:@"active"] boolValue])
+        {
+            //create buttons for options at runtime
+            UIButton *playchoice = [[UIButton alloc] initWithFrame:CGRectMake(25,(160+(40*i)), 150, 25)];
+            playchoice.backgroundColor = [UIColor grayColor];
+            
+            [playchoice setTitle:[dict objectForKey:@"title"] forState:UIControlStateNormal];
+            playchoice.tag = i;
+            //set their selector using add selector
+            [playchoice addTarget:self action:@selector(choiceMade:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [self.view addSubview:playchoice];
+        } ;
     }
+    
+    // Now do the in-app purchase thing
+    
+    [[DDIAPUse sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *prod)
+     {
+         if (success)
+         {
+             _products = prod;
+         }
+     }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 //    NSLog(@"viewWillAppear");
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)productPurchased:(NSNotification *)notification {
+    
+    NSString * productIdentifier = notification.object;
+    [_products enumerateObjectsUsingBlock:^(SKProduct * product, NSUInteger idx, BOOL *stop)
+    {
+        if ([product.productIdentifier isEqualToString:productIdentifier])
+        {
+            // Update Mainparam to set putchased is yes
+            // reload images
+            *stop = YES;
+        }
+    }];
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

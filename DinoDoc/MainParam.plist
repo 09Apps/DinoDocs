@@ -34,9 +34,9 @@
 	<array>
 		<dict>
 			<key>title</key>
-			<string>Explorer</string>
+			<string>Ankylosaurus</string>
 			<key>productid</key>
-			<string>com.09apps.dinodoc.explorer</string>
+			<string>com.09apps.dinodoc.Ankylosaurus</string>
 			<key>active</key>
 			<true/>
 			<key>on-image</key>
@@ -58,41 +58,13 @@
 			<key>off-image</key>
 			<string></string>
 			<key>purchased</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>Velociraptor</string>
-			<key>productid</key>
-			<string>com.09apps.dinodoc.velociraptor</string>
-			<key>active</key>
 			<true/>
-			<key>on-image</key>
-			<string></string>
-			<key>off-image</key>
-			<string></string>
-			<key>purchased</key>
-			<false/>
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>T-Rex</string>
+			<string>Dilophosaurus</string>
 			<key>productid</key>
-			<string>com.09apps.dinodoc.trex</string>
-			<key>active</key>
-			<true/>
-			<key>on-image</key>
-			<string></string>
-			<key>off-image</key>
-			<string></string>
-			<key>purchased</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>Triceratops</string>
-			<key>productid</key>
-			<string>com.09apps.dinodoc.Triceratops</string>
+			<string>com.09apps.dinodoc.Dilophosaurus</string>
 			<key>active</key>
 			<true/>
 			<key>on-image</key>
@@ -118,9 +90,9 @@
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>Ankylosaurus</string>
+			<string>Triceratops</string>
 			<key>productid</key>
-			<string>com.09apps.dinodoc.Ankylosaurus</string>
+			<string>com.09apps.dinodoc.Triceratops</string>
 			<key>active</key>
 			<true/>
 			<key>on-image</key>
@@ -132,9 +104,9 @@
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>Dilophosaurus</string>
+			<string>Explorer</string>
 			<key>productid</key>
-			<string>com.09apps.dinodoc.Dilophosaurus</string>
+			<string>com.09apps.dinodoc.explorer</string>
 			<key>active</key>
 			<true/>
 			<key>on-image</key>
@@ -142,7 +114,7 @@
 			<key>off-image</key>
 			<string></string>
 			<key>purchased</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>title</key>
@@ -160,17 +132,31 @@
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>Remove ads</string>
+			<string>T-Rex</string>
 			<key>productid</key>
-			<string>com.09apps.dinodoc.removeads</string>
+			<string>com.09apps.dinodoc.trex</string>
 			<key>active</key>
-			<false/>
+			<true/>
 			<key>on-image</key>
 			<string></string>
 			<key>off-image</key>
 			<string></string>
 			<key>purchased</key>
 			<false/>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Velociraptor</string>
+			<key>productid</key>
+			<string>com.09apps.dinodoc.velociraptor</string>
+			<key>active</key>
+			<true/>
+			<key>on-image</key>
+			<string></string>
+			<key>off-image</key>
+			<string></string>
+			<key>purchased</key>
+			<true/>
 		</dict>
 	</array>
 </dict>

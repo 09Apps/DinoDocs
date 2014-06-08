@@ -7,6 +7,7 @@
 //
 
 #import "DDAppDelegate.h"
+#import "DDIAPUse.h"
 
 @implementation DDAppDelegate
 
@@ -15,6 +16,7 @@
     // Override point for customization after application launch.
 //    self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dinodoc_bg.png"]];
     
+    [DDIAPUse sharedInstance];
     return YES;
 }
 							

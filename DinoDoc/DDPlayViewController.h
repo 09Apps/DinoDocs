@@ -10,6 +10,6 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface DDPlayViewController : UIViewController
-@property (nonatomic,strong) NSArray* options;
+//@property (nonatomic,strong) NSArray* options;
 @property (nonatomic,strong) AVAudioPlayer *bgplayer;
 @end
