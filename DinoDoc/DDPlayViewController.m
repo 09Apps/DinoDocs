@@ -45,22 +45,6 @@
     else
     {
         SKProduct *product = _products[senderbutton.tag];
-        NSString* alertmsg = [NSString stringWithFormat:@"Do you wish to buy the %@ quiz for %@ ?",product.localizedTitle,product.price];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"In-App Purchase" message:alertmsg delegate:self cancelButtonTitle:@"No" otherButtonTitles: @"Yippee",nil];
-        
-        [alert setTag:senderbutton.tag];
-        [alert show];
-    }
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    //Alert should not be used for anything else in this class, as alert tag is linked to
-    // product index to be purchased
-    
-    if (buttonIndex == 1)
-    {
-        SKProduct *product = _products[alertView.tag];
         NSLog(@"Buying %@...", product.productIdentifier);
         [[DDIAPUse sharedInstance] buyProduct:product];
     }

@@ -7,6 +7,7 @@
 //
 
 #import "DDIAPHelper.h"
+#import "DDDefines.h"
 #import <StoreKit/StoreKit.h>
 
 NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurchasedNotification";
@@ -61,7 +62,10 @@ NSMutableSet * _purchasedProductIdentifiers;
     }
     else
     {
-        NSLog(@"Please enable In App Purchase in Settings");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enable In App Purchase in Settings" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        
+        [alert setTag:IAPSETTING];
+        [alert show];
     }
 }
 
@@ -152,12 +156,16 @@ NSMutableSet * _purchasedProductIdentifiers;
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
 
-- (void)failedTransaction:(SKPaymentTransaction *)transaction {
-    
-    NSLog(@"failedTransaction...");
+- (void)failedTransaction:(SKPaymentTransaction *)transaction
+{
     if (transaction.error.code != SKErrorPaymentCancelled)
     {
-        NSLog(@"Transaction error: %@", transaction.error.localizedDescription);
+        NSString* transerr = [NSString stringWithFormat:@"Transaction error: %@", transaction.error.localizedDescription];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Transaction failed" message:transerr delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [alert setTag:IAPTRANS];
+        [alert show];
     }
     
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
