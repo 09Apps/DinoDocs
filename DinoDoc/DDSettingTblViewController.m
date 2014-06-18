@@ -32,11 +32,8 @@
     // Get the singleton instance of main param
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     
-    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
-    
-    UIImage *image = [UIImage imageNamed: mainparam.navimg];
-    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics: UIBarMetricsDefault];
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    self.view.backgroundColor = [UIColor clearColor];
+    self.view.opaque = NO;
     
     self.soundon = mainparam.soundon;
     self.showansdetails = mainparam.showansdetails;

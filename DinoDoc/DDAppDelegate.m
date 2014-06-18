@@ -8,13 +8,16 @@
 
 #import "DDAppDelegate.h"
 #import "DDIAPUse.h"
+#import "DDMainParam.h"
 
 @implementation DDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    
     // Override point for customization after application launch.
-//    self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dinodoc_bg.png"]];
+    self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
     
     [DDIAPUse sharedInstance];
     return YES;

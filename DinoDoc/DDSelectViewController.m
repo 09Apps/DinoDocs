@@ -34,9 +34,9 @@
     // get the mainparam singleton
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     
-//    self.view.backgroundColor = [UIColor clearColor];
-//    self.view.opaque = NO;
-    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
+    self.view.backgroundColor = [UIColor clearColor];
+    self.view.opaque = NO;
+//    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
     
 	// Overwritting back button, so I can clean up timer and other objects
     UIBarButtonItem *backbutton = [[UIBarButtonItem alloc] initWithTitle:@"Quit" style:UIBarButtonItemStylePlain target:self action:@selector(handleBack:)];
@@ -263,7 +263,7 @@
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
         
         // Show count of questions
-        NSString* qct = [NSString stringWithFormat:@"Q %u of %u",(self.currentqnum+1),self.QUIZCOUNT];
+        NSString* qct = [NSString stringWithFormat:@"Q %lu of %lu",(self.currentqnum+1),(unsigned long)self.QUIZCOUNT];
         self.qcount.text = qct;
         
         NSUInteger qindex = [[self.qindexes objectAtIndex:self.currentqnum] integerValue];

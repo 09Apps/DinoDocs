@@ -30,13 +30,11 @@
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     self.soundon = mainparam.soundon;
     
-//    self.view.backgroundColor = [UIColor clearColor];
-//    self.view.opaque = NO;
-    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
+    UIImage *homeimg = [UIImage imageNamed:mainparam.homeimg];
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:homeimg];
     
-    UIImage *image = [UIImage imageNamed:mainparam.navimg];
-    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics: UIBarMetricsDefault];
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    UIImage *navimg = [UIImage imageNamed:mainparam.navimg];
+    [self.navigationController.navigationBar setBackgroundImage:navimg forBarMetrics: UIBarMetricsDefault];
     
     NSString* bgsoundname = mainparam.bgsound;
     NSString *path = [[NSBundle mainBundle] pathForResource:bgsoundname ofType:@"wav"];
@@ -50,32 +48,27 @@
         [self.player play];
     }
     
-    self.navigationItem.title = mainparam.maintitle;
-    
-    NSString* playernm = @"Hello ";
-    self.playername.text = [playernm stringByAppendingString:mainparam.playername];
-    
     // NEED TO IMPLEMENT
     // CHECK 'newverupdate' PARAMETER IN PLIST IF THERE WERE ANY UPDATES TO PLIST FILE
     // IF 'YES' UPDATE NEW PLIST WITH CONTENTS OF OLD PLIST
+
+    UIButton *stngbtn=[[UIButton alloc]initWithFrame:CGRectMake(10,25,48, 46)];
+    [stngbtn setImage:[UIImage imageNamed:@"settings.png"] forState:UIControlStateNormal];
+    [stngbtn addTarget:self action:@selector(handleSettings:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *stbarbtn=[[UIBarButtonItem alloc]initWithCustomView:stngbtn];
+    self.navigationItem.rightBarButtonItem=stbarbtn;
     
-    [self.navigationItem setHidesBackButton:YES animated:NO];
-    
-    NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
-    shadow.shadowOffset = CGSizeMake(0, 1);
-    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                                      [UIColor colorWithRed:205.0/255.0 green:192.0/255.0 blue:176.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
-                                                                      shadow, NSShadowAttributeName,
-                                                                      [UIFont boldSystemFontOfSize:20.0], NSFontAttributeName, nil]];
-    
+    UIButton *infobtn=[[UIButton alloc]initWithFrame:CGRectMake(10,25,42, 46)];
+    [infobtn setImage:[UIImage imageNamed:@"info.png"] forState:UIControlStateNormal];
+    [infobtn addTarget:self action:@selector(infoPressed:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *infobarbtn=[[UIBarButtonItem alloc]initWithCustomView:infobtn];
+    self.navigationItem.leftBarButtonItem=infobarbtn;
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     DDMainParam* mainparam = [DDMainParam sharedInstance];
-    NSString* playernm = @"Hello ";
-    self.playername.text = [playernm stringByAppendingString:mainparam.playername];
     
     self.soundon = mainparam.soundon;
 }
@@ -103,11 +96,15 @@
         settingTVC.bgplayer = self.player;
     }
 }
-- (IBAction)infoPressed:(UIButton *)sender
+- (void)infoPressed:(UIButton *)sender
 {
     MBInfoVC* infoVC = [[MBInfoVC alloc] init];
     [self.navigationController pushViewController:infoVC animated:YES];
 }
 
+- (void)handleSettings:(UIBarButtonItem*)navbarbutton
+{
+    [self performSegueWithIdentifier:@"settingseg" sender:navbarbutton];
+}
 
 @end

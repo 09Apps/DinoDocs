@@ -12,10 +12,14 @@
 	<integer>20</integer>
 	<key>bgsound</key>
 	<string>dinosound</string>
+	<key>homeimg</key>
+	<string>dinohome.png</string>
 	<key>bgimg</key>
 	<string>dinodoc_bg.png</string>
+	<key>playbgimg</key>
+	<string>dinoplaybg.png</string>
 	<key>navimg</key>
-	<string>NavBar-Leather.png</string>
+	<string>navgbar.png</string>
 	<key>btnbgimg</key>
 	<string>rockbg.png</string>
 	<key>showads</key>

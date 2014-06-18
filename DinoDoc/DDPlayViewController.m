@@ -76,21 +76,22 @@
 {
     [super viewDidLoad];
     
-    UIBarButtonItem *settingbutton = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(handleSettings:)];
-    self.navigationItem.rightBarButtonItem = settingbutton;
+    UIButton *stngbtn=[[UIButton alloc]initWithFrame:CGRectMake(10,25,48, 46)];
+    [stngbtn setImage:[UIImage imageNamed:@"settings.png"] forState:UIControlStateNormal];
+    [stngbtn addTarget:self action:@selector(handleSettings:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *stbarbtn=[[UIBarButtonItem alloc]initWithCustomView:stngbtn];
+    self.navigationItem.rightBarButtonItem=stbarbtn;
     
-    // Overwritting back button, so it goes to home screen even caled from anywhere
-    UIBarButtonItem *homebutton = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStylePlain target:self action:@selector(goHome:)];
-    self.navigationItem.leftBarButtonItem = homebutton;
-    
-    self.navigationItem.title = @"Discover";
+    UIButton *homebtn=[[UIButton alloc]initWithFrame:CGRectMake(10,25,42, 46)];
+    [homebtn setImage:[UIImage imageNamed:@"home.png"] forState:UIControlStateNormal];
+    [homebtn addTarget:self action:@selector(goHome:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *homebarbtn=[[UIBarButtonItem alloc]initWithCustomView:homebtn];
+    self.navigationItem.leftBarButtonItem=homebarbtn;
     
 	// Get the singleton instance of main param
     DDMainParam* mainparam = [DDMainParam sharedInstance];
-    
-//    self.view.backgroundColor = [UIColor clearColor];
-//    self.view.opaque = NO;
-    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
+
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.playbgimg]];
     
     NSUInteger optionscount = [mainparam.options count];
     

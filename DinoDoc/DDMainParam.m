@@ -50,7 +50,9 @@
             self.playername = [mainparamdict objectForKey:@"playername"];
             self.anstime = [[mainparamdict objectForKey:@"anstime"] integerValue];
             self.bgsound = [mainparamdict objectForKey:@"bgsound"];
+            self.homeimg = [mainparamdict objectForKey:@"homeimg"];
             self.bgimg = [mainparamdict objectForKey:@"bgimg"];
+            self.playbgimg = [mainparamdict objectForKey:@"playbgimg"];
             self.navimg = [mainparamdict objectForKey:@"navimg"];
             self.btnbgimg = [mainparamdict objectForKey:@"btnbgimg"];
             self.showads = [[mainparamdict objectForKey:@"showads"] boolValue];
@@ -72,7 +74,9 @@
                                                         @"playername",
                                                         @"anstime",
                                                         @"bgsound",
+                                                        @"homeimg",
                                                         @"bgimg",
+                                                        @"playbgimg",
                                                         @"navimg",
                                                         @"btnbgimg",
                                                         @"showads",
@@ -94,7 +98,9 @@
                                                 self.playername,
                                                 nsanstime,
                                                 self.bgsound,
+                                                self.homeimg,
                                                 self.bgimg,
+                                                self.playbgimg,
                                                 self.navimg,
                                                 self.btnbgimg,
                                                 nsshowads,
