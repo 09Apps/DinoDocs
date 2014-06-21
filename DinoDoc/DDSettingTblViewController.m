@@ -77,11 +77,11 @@
     switch (indexPath.row)
     {
         case 0:
-            CellIdentifier = @"Cell1";
+            CellIdentifier = @"Cell0";  //blank cell
             break;
             
         case 1:
-            CellIdentifier = @"Cell2";
+            CellIdentifier = @"Cell1";
             break;
             
         case 2:
@@ -89,14 +89,19 @@
             break;
             
         case 3:
-            CellIdentifier = @"Cell3";
+            CellIdentifier = @"Cell2";
             break;
             
         case 4:
             CellIdentifier = @"Cell3";
             break;
             
+        case 5:
+            CellIdentifier = @"Cell3";
+            break;
+            
         default:
+            CellIdentifier = @"Cell0";
             break;
     }
 
@@ -113,7 +118,7 @@
     
     switch (indexPath.row)
     {
-        case 0:
+        case 1:
             [cell.textLabel setText:@"   Enter Name : "];
             txtfld.text= self.playername;
             txtfld.delegate = self;
@@ -122,7 +127,7 @@
             cell.accessoryView = txtfld;
             break;
             
-        case 1:
+        case 2:
             [cell.textLabel setText:@"   Sound"];
             [cell.detailTextLabel setText:@"    Sound On/Off"];
             ddswitch.tag = indexPath.row;
@@ -131,7 +136,7 @@
             cell.accessoryView = ddswitch;
             break;
             
-        case 2:
+        case 3:
             [cell.textLabel setText:@"   Answer Details"];
             [cell.detailTextLabel setText:@"    Show Answer details"];
             ddswitch.tag = indexPath.row;
@@ -140,14 +145,14 @@
             cell.accessoryView = ddswitch;
             break;
 
-        case 3:
+        case 4:
             [ddbuttons setTitle:@"   Remove Ads" forState:UIControlStateNormal];
             [ddbuttons addTarget:self action:@selector(removeAds) forControlEvents:UIControlEventTouchUpInside];
             ddbuttons.tag = indexPath.row;
             [cell addSubview:ddbuttons];
             break;
 
-        case 4:
+        case 5:
             [ddbuttons setTitle:@"   Restore Purchases" forState:UIControlStateNormal];
             [ddbuttons addTarget:self action:@selector(restorePurchases:) forControlEvents:UIControlEventTouchUpInside];
             ddbuttons.tag = indexPath.row;
@@ -168,7 +173,7 @@
     if([sender isOn])
     {
         // This means switch turned ON
-        if (sender.tag == 1)
+        if (sender.tag == 2)
         {
             // This means sound made ON
             self.soundon = TRUE;
@@ -184,7 +189,7 @@
     else
     {
         // Execute any code when the switch is OFF
-        if (sender.tag == 1)
+        if (sender.tag == 2)
         {
             // This means sound muted
             self.soundon = FALSE;

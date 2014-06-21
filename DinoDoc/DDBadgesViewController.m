@@ -35,6 +35,12 @@
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.badgebgimg]];
     
+    UIButton *homebtn=[[UIButton alloc]initWithFrame:CGRectMake(10,25,42, 46)];
+    [homebtn setImage:[UIImage imageNamed:@"home.png"] forState:UIControlStateNormal];
+    [homebtn addTarget:self action:@selector(goHome:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *homebarbtn=[[UIBarButtonItem alloc]initWithCustomView:homebtn];
+    self.navigationItem.leftBarButtonItem=homebarbtn;
+    
     // The badges plist file
     NSString* plistPath = [DDUtils getPlistPath:BADGES];
     
@@ -95,6 +101,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)goHome:(id)navbarbutton
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 
 @end
