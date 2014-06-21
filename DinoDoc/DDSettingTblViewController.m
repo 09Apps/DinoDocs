@@ -32,8 +32,7 @@
     // Get the singleton instance of main param
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     
-    self.view.backgroundColor = [UIColor clearColor];
-    self.view.opaque = NO;
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
     
     self.soundon = mainparam.soundon;
     self.showansdetails = mainparam.showansdetails;
@@ -119,6 +118,7 @@
             txtfld.text= self.playername;
             txtfld.delegate = self;
             txtfld.tag = indexPath.row;
+            [txtfld setBorderStyle:UITextBorderStyleLine];
             cell.accessoryView = txtfld;
             break;
             

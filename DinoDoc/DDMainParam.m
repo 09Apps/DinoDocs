@@ -50,9 +50,11 @@
             self.playername = [mainparamdict objectForKey:@"playername"];
             self.anstime = [[mainparamdict objectForKey:@"anstime"] integerValue];
             self.bgsound = [mainparamdict objectForKey:@"bgsound"];
-            self.homeimg = [mainparamdict objectForKey:@"homeimg"];
             self.bgimg = [mainparamdict objectForKey:@"bgimg"];
+            self.homebgimg = [mainparamdict objectForKey:@"homebgimg"];
             self.playbgimg = [mainparamdict objectForKey:@"playbgimg"];
+            self.infobgimg = [mainparamdict objectForKey:@"infobgimg"];
+            self.badgebgimg = [mainparamdict objectForKey:@"badgebgimg"];
             self.navimg = [mainparamdict objectForKey:@"navimg"];
             self.btnbgimg = [mainparamdict objectForKey:@"btnbgimg"];
             self.showads = [[mainparamdict objectForKey:@"showads"] boolValue];
@@ -74,9 +76,11 @@
                                                         @"playername",
                                                         @"anstime",
                                                         @"bgsound",
-                                                        @"homeimg",
                                                         @"bgimg",
+                                                        @"homebgimg",
                                                         @"playbgimg",
+                                                        @"infobgimg",
+                                                        @"badgebgimg",
                                                         @"navimg",
                                                         @"btnbgimg",
                                                         @"showads",
@@ -98,9 +102,11 @@
                                                 self.playername,
                                                 nsanstime,
                                                 self.bgsound,
-                                                self.homeimg,
                                                 self.bgimg,
+                                                self.homebgimg,
                                                 self.playbgimg,
+                                                self.infobgimg,
+                                                self.badgebgimg,
                                                 self.navimg,
                                                 self.btnbgimg,
                                                 nsshowads,

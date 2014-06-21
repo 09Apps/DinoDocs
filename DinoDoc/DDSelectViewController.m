@@ -34,14 +34,12 @@
     // get the mainparam singleton
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     
-    self.view.backgroundColor = [UIColor clearColor];
-    self.view.opaque = NO;
-//    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
     
 	// Overwritting back button, so I can clean up timer and other objects
     UIBarButtonItem *backbutton = [[UIBarButtonItem alloc] initWithTitle:@"Quit" style:UIBarButtonItemStylePlain target:self action:@selector(handleBack:)];
     self.navigationItem.leftBarButtonItem = backbutton;
-    self.navigationItem.title = mainparam.maintitle;    
+    self.navigationItem.title = mainparam.maintitle;
     
     self.btnbgimg = mainparam.btnbgimg;
     

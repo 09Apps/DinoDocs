@@ -7,6 +7,7 @@
 //
 
 #import "MBInfoVC.h"
+#import "DDMainParam.h"
 
 @interface MBInfoVC ()
 
@@ -28,11 +29,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.view.backgroundColor = [UIColor clearColor];
-    self.view.opaque = NO;
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.infobgimg]];
 
+    UIButton *homebtn=[[UIButton alloc]initWithFrame:CGRectMake(10,25,42, 46)];
+    [homebtn setImage:[UIImage imageNamed:@"home.png"] forState:UIControlStateNormal];
+    [homebtn addTarget:self action:@selector(goHome:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *homebarbtn=[[UIBarButtonItem alloc]initWithCustomView:homebtn];
+    self.navigationItem.leftBarButtonItem=homebarbtn;
+    
     self.scrollview.contentSize = CGSizeMake(self.scrollview.frame.size.width, 600);
-    self.navigationItem.title = @"Info";
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,6 +94,11 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
     
+}
+
+- (void)goHome:(id)navbarbutton
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

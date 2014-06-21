@@ -31,13 +31,11 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor clearColor];
-    self.view.opaque = NO;
-    
     // get the mainparam singleton
     DDMainParam* mainparam = [DDMainParam sharedInstance];
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
     
-    self.navigationItem.title = mainparam.maintitle;
+//    self.navigationItem.title = mainparam.maintitle;
     
     UIImage *image = [UIImage imageNamed: mainparam.navimg];
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics: UIBarMetricsDefault];

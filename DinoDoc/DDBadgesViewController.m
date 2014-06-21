@@ -9,6 +9,7 @@
 #import "DDBadgesViewController.h"
 #import "DDDefines.h"
 #import "DDUtils.h"
+#import "DDMainParam.h"    
 
 @interface DDBadgesViewController ()
 
@@ -29,9 +30,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    self.view.backgroundColor = [UIColor clearColor];
-    self.view.opaque = NO;
+
+	// Get the singleton instance of main param
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.badgebgimg]];
     
     // The badges plist file
     NSString* plistPath = [DDUtils getPlistPath:BADGES];

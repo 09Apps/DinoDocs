@@ -30,7 +30,7 @@
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     self.soundon = mainparam.soundon;
     
-    UIImage *homeimg = [UIImage imageNamed:mainparam.homeimg];
+    UIImage *homeimg = [UIImage imageNamed:mainparam.homebgimg];
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:homeimg];
     
     UIImage *navimg = [UIImage imageNamed:mainparam.navimg];
