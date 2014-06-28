@@ -11,6 +11,7 @@
 #import "DDMainParam.h"    
 #import "DDSettingTblViewController.h"
 #import "DDIAPUse.h"
+#import "DDUtils.h"
 
 @interface DDPlayViewController ()
 {
@@ -31,34 +32,37 @@
     }
     return self;
 }
-
-- (void)choiceMade:(UIButton *)senderbutton
+- (IBAction)btnClicked:(UIButton *)senderbtn
 {
     DDMainParam* mainparam = [DDMainParam sharedInstance];
-    NSDictionary* dict = [mainparam.options objectAtIndex:senderbutton.tag];
+    self.currprod = senderbtn.tag;
+    NSDictionary* dict = [mainparam.options objectAtIndex:senderbtn.tag];
     NSString* prodid = [dict objectForKey:@"productid"];
     
     if ([[DDIAPUse sharedInstance] productPurchased:prodid])
     {
-        [self performSegueWithIdentifier:@"selseg" sender:senderbutton];
+        [self performSegueWithIdentifier:@"selseg" sender:senderbtn];
     }
     else
     {
-        SKProduct *product = _products[senderbutton.tag];
-        NSLog(@"Buying %@...", product.productIdentifier);
+        SKProduct *product = _products[senderbtn.tag];
         [[DDIAPUse sharedInstance] buyProduct:product];
     }
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender
 {
     // Just to make sure we have the right segue
     if ([segue.identifier isEqualToString:@"selseg"])
     {
         DDSelectViewController *selVC = (DDSelectViewController*)[segue destinationViewController];
         
+        DDMainParam* mainparam = [DDMainParam sharedInstance];
+        NSDictionary* dict = [mainparam.options objectAtIndex:self.currprod];
+        
         // Pass on required parameters from main file
-        selVC.opttitle = [(UIButton*)sender currentTitle];
+        selVC.opttitle = [dict objectForKey:@"title"];
         
         // Stop the background sound now.
         [self.bgplayer stop];
@@ -92,25 +96,116 @@
     DDMainParam* mainparam = [DDMainParam sharedInstance];
 
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.playbgimg]];
-    
+
     NSUInteger optionscount = [mainparam.options count];
-    
+
     for (int i=0; i<optionscount; i++)
     {
         NSDictionary* dict = [mainparam.options objectAtIndex:i];
         
         if ([[dict objectForKey:@"active"] boolValue])
         {
-            //create buttons for options at runtime
-            UIButton *playchoice = [[UIButton alloc] initWithFrame:CGRectMake(25,(160+(40*i)), 150, 25)];
-            playchoice.backgroundColor = [UIColor grayColor];
-            
-            [playchoice setTitle:[dict objectForKey:@"title"] forState:UIControlStateNormal];
-            playchoice.tag = i;
-            //set their selector using add selector
-            [playchoice addTarget:self action:@selector(choiceMade:) forControlEvents:UIControlEventTouchUpInside];
-            
-            [self.view addSubview:playchoice];
+            switch ([[dict objectForKey:@"butseq"] integerValue])
+            {
+                case 0:
+                    if ([[dict objectForKey:@"purchased"] boolValue])
+                    {
+                        [self.b0btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
+                    }
+                    else
+                    {
+                        [self.b0btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
+                    }
+                    [self.b0btn setTag:i];
+                    break;
+
+                case 1:
+                    if ([[dict objectForKey:@"purchased"] boolValue])
+                    {
+                        [self.b1btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
+                    }
+                    else
+                    {
+                        [self.b1btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
+                    }
+                    [self.b1btn setTag:i];
+                    break;
+
+                case 2:
+                    if ([[dict objectForKey:@"purchased"] boolValue])
+                    {
+                        [self.b2btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
+                    }
+                    else
+                    {
+                        [self.b2btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
+                    }
+                    [self.b2btn setTag:i];
+                    break;
+                    
+                case 3:
+                    if ([[dict objectForKey:@"purchased"] boolValue])
+                    {
+                        [self.b3btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
+                    }
+                    else
+                    {
+                        [self.b3btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
+                    }
+                    [self.b3btn setTag:i];
+                    break;
+                    
+                case 4:
+                    if ([[dict objectForKey:@"purchased"] boolValue])
+                    {
+                        [self.b4btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
+                    }
+                    else
+                    {
+                        [self.b4btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
+                    }
+                    [self.b4btn setTag:i];
+                    break;
+                    
+                case 5:
+                    if ([[dict objectForKey:@"purchased"] boolValue])
+                    {
+                        [self.b5btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
+                    }
+                    else
+                    {
+                        [self.b5btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
+                    }
+                    [self.b5btn setTag:i];
+                    break;
+
+                case 6:
+                    if ([[dict objectForKey:@"purchased"] boolValue])
+                    {
+                        [self.b6btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
+                    }
+                    else
+                    {
+                        [self.b6btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
+                    }
+                    [self.b6btn setTag:i];
+                    break;
+                    
+                case 7:
+                    if ([[dict objectForKey:@"purchased"] boolValue])
+                    {
+                        [self.b7btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
+                    }
+                    else
+                    {
+                        [self.b7btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
+                    }
+                    [self.b7btn setTag:i];
+                    break;
+                    
+                default:
+                    break;
+            }
         } ;
     }
     
@@ -127,11 +222,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-//    NSLog(@"viewWillAppear");
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated
+{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -145,6 +240,12 @@
             // Update Mainparam to set putchased is yes
             // reload images
             *stop = YES;
+            
+            DDMainParam* mainparam = [DDMainParam sharedInstance];
+            NSDictionary* dict = [mainparam.options objectAtIndex:self.currprod];
+            [dict setValue:[DDUtils stringFromBool:YES] forKey:@"purchased"];
+            [mainparam updateMainParam];
+            
         }
     }];
     
