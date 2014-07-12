@@ -261,7 +261,7 @@
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
         
         // Show count of questions
-        NSString* qct = [NSString stringWithFormat:@"Q %lu of %lu",(self.currentqnum+1),(unsigned long)self.QUIZCOUNT];
+        NSString* qct = [NSString stringWithFormat:@"Q %d of %lu",(self.currentqnum+1),(unsigned long)self.QUIZCOUNT];
         self.qcount.text = qct;
         
         NSUInteger qindex = [[self.qindexes objectAtIndex:self.currentqnum] integerValue];

@@ -10,14 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface DDPlayViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *b0btn;
-@property (weak, nonatomic) IBOutlet UIButton *b7btn;
-@property (weak, nonatomic) IBOutlet UIButton *b2btn;
-@property (weak, nonatomic) IBOutlet UIButton *b4btn;
-@property (weak, nonatomic) IBOutlet UIButton *b5btn;
-@property (weak, nonatomic) IBOutlet UIButton *b3btn;
-@property (weak, nonatomic) IBOutlet UIButton *b6btn;
-@property (weak, nonatomic) IBOutlet UIButton *b1btn;
 @property (nonatomic,strong) AVAudioPlayer *bgplayer;
+@property (nonatomic,strong) UIActivityIndicatorView *spinner;
 @property NSUInteger currprod;
 @end

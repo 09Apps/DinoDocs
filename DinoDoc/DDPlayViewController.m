@@ -34,6 +34,10 @@
 }
 - (IBAction)btnClicked:(UIButton *)senderbtn
 {
+    self.spinner.center = self.view.center;
+    [self.view addSubview:self.spinner];
+    [self.spinner startAnimating];
+    
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     self.currprod = senderbtn.tag;
     NSDictionary* dict = [mainparam.options objectAtIndex:senderbtn.tag];
@@ -41,6 +45,11 @@
     
     if ([[DDIAPUse sharedInstance] productPurchased:prodid])
     {
+        if ([self.spinner isAnimating])
+        {
+            [self.spinner stopAnimating];
+        }
+        
         [self performSegueWithIdentifier:@"selseg" sender:senderbtn];
     }
     else
@@ -49,7 +58,6 @@
         [[DDIAPUse sharedInstance] buyProduct:product];
     }
 }
-
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender
 {
@@ -92,125 +100,23 @@
     UIBarButtonItem *homebarbtn=[[UIBarButtonItem alloc]initWithCustomView:homebtn];
     self.navigationItem.leftBarButtonItem=homebarbtn;
     
-	// Get the singleton instance of main param
+    // Get the singleton instance of main param
     DDMainParam* mainparam = [DDMainParam sharedInstance];
-
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.playbgimg]];
-
+    
     NSUInteger optionscount = [mainparam.options count];
-
+    
     for (int i=0; i<optionscount; i++)
     {
-        NSDictionary* dict = [mainparam.options objectAtIndex:i];
-        
-        if ([[dict objectForKey:@"active"] boolValue])
-        {
-            switch ([[dict objectForKey:@"butseq"] integerValue])
-            {
-                case 0:
-                    if ([[dict objectForKey:@"purchased"] boolValue])
-                    {
-                        [self.b0btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
-                    }
-                    else
-                    {
-                        [self.b0btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
-                    }
-                    [self.b0btn setTag:i];
-                    break;
-
-                case 1:
-                    if ([[dict objectForKey:@"purchased"] boolValue])
-                    {
-                        [self.b1btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
-                    }
-                    else
-                    {
-                        [self.b1btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
-                    }
-                    [self.b1btn setTag:i];
-                    break;
-
-                case 2:
-                    if ([[dict objectForKey:@"purchased"] boolValue])
-                    {
-                        [self.b2btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
-                    }
-                    else
-                    {
-                        [self.b2btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
-                    }
-                    [self.b2btn setTag:i];
-                    break;
-                    
-                case 3:
-                    if ([[dict objectForKey:@"purchased"] boolValue])
-                    {
-                        [self.b3btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
-                    }
-                    else
-                    {
-                        [self.b3btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
-                    }
-                    [self.b3btn setTag:i];
-                    break;
-                    
-                case 4:
-                    if ([[dict objectForKey:@"purchased"] boolValue])
-                    {
-                        [self.b4btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
-                    }
-                    else
-                    {
-                        [self.b4btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
-                    }
-                    [self.b4btn setTag:i];
-                    break;
-                    
-                case 5:
-                    if ([[dict objectForKey:@"purchased"] boolValue])
-                    {
-                        [self.b5btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
-                    }
-                    else
-                    {
-                        [self.b5btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
-                    }
-                    [self.b5btn setTag:i];
-                    break;
-
-                case 6:
-                    if ([[dict objectForKey:@"purchased"] boolValue])
-                    {
-                        [self.b6btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
-                    }
-                    else
-                    {
-                        [self.b6btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
-                    }
-                    [self.b6btn setTag:i];
-                    break;
-                    
-                case 7:
-                    if ([[dict objectForKey:@"purchased"] boolValue])
-                    {
-                        [self.b7btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"on-image"]] forState:UIControlStateNormal];
-                    }
-                    else
-                    {
-                        [self.b7btn setBackgroundImage:[UIImage imageNamed:[dict objectForKey:@"iap-image"]] forState:UIControlStateNormal];
-                    }
-                    [self.b7btn setTag:i];
-                    break;
-                    
-                default:
-                    break;
-            }
-        } ;
+        [self drawButton:i];
     }
     
-    // Now do the in-app purchase thing
+    // Initiate activity indicator
+    self.spinner = [[UIActivityIndicatorView alloc]
+                                        initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.spinner.hidesWhenStopped = YES;
     
+    // Now do the in-app purchase thing
     [[DDIAPUse sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *prod)
      {
          if (success)
@@ -218,6 +124,85 @@
              _products = prod;
          }
      }];
+}
+
+- (void) drawButton:(NSUInteger)btnindex
+{
+    CGFloat scrwidth = CGRectGetWidth(self.view.bounds);
+    CGFloat scrheight = CGRectGetHeight(self.view.bounds);
+    CGFloat imgwidth, imgheight;
+    
+    // Get the singleton instance of main param
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    
+    NSDictionary* dict = [mainparam.options objectAtIndex:btnindex];
+    
+    if ([[dict objectForKey:@"active"] boolValue])
+    {
+        //create buttons for options at runtime
+        UIButton *choicebtn = [[UIButton alloc] init];
+        
+        //set their selector using add selector
+        [choicebtn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
+        
+        if ([[dict objectForKey:@"purchased"] boolValue])
+        {
+            UIImage* on_img = [UIImage imageNamed:[dict objectForKey:@"on-image"]];
+            [choicebtn setImage: on_img forState:UIControlStateNormal];
+            imgheight = on_img.size.height;
+            imgwidth = on_img.size.width;
+        }
+        else
+        {
+            UIImage* iap_img = [UIImage imageNamed:[dict objectForKey:@"iap-image"]];
+            [choicebtn setImage:iap_img forState:UIControlStateNormal];
+            imgheight = iap_img.size.height;
+            imgwidth = iap_img.size.width;
+        }
+        
+        [choicebtn setTag:btnindex];
+        
+        switch ([[dict objectForKey:@"butseq"] integerValue])
+        {
+            case 0:
+                choicebtn.frame = CGRectMake(((scrwidth*0.5)-(imgwidth/2)),((scrheight*0.3)-(imgheight/2)),imgwidth,imgheight);
+                break;
+                
+            case 1:
+                choicebtn.frame = CGRectMake(((scrwidth*0.22)-(imgwidth/2)),((scrheight*0.5)-(imgheight/2)),imgwidth,imgheight);
+                break;
+                
+            case 2:
+                choicebtn.frame = CGRectMake(((scrwidth*0.5)-(imgwidth/2)),((scrheight*0.5)-(imgheight/2)),imgwidth,imgheight);
+                break;
+                
+            case 3:
+                choicebtn.frame = CGRectMake(((scrwidth*0.78)-(imgwidth/2)),((scrheight*0.5)-(imgheight/2)),imgwidth,imgheight);
+                break;
+                
+            case 4:
+                choicebtn.frame = CGRectMake(((scrwidth*0.12)-(imgwidth/2)),((scrheight*0.67)-(imgheight/2)),imgwidth,imgheight);
+                break;
+                
+            case 5:
+                choicebtn.frame = CGRectMake(((scrwidth*0.36)-(imgwidth/2)),((scrheight*0.67)-(imgheight/2)),imgwidth,imgheight);
+                break;
+                
+            case 6:
+                choicebtn.frame = CGRectMake(((scrwidth*0.59)-(imgwidth/2)),((scrheight*0.67)-(imgheight/2)),imgwidth,imgheight);
+                break;
+                
+            case 7:
+                choicebtn.frame = CGRectMake(((scrwidth*0.85)-(imgwidth/2)),((scrheight*0.67)-(imgheight/2)),imgwidth,imgheight);
+                break;
+                
+            default:
+                break;
+        }
+        
+        [self.view addSubview:choicebtn];
+    } ;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -230,8 +215,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)productPurchased:(NSNotification *)notification {
-    
+- (void)productPurchased:(NSNotification *)notification
+{
     NSString * productIdentifier = notification.object;
     [_products enumerateObjectsUsingBlock:^(SKProduct * product, NSUInteger idx, BOOL *stop)
     {
@@ -245,11 +230,17 @@
             NSDictionary* dict = [mainparam.options objectAtIndex:self.currprod];
             [dict setValue:[DDUtils stringFromBool:YES] forKey:@"purchased"];
             [mainparam updateMainParam];
+
+            // Change image on button
+            UIView *sview = [self.view viewWithTag:self.currprod];
+            UIButton* cbtn = (UIButton*)sview;
             
+            UIImage* on_img = [UIImage imageNamed:[dict objectForKey:@"on-image"]];
+            [cbtn setImage: on_img forState:UIControlStateNormal];
         }
     }];
-    
 }
+     
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
