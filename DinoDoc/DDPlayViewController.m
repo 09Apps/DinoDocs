@@ -34,7 +34,11 @@
 }
 - (IBAction)btnClicked:(UIButton *)senderbtn
 {
-    self.spinner.center = self.view.center;
+    // Initiate activity indicator
+    self.spinner = [[UIActivityIndicatorView alloc]
+                    initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.spinner.hidesWhenStopped = YES;
+    self.spinner.center = senderbtn.center;
     [self.view addSubview:self.spinner];
     [self.spinner startAnimating];
     
@@ -110,11 +114,6 @@
     {
         [self drawButton:i];
     }
-    
-    // Initiate activity indicator
-    self.spinner = [[UIActivityIndicatorView alloc]
-                                        initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    self.spinner.hidesWhenStopped = YES;
     
     // Now do the in-app purchase thing
     [[DDIAPUse sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *prod)
@@ -208,11 +207,21 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(purchaseFailed:) name:IAPHelperFailedPurchasedNotification object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)purchaseFailed:(NSNotification *)notification
+{
+    if ([self.spinner isAnimating])
+    {
+        [self.spinner stopAnimating];
+    }
 }
 
 - (void)productPurchased:(NSNotification *)notification
@@ -238,9 +247,14 @@
             UIImage* on_img = [UIImage imageNamed:[dict objectForKey:@"on-image"]];
             [cbtn setImage: on_img forState:UIControlStateNormal];
         }
+        
+        if ([self.spinner isAnimating])
+        {
+            [self.spinner stopAnimating];
+        }
     }];
 }
-     
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

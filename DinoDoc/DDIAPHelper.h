@@ -8,6 +8,7 @@
 
 #import <StoreKit/StoreKit.h>
 UIKIT_EXTERN NSString *const IAPHelperProductPurchasedNotification;
+UIKIT_EXTERN NSString *const IAPHelperFailedPurchasedNotification;
 #import <Foundation/Foundation.h>
 
 typedef void (^RequestProductsCompletionHandler)(BOOL success, NSArray * products);

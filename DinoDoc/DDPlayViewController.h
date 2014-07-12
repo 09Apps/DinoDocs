@@ -11,6 +11,6 @@
 
 @interface DDPlayViewController : UIViewController
 @property (nonatomic,strong) AVAudioPlayer *bgplayer;
-@property (nonatomic,strong) UIActivityIndicatorView *spinner;
+@property (atomic,strong) UIActivityIndicatorView *spinner;
 @property NSUInteger currprod;
 @end

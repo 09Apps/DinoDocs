@@ -11,6 +11,7 @@
 #import <StoreKit/StoreKit.h>
 
 NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurchasedNotification";
+NSString *const IAPHelperFailedPurchasedNotification = @"IAPHelperFailedPurchasedNotification";
 
 @interface DDIAPHelper () <SKProductsRequestDelegate>
 @end
@@ -38,11 +39,6 @@ NSMutableSet * _purchasedProductIdentifiers;
             if (productPurchased)
             {
                 [_purchasedProductIdentifiers addObject:productId];
-//                NSLog(@"Previously purchased: %@", productId);
-            }
-            else
-            {
-//                NSLog(@"Not purchased: %@", productId);
             }
         }
         [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
@@ -158,6 +154,8 @@ NSMutableSet * _purchasedProductIdentifiers;
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperFailedPurchasedNotification object:transaction.payment.productIdentifier userInfo:nil];
+    
     if (transaction.error.code != SKErrorPaymentCancelled)
     {
         NSString* transerr = [NSString stringWithFormat:@"Transaction error: %@", transaction.error.localizedDescription];
