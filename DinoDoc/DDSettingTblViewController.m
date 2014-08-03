@@ -8,6 +8,8 @@
 
 #import "DDSettingTblViewController.h"
 #import "DDMainParam.h" 
+#import "DDDefines.h"
+#import "DDUtils.h"
 #import "DDIAPUse.h"
 
 @interface DDSettingTblViewController () 
@@ -37,12 +39,68 @@
     self.soundon = mainparam.soundon;
     self.showansdetails = mainparam.showansdetails;
     self.playername = mainparam.playername;
+    self.restored = NO;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(purchaseFailed:) name:IAPHelperFailedPurchasedNotification object:nil];
+}
+
+
+- (void)purchaseFailed:(NSNotification *)notification
+{
+    if ([self.spinner isAnimating])
+    {
+        [self.spinner stopAnimating];
+    }
+}
+
+- (void)productPurchased:(NSNotification *)notification
+{
+    NSString * productIdentifier = notification.object;
+
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    NSUInteger optionscount = [mainparam.options count];
+             
+    for (int i=0; i<optionscount; i++)
+    {
+        NSDictionary* dict = [mainparam.options objectAtIndex:i];
+        NSString* plistprodid = [dict objectForKey:@"productid"];
+        
+        if ([plistprodid compare:productIdentifier] == NSOrderedSame)
+        {
+            [dict setValue:[DDUtils stringFromBool:YES] forKey:@"purchased"];
+            break;
+        }
+    }
+         
+    if ([self.spinner isAnimating])
+    {
+        [self.spinner stopAnimating];
+    }
+    self.restored = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void) viewDidDisappear:(BOOL)animated
+{
+    if (self.restored)
+    {
+        [self.delegate modalDialogClosed:self.parentViewController];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,7 +120,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 5;
+    return SETOPTCT;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -210,6 +268,14 @@
 
 - (IBAction)restorePurchases:(UIButton *)sender
 {
+    // Initiate activity indicator
+    self.spinner = [[UIActivityIndicatorView alloc]
+                    initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.spinner.hidesWhenStopped = YES;
+    self.spinner.center = self.view.center;
+    [self.view addSubview:self.spinner];
+    [self.spinner startAnimating];
+    
     [[DDIAPUse sharedInstance] restoreCompletedTransactions];
 }
 
@@ -241,7 +307,7 @@
         [mainparam updateMainParam];
     }
 
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    [self dismissViewControllerAnimated:YES completion:^{ }];    
 }
 
 /*

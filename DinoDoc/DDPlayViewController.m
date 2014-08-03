@@ -32,6 +32,7 @@
     }
     return self;
 }
+
 - (IBAction)btnClicked:(UIButton *)senderbtn
 {
     // Initiate activity indicator
@@ -85,6 +86,7 @@
         
         // Pass on soundid to Play VC as we will stop it at exit of play VC
         settingTVC.bgplayer = self.bgplayer;
+        settingTVC.delegate = self;
     }
 }
 
@@ -147,7 +149,7 @@
         if ([[dict objectForKey:@"purchased"] boolValue])
         {
             UIImage* on_img = [UIImage imageNamed:[dict objectForKey:@"on-image"]];
-            [choicebtn setImage: on_img forState:UIControlStateNormal];
+            [choicebtn setImage:on_img forState:UIControlStateNormal];
             imgheight = on_img.size.height;
             imgwidth = on_img.size.width;
         }
@@ -201,11 +203,17 @@
         
         [self.view addSubview:choicebtn];
     } ;
-    
+}
+
+- (void)modalDialogClosed:(UIViewController *)viewController
+//- (void)modalDialogClosed
+{
+    [self goHome:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(purchaseFailed:) name:IAPHelperFailedPurchasedNotification object:nil];

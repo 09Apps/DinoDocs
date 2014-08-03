@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "DDSettingTblViewController.h"
 
-@interface DDPlayViewController : UIViewController
+@interface DDPlayViewController : UIViewController <DDSettingTblViewControllerDelegate>
 @property (nonatomic,strong) AVAudioPlayer *bgplayer;
 @property (atomic,strong) UIActivityIndicatorView *spinner;
 @property NSUInteger currprod;
