@@ -20,5 +20,6 @@
 #define BENCHMARKFACTOR 0.6         // The multiplier for score benchmarking
 #define MAINPARAM   @"MainParam"    // Name of main parameter file
 #define BADGES      @"badges"       // Name of badges plist file
+#define SETOPTCT    6               // Count of setting options for TableVC
 
 #endif

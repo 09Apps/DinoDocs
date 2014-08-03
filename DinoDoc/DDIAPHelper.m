@@ -154,6 +154,8 @@ NSMutableSet * _purchasedProductIdentifiers;
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction
 {
+    NSLog(@"failedTransaction...");
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperFailedPurchasedNotification object:transaction.payment.productIdentifier userInfo:nil];
     
     if (transaction.error.code != SKErrorPaymentCancelled)
@@ -175,6 +177,7 @@ NSMutableSet * _purchasedProductIdentifiers;
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:productIdentifier];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperProductPurchasedNotification object:productIdentifier userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperFailedPurchasedNotification object:productIdentifier userInfo:nil];
     
 }
 
