@@ -40,7 +40,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="d7P-ta-vuS" kind="push" identifier="badgeseg" id="7WC-xo-2kq"/>
+                                    <segue destination="d7P-ta-vuS" kind="push" identifier="selbadge" id="ks8-Si-BXs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmw-3a-kVz">
@@ -54,11 +54,19 @@
                                     <segue destination="qXi-1E-XE6" kind="push" identifier="playseg" id="rnV-qn-XOd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hrk-T8-Mj1">
+                                <rect key="frame" x="59" y="151" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="K7V-gL-7Ro"/>
                     <connections>
+                        <outlet property="playernm" destination="Hrk-T8-Mj1" id="8wK-FD-hiI"/>
                         <segue destination="PGO-AR-tWc" kind="modal" identifier="settingseg" modalTransitionStyle="coverVertical" id="vU8-X1-dwt"/>
                     </connections>
                 </viewController>
@@ -96,6 +104,7 @@
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uhX-55-wqb">
                             <rect key="frame" x="0.0" y="241" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <state key="normal" title="Done">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -183,100 +192,10 @@
                     <view key="view" contentMode="scaleToFill" id="5BJ-Rn-OH2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4X-ZU-Na8">
-                                <rect key="frame" x="115" y="127" width="106" height="115"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnClicked:" destination="qXi-1E-XE6" eventType="touchUpInside" id="Mbs-19-oZc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8YN-Ku-Rx0">
-                                <rect key="frame" x="140" y="268" width="57" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnClicked:" destination="qXi-1E-XE6" eventType="touchUpInside" id="i2Z-3w-qeF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZw-U8-mtj">
-                                <rect key="frame" x="214" y="256" width="95" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnClicked:" destination="qXi-1E-XE6" eventType="touchUpInside" id="n1G-Zm-AfJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7G-hx-X7a">
-                                <rect key="frame" x="42" y="268" width="73" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnClicked:" destination="qXi-1E-XE6" eventType="touchUpInside" id="MJ6-oR-7v3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hdg-UE-1tD">
-                                <rect key="frame" x="77" y="359" width="90" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnClicked:" destination="qXi-1E-XE6" eventType="touchUpInside" id="JjA-51-W0f"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWK-l0-PXf">
-                                <rect key="frame" x="153" y="358" width="90" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnClicked:" destination="qXi-1E-XE6" eventType="touchUpInside" id="CYE-f8-dfH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQq-Me-KYV">
-                                <rect key="frame" x="227" y="359" width="93" height="93"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnClicked:" destination="qXi-1E-XE6" eventType="touchUpInside" id="qiW-J7-gUD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msi-HF-U3F">
-                                <rect key="frame" x="-4" y="359" width="90" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnClicked:" destination="qXi-1E-XE6" eventType="touchUpInside" id="OiU-RD-2ho"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="hYL-kj-Zqj"/>
                     <connections>
-                        <outlet property="b0btn" destination="Z4X-ZU-Na8" id="Wzw-IX-u4R"/>
-                        <outlet property="b1btn" destination="v7G-hx-X7a" id="YGb-tC-qkG"/>
-                        <outlet property="b2btn" destination="8YN-Ku-Rx0" id="1GQ-a7-diF"/>
-                        <outlet property="b3btn" destination="GZw-U8-mtj" id="X1p-ha-wl4"/>
-                        <outlet property="b4btn" destination="msi-HF-U3F" id="ErC-Kc-PhU"/>
-                        <outlet property="b5btn" destination="Hdg-UE-1tD" id="k4t-Pa-BBv"/>
-                        <outlet property="b6btn" destination="oWK-l0-PXf" id="8Lf-9J-pk8"/>
-                        <outlet property="b7btn" destination="nQq-Me-KYV" id="pfa-k3-aNj"/>
                         <segue destination="vSe-Y9-s3x" kind="push" identifier="selseg" id="yv9-Yq-rLY"/>
                         <segue destination="PGO-AR-tWc" kind="modal" identifier="selsetting" modalTransitionStyle="coverVertical" id="VVj-qZ-vpE"/>
                         <segue destination="vXZ-lx-hvc" kind="push" identifier="gohome" id="SG2-cx-PxW"/>
@@ -366,9 +285,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dQ-u4-H1a">
-                                <rect key="frame" x="106" y="437" width="125" height="30"/>
+                                <rect key="frame" x="106" y="366" width="125" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play Again">
+                                <state key="normal" title="Play Again" backgroundImage="rockbg.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -404,14 +324,17 @@
             <point key="canvasLocation" x="1010" y="355"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rockbg.png" width="226" height="60"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rnV-qn-XOd"/>
+        <segue reference="vU8-X1-dwt"/>
         <segue reference="SG2-cx-PxW"/>
-        <segue reference="VVj-qZ-vpE"/>
+        <segue reference="rnV-qn-XOd"/>
     </inferredMetricsTieBreakers>
 </document>

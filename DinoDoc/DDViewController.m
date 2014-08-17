@@ -9,6 +9,7 @@
 #import "DDViewController.h"
 #import "DDPlayViewController.h"
 #import "DDSettingTblViewController.h"
+#import "DDBadgesViewController.h"
 #import "DDMainParam.h"
 #import "MBInfoVC.h"
 
@@ -63,6 +64,9 @@
     [infobtn addTarget:self action:@selector(infoPressed:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *infobarbtn=[[UIBarButtonItem alloc]initWithCustomView:infobtn];
     self.navigationItem.leftBarButtonItem=infobarbtn;
+    
+    NSString* playernmstr = @"Hi ";
+    self.playernm.text = [playernmstr stringByAppendingString:mainparam.playername];
 
 }
 
@@ -94,6 +98,13 @@
         
         // Pass on soundid to Play VC as we will stop it at exit of play VC
         settingTVC.bgplayer = self.player;
+    }
+    else if ([segue.identifier compare:@"selbadge"] == NSOrderedSame)
+    {
+        DDBadgesViewController *badgeVC = (DDBadgesViewController*)[segue destinationViewController];
+        
+        // Pass on soundid to Play VC as we will stop it at exit of play VC
+        badgeVC.bgplayer = self.player;
     }
 }
 - (void)infoPressed:(UIButton *)sender

@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface DDBadgesViewController : UIViewController
-
+@property (nonatomic,strong) AVAudioPlayer *bgplayer;
 @property (strong, nonatomic) NSArray* badges;
+
++ (NSString*) checkBadgeForQuiz:(NSString*)quiztype
+                      WithScore:(int)score;
 
 @end

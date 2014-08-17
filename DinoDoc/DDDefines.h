@@ -21,5 +21,7 @@
 #define MAINPARAM   @"MainParam"    // Name of main parameter file
 #define BADGES      @"badges"       // Name of badges plist file
 #define SETOPTCT    6               // Count of setting options for TableVC
+#define BADGEHEIGHT 110              // Height of Badge icon
+#define BADGEWIDTH  110              // Height of Badge icon
 
 #endif

@@ -11,6 +11,7 @@
 #import "DDMainParam.h"
 #import "DDDefines.h"
 #import "DDPlayViewController.h"
+#import "DDBadgesViewController.h"
 
 @interface DDResultViewController ()
 
@@ -33,9 +34,7 @@
     
     // get the mainparam singleton
     DDMainParam* mainparam = [DDMainParam sharedInstance];
-    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
-    
-//    self.navigationItem.title = mainparam.maintitle;
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.resultbgimg]];
     
     UIImage *image = [UIImage imageNamed: mainparam.navimg];
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics: UIBarMetricsDefault];
@@ -43,16 +42,14 @@
     
     // Change headings as per score
     NSUInteger benchmark = self.quizcount * BENCHMARKFACTOR;
+
+    self.titlelbl.text = @"Game Over!";
+    self.scorelbl.text = [NSString stringWithFormat:@" %lu of %lu",(unsigned long)self.score,(unsigned long)self.quizcount];
     
     if(self.score > benchmark)
     {
         NSString* playernm = @"Excellent score, ";
         self.namelbl.text = [playernm stringByAppendingString:mainparam.playername];
-        
-        if (self.score == self.quizcount)
-        {
-            // call gotfull score
-        }
     }
     else
     {
@@ -60,8 +57,9 @@
         self.namelbl.text = [playernm stringByAppendingString:mainparam.playername];
     }
     
-    self.titlelbl.text = @"Game Over!";
-    self.scorelbl.text = [NSString stringWithFormat:@" %lu of %lu",(unsigned long)self.score,(unsigned long)self.quizcount];
+    NSString* bdgimg = [DDBadgesViewController checkBadgeForQuiz:self.quiztype
+                                                       WithScore:self.score];
+
     
     [self.navigationItem setHidesBackButton:YES animated:NO];
 }

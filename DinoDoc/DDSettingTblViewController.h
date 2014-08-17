@@ -21,6 +21,7 @@
 @property BOOL restored;
 @property (nonatomic,strong) AVAudioPlayer *bgplayer;
 @property (nonatomic,strong) NSString* playername;
+@property (nonatomic,strong) NSString* btnbgimg;
 @property (atomic,strong) UIActivityIndicatorView *spinner;
 @property (assign) id<DDSettingTblViewControllerDelegate> delegate;
 

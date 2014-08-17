@@ -75,6 +75,7 @@
         NSDictionary* dict = [mainparam.options objectAtIndex:self.currprod];
         
         // Pass on required parameters from main file
+        //tile value in mainparam options must match with title value in badge -> Badges
         selVC.opttitle = [dict objectForKey:@"title"];
         
         // Stop the background sound now.

@@ -249,6 +249,7 @@
         DDResultViewController *resultVC = (DDResultViewController *)[segue destinationViewController];
         resultVC.score = self.userscore;
         resultVC.quizcount = self.QUIZCOUNT;
+        resultVC.quiztype = self.opttitle;
     }
 }
 

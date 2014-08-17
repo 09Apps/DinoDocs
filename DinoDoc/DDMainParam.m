@@ -55,6 +55,7 @@
             self.playbgimg = [mainparamdict objectForKey:@"playbgimg"];
             self.infobgimg = [mainparamdict objectForKey:@"infobgimg"];
             self.badgebgimg = [mainparamdict objectForKey:@"badgebgimg"];
+            self.resultbgimg = [mainparamdict objectForKey:@"resultbgimg"];
             self.navimg = [mainparamdict objectForKey:@"navimg"];
             self.btnbgimg = [mainparamdict objectForKey:@"btnbgimg"];
             self.showads = [[mainparamdict objectForKey:@"showads"] boolValue];
@@ -81,6 +82,7 @@
                                                         @"playbgimg",
                                                         @"infobgimg",
                                                         @"badgebgimg",
+                                                        @"resultbgimg",
                                                         @"navimg",
                                                         @"btnbgimg",
                                                         @"showads",
@@ -107,6 +109,7 @@
                                                 self.playbgimg,
                                                 self.infobgimg,
                                                 self.badgebgimg,
+                                                self.resultbgimg,
                                                 self.navimg,
                                                 self.btnbgimg,
                                                 nsshowads,

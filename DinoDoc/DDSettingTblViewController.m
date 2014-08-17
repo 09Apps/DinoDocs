@@ -35,7 +35,7 @@
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
-    
+    self.btnbgimg = mainparam.btnbgimg;
     self.soundon = mainparam.soundon;
     self.showansdetails = mainparam.showansdetails;
     self.playername = mainparam.playername;
@@ -128,7 +128,9 @@
     static NSString *CellIdentifier;
     UISwitch* ddswitch = [[UISwitch alloc] init];
     UIButton* ddbuttons = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    ddbuttons.frame = CGRectMake(0, 0, 260, 40);
+    ddbuttons.frame = CGRectMake(35, 0, 260, 40);
+    [ddbuttons setBackgroundImage:[UIImage imageNamed:self.btnbgimg] forState:UIControlStateNormal];
+    [ddbuttons setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     UITextField* txtfld = [[UITextField alloc] initWithFrame:CGRectMake(150, 0, 150, 40)];
 

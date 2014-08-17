@@ -40,7 +40,7 @@
     [homebtn addTarget:self action:@selector(goHome:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *homebarbtn=[[UIBarButtonItem alloc]initWithCustomView:homebtn];
     self.navigationItem.leftBarButtonItem=homebarbtn;
-    
+ 
     // The badges plist file
     NSString* plistPath = [DDUtils getPlistPath:BADGES];
     
@@ -61,38 +61,38 @@
         self.badges = [dict objectForKey:@"Badges"];
         
         NSUInteger bcount = [self.badges count];
-        
-        for (int i=0; i<bcount; i++)
+        CGFloat scrwidth = CGRectGetWidth(self.view.bounds);
+        CGFloat scrheight = CGRectGetHeight(self.view.bounds);
+        NSUInteger widthindex = 0;
+
+        for (int i=0; i<bcount;i++)
         {
             NSDictionary* bgdict = [self.badges objectAtIndex:i];
-            
-            //create labels for badges
-            UILabel *badgelbl = [[UILabel alloc] initWithFrame:CGRectMake(25,(160+(90*i)), 50, 50)];
             
             BOOL isenabled = [[bgdict objectForKey:@"enabled"] boolValue];
             
             if (isenabled)
             {
+                NSUInteger heightindex = (widthindex/3)+1; // To get height
+                NSUInteger nwidthindex = widthindex - ((heightindex-1)*3);
+                NSUInteger nheightindex = (scrheight*0.23)+((heightindex-1)*(BADGEHEIGHT*0.8));
+                
+                //create labels for badges
+                UILabel *badgelbl = [[UILabel alloc] initWithFrame:CGRectMake((scrwidth*0.32*nwidthindex),nheightindex,BADGEWIDTH,BADGEHEIGHT)];
                 NSString* img = [bgdict objectForKey:@"enabledimg"];
                 badgelbl.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:img]];
+                widthindex++;
+                [self.view addSubview:badgelbl];
             }
-            else
-            {
-                NSString* img = [bgdict objectForKey:@"disabledimg"];
-                badgelbl.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:img]];
-            }
-
-            [badgelbl setText:[bgdict objectForKey:@"title"]];
-            
-            [self.view addSubview:badgelbl];
         }
     }
 }
 
-+ (NSDictionary*) gotFullScore
++ (NSString*) checkBadgeForQuiz:(NSString*)quiztype
+                      WithScore:(int)score
 {
-    NSDictionary* bgdict;
-    return bgdict;
+    NSString* str;
+    return str;
 }
 
 - (void)didReceiveMemoryWarning
