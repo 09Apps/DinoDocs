@@ -11,9 +11,14 @@
 
 @interface DDBadgesViewController : UIViewController
 @property (nonatomic,strong) AVAudioPlayer *bgplayer;
-@property (strong, nonatomic) NSArray* badges;
 
-+ (NSString*) checkBadgeForQuiz:(NSString*)quiztype
-                      WithScore:(int)score;
+@property (strong, nonatomic) NSArray* badges;
+@property BOOL newverupd;
+@property NSUInteger quizcounter;
+
+-(NSString*) checkBadgeForQuiz:(NSString*)quiztype
+                    WithScore:(NSUInteger)score
+                        Outof:(NSUInteger)outofcount
+                        InTime:(NSUInteger)totaltime;
 
 @end

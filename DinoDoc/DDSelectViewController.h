@@ -29,6 +29,7 @@ extern
 @property NSUInteger timesec;
 @property NSUInteger pausedtimesec;
 @property NSUInteger userscore;
+@property NSUInteger totaltime;
 @property (nonatomic, strong) NSTimer *timer;
 @property (weak, nonatomic) IBOutlet UILabel *qcount;
 @property (weak, nonatomic) IBOutlet UILabel *scorelbl;

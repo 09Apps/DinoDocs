@@ -39,12 +39,11 @@
     UIImage *image = [UIImage imageNamed: mainparam.navimg];
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics: UIBarMetricsDefault];
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    
+
+    self.scorelbl.text = [NSString stringWithFormat:@" %lu of %lu",(unsigned long)self.score,(unsigned long)self.quizcount];
+
     // Change headings as per score
     NSUInteger benchmark = self.quizcount * BENCHMARKFACTOR;
-
-    self.titlelbl.text = @"Game Over!";
-    self.scorelbl.text = [NSString stringWithFormat:@" %lu of %lu",(unsigned long)self.score,(unsigned long)self.quizcount];
     
     if(self.score > benchmark)
     {
@@ -57,10 +56,22 @@
         self.namelbl.text = [playernm stringByAppendingString:mainparam.playername];
     }
     
-    NSString* bdgimg = [DDBadgesViewController checkBadgeForQuiz:self.quiztype
-                                                       WithScore:self.score];
-
+    DDBadgesViewController* bdgVC = [[DDBadgesViewController alloc] init];
+    NSString* bdgimg = [ bdgVC checkBadgeForQuiz:self.quiztype
+                                        WithScore:self.score
+                                        Outof:self.quizcount
+                                        InTime:self.totaltime];
     
+    if (bdgimg != nil)
+    {
+        self.bdglbl.text = @"You earned a badge!";
+        [self.bdgimglbl setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:bdgimg]]];
+    }
+    else
+    {
+        self.bdglbl.text = @"Keep playing to earn a badge!";
+    }
+
     [self.navigationItem setHidesBackButton:YES animated:NO];
 }
 

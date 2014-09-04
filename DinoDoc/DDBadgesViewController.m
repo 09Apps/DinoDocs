@@ -54,10 +54,12 @@
     
     if (! dict)
     {
-        NSLog(@"readMainParam: error reading Badge plist, desc: %@", errorDesc);
+        NSLog(@"Error reading Badge plist, desc: %@", errorDesc);
     }
     else
     {
+        self.newverupd = [[dict objectForKey:@"newverupdate"] boolValue];
+        self.quizcounter = [[dict objectForKey:@"quizcounter"] integerValue];
         self.badges = [dict objectForKey:@"Badges"];
         
         NSUInteger bcount = [self.badges count];
@@ -68,7 +70,6 @@
         for (int i=0; i<bcount;i++)
         {
             NSDictionary* bgdict = [self.badges objectAtIndex:i];
-            
             BOOL isenabled = [[bgdict objectForKey:@"enabled"] boolValue];
             
             if (isenabled)
@@ -88,12 +89,153 @@
     }
 }
 
-+ (NSString*) checkBadgeForQuiz:(NSString*)quiztype
-                      WithScore:(int)score
-{
-    NSString* str;
-    return str;
+-(NSString*) checkBadgeForQuiz:(NSString*)quiztype
+                     WithScore:(NSUInteger)score
+                         Outof:(NSUInteger)outofcount
+                        InTime:(NSUInteger)totaltime
+{    
+    // The badges plist file
+    NSString* plistPath = [DDUtils getPlistPath:BADGES];
+    
+    // read property list into memory as an NSData object
+    NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
+    NSString *errorDesc = nil;
+    NSPropertyListFormat format;
+    
+    // convert static property list into dictionary object
+    NSMutableDictionary* dict = (NSMutableDictionary *)[NSPropertyListSerialization propertyListFromData:plistXML mutabilityOption:NSPropertyListMutableContainersAndLeaves format:&format errorDescription:&errorDesc];
+    
+    if (! dict)
+    {
+        NSLog(@"readMainParam: error reading Badge plist, desc: %@", errorDesc);
+    }
+    else
+    {
+        self.newverupd = [[dict objectForKey:@"newverupdate"] boolValue];
+        self.quizcounter = [[dict objectForKey:@"quizcounter"] integerValue];
+        self.badges = [dict objectForKey:@"Badges"];
+        
+        NSUInteger bcount = [self.badges count];
+        NSUInteger earnedbadges = 0;
+
+        for (int i=0; i<bcount;i++)
+        {
+            NSMutableDictionary* bgdict = [self.badges objectAtIndex:i];
+                
+            BOOL isenabled = [[bgdict objectForKey:@"enabled"] boolValue];
+            NSString* nsenabled = [DDUtils stringFromBool:YES];
+            NSString* titlestr = [bgdict objectForKey:@"title"];
+                
+            if (isenabled == NO)
+            {
+                // Check if beginner
+                if (self.quizcounter == 0)
+                {
+                    if ([titlestr compare:@"First_Quiz"] == NSOrderedSame)
+                    {
+                        [bgdict setObject:nsenabled forKey:@"enabled"];
+                        self.quizcounter++;
+                        [self updateBadgeParam];
+                        return [bgdict objectForKey:@"enabledimg"];
+                    }
+                }
+
+                if (score > outofcount*BADGEFACTOR)
+                {
+                    //Check if fast
+                    if (totaltime <= SPEEDMASTERFACTOR*outofcount )
+                    {
+                        if ([titlestr compare:@"Speed"] == NSOrderedSame)
+                        {
+                            [bgdict setObject:nsenabled forKey:@"enabled"];
+                            self.quizcounter++;
+                            [self updateBadgeParam];
+                            return [bgdict objectForKey:@"enabledimg"];
+                        }
+                    }
+                    
+                    //Check if any other badge
+                    if ([titlestr compare:quiztype] == NSOrderedSame)
+                    {
+                        [bgdict setObject:nsenabled forKey:@"enabled"];
+                        self.quizcounter++;
+                        [self updateBadgeParam];
+                        return [bgdict objectForKey:@"enabledimg"];
+                    }
+                    
+                }
+                
+                //Check if quiz master
+                if (self.quizcounter > QUIZMASTERFACTOR )
+                {
+                    if ([titlestr compare:@"QuizMaster"] == NSOrderedSame)
+                    {
+                        [bgdict setObject:nsenabled forKey:@"enabled"];
+                        self.quizcounter++;
+                        [self updateBadgeParam];
+                        return [bgdict objectForKey:@"enabledimg"];
+                    }
+                }
+                
+                // Check if Quiz doctor
+                if (bcount == QUIZDOCFACTOR)
+                {
+                    if ([titlestr compare:@"QuizDoc"] == NSOrderedSame)
+                    {
+                        [bgdict setObject:nsenabled forKey:@"enabled"];
+                        self.quizcounter++;
+                        [self updateBadgeParam];
+                        return [bgdict objectForKey:@"enabledimg"];
+                    }
+                }
+                
+            }
+            else
+            {
+                earnedbadges++;
+            }
+        }
+    }
+    
+    self.quizcounter++;
+    [self updateBadgeParam];
+    return nil;
 }
+
+-(void) updateBadgeParam
+{
+    NSArray* keyarr = [[NSArray alloc] initWithObjects: @"newverupdate",
+                       @"quizcounter",
+                       @"Badges", nil];
+    
+    NSString* nsnewver = [DDUtils stringFromBool:self.newverupd];
+    NSString* nsquizcounter = [NSString stringWithFormat:@"%lu",(unsigned long)self.quizcounter];
+    
+    NSArray* valarr = [NSArray arrayWithObjects: nsnewver,
+                       nsquizcounter,
+                       self.badges, nil];
+    
+    NSDictionary* bdgparam = [[NSDictionary alloc] initWithObjects:valarr forKeys:keyarr];
+    
+    NSString* plistPath = [DDUtils getPlistPath:BADGES];
+    
+    NSString *error = nil;
+    
+    // create NSData from dictionary
+    NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:bdgparam format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
+    
+    // check is plistData exists
+    if(plistData)
+    {
+        // write plistData to our Data.plist file
+        [plistData writeToFile:plistPath atomically:YES];
+    }
+    else
+    {
+        NSLog(@"Error in saveData: %@", error);
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {

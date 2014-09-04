@@ -87,6 +87,7 @@
     
     self.userscore = 0;
     self.currentqnum = 0;
+    self.totaltime = 0;
     
     // get an array of unique random numbers to be used to pulls questions at random
     self.qindexes = [DDUtils randomIntegerArrayFrom:0 To:([self.questions count]-1) Count:self.QUIZCOUNT];
@@ -141,6 +142,7 @@
 
 - (void)answerClicked:(UIButton*) sender
 {
+    self.totaltime = self.totaltime + self.ANSTIME - self.timesec;
     [self.timer invalidate];
     self.timer = nil;
     AudioServicesRemoveSystemSoundCompletion(self.qzbgsnd);
@@ -250,6 +252,7 @@
         resultVC.score = self.userscore;
         resultVC.quizcount = self.QUIZCOUNT;
         resultVC.quiztype = self.opttitle;
+        resultVC.totaltime = self.timesec;
     }
 }
 

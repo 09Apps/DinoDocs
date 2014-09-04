@@ -17,11 +17,15 @@
 #define IAPSETTING  50              // alert tag for In-App purchases settings
 #define IAPTRANS    150             // alert tag for In-App purchases transaction error
 #define OPTCT       4               // Number of Answer options
-#define BENCHMARKFACTOR 0.6         // The multiplier for score benchmarking
+#define BENCHMARKFACTOR 0.7         // The multiplier for score benchmarking
+#define BADGEFACTOR 0.85            // The multiplier for score benchmarking
+#define SPEEDMASTERFACTOR 2.5       // Quickest time to answer a question
+#define QUIZMASTERFACTOR 25         // Quickest time to answer a question
+#define QUIZDOCFACTOR 10            // Number of max badges - 1
 #define MAINPARAM   @"MainParam"    // Name of main parameter file
 #define BADGES      @"badges"       // Name of badges plist file
 #define SETOPTCT    6               // Count of setting options for TableVC
-#define BADGEHEIGHT 110              // Height of Badge icon
-#define BADGEWIDTH  110              // Height of Badge icon
+#define BADGEHEIGHT 110             // Height of Badge icon
+#define BADGEWIDTH  110             // Height of Badge icon
 
 #endif
