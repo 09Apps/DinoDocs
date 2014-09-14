@@ -10,6 +10,7 @@
 #import "DDSelectViewController.h"
 #import "DDMainParam.h"
 #import "DDDefines.h"
+#import "DDUtils.h"
 #import "DDPlayViewController.h"
 #import "DDBadgesViewController.h"
 
@@ -65,11 +66,12 @@
     if (bdgimg != nil)
     {
         self.bdglbl.text = @"You earned a badge!";
-        [self.bdgimglbl setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:bdgimg]]];
+        UIImage *mybdg = [DDUtils imageWithImage:[UIImage imageNamed:bdgimg] scaledToSize:CGSizeMake(150, 150)];
+        [self.bdgimglbl setBackgroundColor:[UIColor colorWithPatternImage:mybdg]];
     }
     else
     {
-        self.bdglbl.text = @"Keep playing to earn a badge!";
+        self.bdglbl.text = @"Keep playing to earn badges!";
     }
 
     [self.navigationItem setHidesBackButton:YES animated:NO];

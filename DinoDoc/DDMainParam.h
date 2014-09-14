@@ -23,7 +23,7 @@
 @property (nonatomic,retain) NSString* quizbgsound;
 @property (nonatomic,retain) NSString* rightsound;
 @property (nonatomic,retain) NSString* wrongsound;
-@property (nonatomic,strong) NSArray* options;
+@property (nonatomic,strong) NSMutableArray* options;
 @property NSUInteger anstime;
 @property BOOL showads;
 @property BOOL soundon;

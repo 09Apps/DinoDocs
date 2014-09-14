@@ -23,8 +23,8 @@ RequestProductsCompletionHandler _completionHandler;
 NSSet * _productIdentifiers;
 NSMutableSet * _purchasedProductIdentifiers;
 
-- (id)initWithProductIdentifiers:(NSSet *)prodIdentifiers {
-    
+- (id)initWithProductIdentifiers:(NSSet *)prodIdentifiers
+{    
     if ((self = [super init]))
     {
         // Store product identifiers
@@ -106,7 +106,8 @@ NSMutableSet * _purchasedProductIdentifiers;
     
 }
 
-- (BOOL)productPurchased:(NSString *)productIdentifier {
+- (BOOL)productPurchased:(NSString *)productIdentifier
+{
     return [_purchasedProductIdentifiers containsObject:productIdentifier];
 }
 

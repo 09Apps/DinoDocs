@@ -78,12 +78,15 @@
                 NSUInteger nwidthindex = widthindex - ((heightindex-1)*3);
                 NSUInteger nheightindex = (scrheight*0.23)+((heightindex-1)*(BADGEHEIGHT*0.8));
                 
-                //create labels for badges
-                UILabel *badgelbl = [[UILabel alloc] initWithFrame:CGRectMake((scrwidth*0.32*nwidthindex),nheightindex,BADGEWIDTH,BADGEHEIGHT)];
+                //create buttons for badges
+                UIButton *bdgbtn = [[UIButton alloc] initWithFrame:CGRectMake((scrwidth*0.32*nwidthindex),nheightindex,BADGEWIDTH,BADGEHEIGHT)];
                 NSString* img = [bgdict objectForKey:@"enabledimg"];
-                badgelbl.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:img]];
+                UIImage *mybdg = [DDUtils imageWithImage:[UIImage imageNamed:img] scaledToSize:CGSizeMake(110, 110)];
+                [bdgbtn setImage:mybdg forState:UIControlStateNormal];
+                [bdgbtn setTag:i];
+                [bdgbtn addTarget:self action:@selector(badgeButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 widthindex++;
-                [self.view addSubview:badgelbl];
+                [self.view addSubview:bdgbtn];
             }
         }
     }
@@ -248,5 +251,34 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)badgeButtonPressed:(UIButton*)navbarbutton
+{
+    
+    NSDictionary* bgdict = [self.badges objectAtIndex:navbarbutton.tag];
+    NSString* descstr = [bgdict objectForKey:@"description"];
+    NSString* detstr = [bgdict objectForKey:@"details"];
+    NSString* imgstr = [bgdict objectForKey:@"enabledimg"];
+    
+    UIImage *mybdg = [DDUtils imageWithImage:[UIImage imageNamed:imgstr] scaledToSize:CGSizeMake(155, 155)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(40, 40, 195, 195)];
+    [imageView setImage:mybdg];
+ /*
+    CGFloat scrwidth = CGRectGetWidth(self.view.bounds);
+    CGFloat scrheight = CGRectGetHeight(self.view.bounds);
+    UIView* showView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, scrwidth*0.6 , scrheight* 0.6)];
+*/
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:descstr message:detstr delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+
+    
+    
+    //check if os version is 7 or above
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+        [alert setValue:imageView forKey:@"accessoryView"];
+    }else{
+        [alert addSubview:imageView];
+    }
+    [alert show];
+}
 
 @end

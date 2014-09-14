@@ -46,6 +46,7 @@
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     self.currprod = senderbtn.tag;
     NSDictionary* dict = [mainparam.options objectAtIndex:senderbtn.tag];
+    
     NSString* prodid = [dict objectForKey:@"productid"];
     
     if ([[DDIAPUse sharedInstance] productPurchased:prodid])
@@ -245,7 +246,7 @@
             *stop = YES;
             
             DDMainParam* mainparam = [DDMainParam sharedInstance];
-            NSDictionary* dict = [mainparam.options objectAtIndex:self.currprod];
+            NSMutableDictionary* dict = [mainparam.options objectAtIndex:self.currprod];
             [dict setValue:[DDUtils stringFromBool:YES] forKey:@"purchased"];
             [mainparam updateMainParam];
 

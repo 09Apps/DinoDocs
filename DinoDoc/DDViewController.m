@@ -65,7 +65,7 @@
     UIBarButtonItem *infobarbtn=[[UIBarButtonItem alloc]initWithCustomView:infobtn];
     self.navigationItem.leftBarButtonItem=infobarbtn;
     
-    NSString* playernmstr = @"Hi ";
+    NSString* playernmstr = @"Hey ";
     self.playernm.text = [playernmstr stringByAppendingString:mainparam.playername];
 
 }
