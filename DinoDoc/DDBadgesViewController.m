@@ -268,10 +268,8 @@
     UIView* showView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, scrwidth*0.6 , scrheight* 0.6)];
 */
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:descstr message:detstr delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:descstr message:detstr delegate:self cancelButtonTitle:@"Cool" otherButtonTitles: nil];
 
-    
-    
     //check if os version is 7 or above
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
         [alert setValue:imageView forKey:@"accessoryView"];
