@@ -48,8 +48,8 @@
     NSDictionary* dict = [mainparam.options objectAtIndex:senderbtn.tag];
     
     NSString* prodid = [dict objectForKey:@"productid"];
-    
-    if ([[DDIAPUse sharedInstance] productPurchased:prodid])
+
+    if ([[dict objectForKey:@"purchased"] boolValue] || [[DDIAPUse sharedInstance] productPurchased:prodid] )
     {
         if ([self.spinner isAnimating])
         {
@@ -60,8 +60,19 @@
     }
     else
     {
-        SKProduct *product = _products[senderbtn.tag];
-        [[DDIAPUse sharedInstance] buyProduct:product];
+        if (_products == nil)
+        {
+            [self.spinner stopAnimating];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oh shucks!" message:@"Seems like a slow connection, please try again in 2-3 seconds" delegate:self cancelButtonTitle:@"Yawn..." otherButtonTitles: nil];
+            
+            [alert show];
+        }
+        else
+        {
+            SKProduct *product = _products[senderbtn.tag];
+            [[DDIAPUse sharedInstance] buyProduct:product];
+        }
+        
     }
 }
 
