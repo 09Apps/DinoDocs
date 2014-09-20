@@ -79,6 +79,7 @@
         if ([plistprodid compare:productIdentifier] == NSOrderedSame)
         {
             [dict setValue:[DDUtils stringFromBool:YES] forKey:@"purchased"];
+            [mainparam setParamchanged:TRUE];
             break;
         }
     }
