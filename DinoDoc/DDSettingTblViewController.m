@@ -273,7 +273,7 @@
 {
     // Initiate activity indicator
     self.spinner = [[UIActivityIndicatorView alloc]
-                    initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+                    initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.spinner.hidesWhenStopped = YES;
     self.spinner.center = self.view.center;
     [self.view addSubview:self.spinner];
