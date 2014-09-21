@@ -58,10 +58,12 @@
 
 - (void)purchaseFailed:(NSNotification *)notification
 {
-    if ([self.spinner isAnimating])
+/*    if ([self.spinner isAnimating])
     {
         [self.spinner stopAnimating];
-    }
+    } */
+    
+    [self.HUD hide:YES];
 }
 
 - (void)productPurchased:(NSNotification *)notification
@@ -84,10 +86,12 @@
         }
     }
          
-    if ([self.spinner isAnimating])
+/*    if ([self.spinner isAnimating])
     {
         [self.spinner stopAnimating];
-    }
+    } */
+    
+    [self.HUD hide:YES];
     self.restored = YES;
 }
 
@@ -272,12 +276,22 @@
 - (IBAction)restorePurchases:(UIButton *)sender
 {
     // Initiate activity indicator
-    self.spinner = [[UIActivityIndicatorView alloc]
+/*    self.spinner = [[UIActivityIndicatorView alloc]
                     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.spinner.hidesWhenStopped = YES;
     self.spinner.center = self.view.center;
     [self.view addSubview:self.spinner];
-    [self.spinner startAnimating];
+    [self.spinner startAnimating];  */
+    
+    self.HUD = [[MBProgressHUD alloc] initWithView:self.view];
+	[self.view addSubview:self.HUD];
+	
+	self.HUD.delegate = self;
+	self.HUD.labelText = @"Restoring ... ";
+	self.HUD.square = YES;
+	
+	//[self.HUD showWhileExecuting:@selector(callIAPRestore) onTarget:self withObject:nil animated:YES];
+    [self.HUD show:YES];
     
     [[DDIAPUse sharedInstance] restoreCompletedTransactions];
 }

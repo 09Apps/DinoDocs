@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "MBProgressHUD.h"
 
 @protocol DDSettingTblViewControllerDelegate
 - (void)modalDialogClosed:(UIViewController *)viewController;
 //- (void)modalDialogClosed;
 @end
 
-@interface DDSettingTblViewController : UITableViewController <UITextFieldDelegate>
+@interface DDSettingTblViewController : UITableViewController <UITextFieldDelegate, MBProgressHUDDelegate>
 
 @property BOOL soundon;
 @property BOOL showansdetails;
@@ -22,7 +23,8 @@
 @property (nonatomic,strong) AVAudioPlayer *bgplayer;
 @property (nonatomic,strong) NSString* playername;
 @property (nonatomic,strong) NSString* btnbgimg;
-@property (atomic,strong) UIActivityIndicatorView *spinner;
+//@property (atomic,strong) UIActivityIndicatorView *spinner;
 @property (assign) id<DDSettingTblViewControllerDelegate> delegate;
+@property (nonatomic,strong) MBProgressHUD *HUD;
 
 @end
