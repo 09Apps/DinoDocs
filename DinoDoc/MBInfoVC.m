@@ -8,6 +8,7 @@
 
 #import "MBInfoVC.h"
 #import "DDMainParam.h"
+#import "DDDefines.h"
 
 @interface MBInfoVC ()
 
@@ -34,7 +35,7 @@
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.infobgimg]];
 
     UIButton *homebtn=[[UIButton alloc]initWithFrame:CGRectMake(10,25,42, 46)];
-    [homebtn setImage:[UIImage imageNamed:@"home.png"] forState:UIControlStateNormal];
+    [homebtn setImage:[UIImage imageNamed:HOMEICON] forState:UIControlStateNormal];
     [homebtn addTarget:self action:@selector(goHome:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *homebarbtn=[[UIBarButtonItem alloc]initWithCustomView:homebtn];
     self.navigationItem.leftBarButtonItem=homebarbtn;
@@ -49,7 +50,7 @@
 }
 - (IBAction)FBClicked:(UIButton *)sender
 {
-    NSURL *facebookURL = [NSURL URLWithString:@"fb://profile/618157821568008"];
+    NSURL *facebookURL = [NSURL URLWithString:FBURL];
     if ([[UIApplication sharedApplication] canOpenURL:facebookURL]) {
         [[UIApplication sharedApplication] openURL:facebookURL];
     } else {
@@ -59,18 +60,20 @@
 
 - (IBAction)WWWpressed:(UIButton *)sender
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.09apps.com/"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:WEBURL]];
 }
 - (IBAction)AppStoreClicked:(UIButton *)sender
 {    
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
     {
-        NSString *templateReviewURLiOS7 = @"itms-apps://itunes.apple.com/app/id699394136";
+        NSString *templateReviewURLiOS7 = @"itms-apps://itunes.apple.com/app/id";
+        [templateReviewURLiOS7 stringByAppendingString:APPID];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:templateReviewURLiOS7]];
     }
     else
     {
-        NSString *templateReviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=699394136";
+        NSString *templateReviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=";
+        [templateReviewURL stringByAppendingString:APPID];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:templateReviewURL]];
     }
 }
@@ -81,9 +84,9 @@
     
     mailComposer.mailComposeDelegate = self;
     
-    [mailComposer setToRecipients:[NSArray arrayWithObjects: @"contact@09apps.com",nil]];
+    [mailComposer setToRecipients:[NSArray arrayWithObjects: CONTACTEMAIL,nil]];
     
-    [mailComposer setSubject:[NSString stringWithFormat: @"DinoDOC iOS"]];
+    [mailComposer setSubject:[NSString stringWithFormat: EMAILSUB]];
     
     [self presentViewController:mailComposer animated:YES completion:nil];
 

@@ -12,6 +12,7 @@
 #import "DDBadgesViewController.h"
 #import "DDMainParam.h"
 #import "MBInfoVC.h"
+#import "DDDefines.h"
 
 @interface DDViewController ()
 
@@ -54,13 +55,13 @@
     // IF 'YES' UPDATE NEW PLIST WITH CONTENTS OF OLD PLIST
 
     UIButton *stngbtn=[[UIButton alloc]initWithFrame:CGRectMake(10,25,48, 46)];
-    [stngbtn setImage:[UIImage imageNamed:@"settings.png"] forState:UIControlStateNormal];
+    [stngbtn setImage:[UIImage imageNamed:SETGICON] forState:UIControlStateNormal];
     [stngbtn addTarget:self action:@selector(handleSettings:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *stbarbtn=[[UIBarButtonItem alloc]initWithCustomView:stngbtn];
     self.navigationItem.rightBarButtonItem=stbarbtn;
     
     UIButton *infobtn=[[UIButton alloc]initWithFrame:CGRectMake(10,25,42, 46)];
-    [infobtn setImage:[UIImage imageNamed:@"info.png"] forState:UIControlStateNormal];
+    [infobtn setImage:[UIImage imageNamed:INFOICON] forState:UIControlStateNormal];
     [infobtn addTarget:self action:@selector(infoPressed:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *infobarbtn=[[UIBarButtonItem alloc]initWithCustomView:infobtn];
     self.navigationItem.leftBarButtonItem=infobarbtn;
@@ -71,9 +72,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated
-{
-    DDMainParam* mainparam = [DDMainParam sharedInstance];
-    
+{    
+    DDMainParam* mainparam = [DDMainParam sharedInstance];    
     self.soundon = mainparam.soundon;
 }
 

@@ -46,10 +46,27 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:self.HUD];
+    
+    self.HUD.delegate = self;
+    self.HUD.labelText = @"Hang on ... ";
+    self.HUD.square = YES;
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    
+    if (mainparam.showads)
+    {
+        [super viewWillAppear:animated];
+        self.shared = [MBGADMasterVC singleton];
+        [self.shared resetAdView:self];
+    }
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(purchaseFailed:) name:IAPHelperFailedPurchasedNotification object:nil];
@@ -69,23 +86,31 @@
 - (void)productPurchased:(NSNotification *)notification
 {
     NSString * productIdentifier = notification.object;
-
     DDMainParam* mainparam = [DDMainParam sharedInstance];
-    NSUInteger optionscount = [mainparam.options count];
-             
-    for (int i=0; i<optionscount; i++)
+    
+    if ([productIdentifier compare:REMOVEADPRODID] == NSOrderedSame)
     {
-        NSDictionary* dict = [mainparam.options objectAtIndex:i];
-        NSString* plistprodid = [dict objectForKey:@"productid"];
+        mainparam.showads = NO;
+        [mainparam setParamchanged:YES];
+    }
+    else
+    {
+        NSUInteger optionscount = [mainparam.options count];
         
-        if ([plistprodid compare:productIdentifier] == NSOrderedSame)
+        for (int i=0; i<optionscount; i++)
         {
-            [dict setValue:[DDUtils stringFromBool:YES] forKey:@"purchased"];
-            [mainparam setParamchanged:TRUE];
-            break;
+            NSDictionary* dict = [mainparam.options objectAtIndex:i];
+            NSString* plistprodid = [dict objectForKey:@"productid"];
+            
+            if ([plistprodid compare:productIdentifier] == NSOrderedSame)
+            {
+                [dict setValue:[DDUtils stringFromBool:YES] forKey:@"purchased"];
+                [mainparam setParamchanged:YES];
+                break;
+            }
         }
     }
-         
+    
 /*    if ([self.spinner isAnimating])
     {
         [self.spinner stopAnimating];
@@ -211,12 +236,13 @@
             break;
 
         case 4:
-            [ddbuttons setTitle:@"   Remove Ads" forState:UIControlStateNormal];
+        {
+            [ddbuttons setTitle:@"   Remove Ads ($0.99)" forState:UIControlStateNormal];
             [ddbuttons addTarget:self action:@selector(removeAds) forControlEvents:UIControlEventTouchUpInside];
             ddbuttons.tag = indexPath.row;
             [cell addSubview:ddbuttons];
             break;
-
+        }
         case 5:
             [ddbuttons setTitle:@"   Restore Purchases" forState:UIControlStateNormal];
             [ddbuttons addTarget:self action:@selector(restorePurchases:) forControlEvents:UIControlEventTouchUpInside];
@@ -283,14 +309,7 @@
     [self.view addSubview:self.spinner];
     [self.spinner startAnimating];  */
     
-    self.HUD = [[MBProgressHUD alloc] initWithView:self.view];
-	[self.view addSubview:self.HUD];
-	
-	self.HUD.delegate = self;
-	self.HUD.labelText = @"Restoring ... ";
-	self.HUD.square = YES;
-	
-	//[self.HUD showWhileExecuting:@selector(callIAPRestore) onTarget:self withObject:nil animated:YES];
+//    [self.HUD hide:YES afterDelay:30];
     [self.HUD show:YES];
     
     [[DDIAPUse sharedInstance] restoreCompletedTransactions];
@@ -298,7 +317,54 @@
 
 - (void)removeAds
 {
-    NSLog(@"Remove Ads");
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    if (mainparam.showads)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Remove Ads" message:@"One time fees of $0.99 would be charged for removing all ads from the app" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: @"Continue", nil];
+        
+        [alert setTag:REMOVEAD];
+        [alert show];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ads removed" message:@"Ads already removed from the app." delegate:self cancelButtonTitle:@"cool" otherButtonTitles: nil];
+        
+        [alert setTag:NOADS];
+        [alert show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (alertView.tag)
+    {
+        case REMOVEAD:
+            if (buttonIndex == 1)
+            {
+                //[self.HUD hide:YES afterDelay:30];
+                [self.HUD show:YES];
+                // User presses Continue for remove ads
+                [[DDIAPUse sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *prod)
+                 {
+                     if (success)
+                     {
+                         for (SKProduct *product in prod)
+                         {
+                             NSLog(@"product.productIdentifier %@",product.productIdentifier);
+                             if ([product.productIdentifier isEqualToString:REMOVEADPRODID])
+                             {
+                                 [[DDIAPUse sharedInstance] buyProduct:product];
+                                 break;
+                             }
+                         }
+                     }
+                 }];
+            }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

@@ -9,6 +9,7 @@
 #import "DDAppDelegate.h"
 #import "DDIAPUse.h"
 #import "DDMainParam.h"
+#import "iRate.h"
 
 @implementation DDAppDelegate
 
@@ -48,6 +49,18 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
++ (void)initialize
+{
+    //configure iRate
+    [iRate sharedInstance].appStoreID = 881531237;
+    
+    [iRate sharedInstance].daysUntilPrompt = 5;
+    [iRate sharedInstance].usesUntilPrompt = 5;
+    
+    //enable preview mode
+    //    [iRate sharedInstance].previewMode = YES;
 }
 
 @end

@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "MBProgressHUD.h"
+#import "MBGADMasterVC.h"
 
 @protocol DDSettingTblViewControllerDelegate
 - (void)modalDialogClosed:(UIViewController *)viewController;
 //- (void)modalDialogClosed;
 @end
 
-@interface DDSettingTblViewController : UITableViewController <UITextFieldDelegate, MBProgressHUDDelegate>
+@interface DDSettingTblViewController : UITableViewController <UITextFieldDelegate, MBProgressHUDDelegate, GADBannerViewDelegate>
 
 @property BOOL soundon;
 @property BOOL showansdetails;
@@ -26,5 +27,6 @@
 //@property (atomic,strong) UIActivityIndicatorView *spinner;
 @property (assign) id<DDSettingTblViewControllerDelegate> delegate;
 @property (nonatomic,strong) MBProgressHUD *HUD;
+@property (weak, nonatomic) MBGADMasterVC* shared;
 
 @end

@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "MBGADMasterVC.h"
 
-@interface DDBadgesViewController : UIViewController
+@interface DDBadgesViewController : UIViewController <GADBannerViewDelegate>
 @property (nonatomic,strong) AVAudioPlayer *bgplayer;
 
 @property (strong, nonatomic) NSArray* badges;
 @property BOOL newverupd;
 @property NSUInteger quizcounter;
+@property (weak, nonatomic) MBGADMasterVC* shared;
 
 -(NSString*) checkBadgeForQuiz:(NSString*)quiztype
                     WithScore:(NSUInteger)score

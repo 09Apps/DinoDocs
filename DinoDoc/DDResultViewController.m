@@ -73,8 +73,29 @@
     {
         self.bdglbl.text = @"Keep playing to earn badges!";
     }
+    
+    if (self.soundon)
+    {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"claps" ofType:@"wav"];
+        NSURL *pathURL = [NSURL fileURLWithPath:path];
+        
+        self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:pathURL error:nil];
+        [self.player play];
+    }
 
     [self.navigationItem setHidesBackButton:YES animated:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    
+    if (mainparam.showads)
+    {
+        [super viewWillAppear:animated];
+        self.shared = [MBGADMasterVC singleton];
+        [self.shared resetAdView:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,6 +106,7 @@
 
 - (IBAction)playAgain:(UIButton *)senderbutton
 {
+    [self.player stop];
     [self performSegueWithIdentifier:@"goplay" sender:senderbutton];
     
 /*    [self dismissViewControllerAnimated:YES completion:^{}];

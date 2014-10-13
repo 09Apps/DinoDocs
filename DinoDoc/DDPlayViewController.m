@@ -12,6 +12,7 @@
 #import "DDSettingTblViewController.h"
 #import "DDIAPUse.h"
 #import "DDUtils.h"
+#import "DDDefines.h"
 
 @interface DDPlayViewController ()
 {
@@ -108,13 +109,13 @@
     [super viewDidLoad];
     
     UIButton *stngbtn=[[UIButton alloc]initWithFrame:CGRectMake(10,25,48, 46)];
-    [stngbtn setImage:[UIImage imageNamed:@"settings.png"] forState:UIControlStateNormal];
+    [stngbtn setImage:[UIImage imageNamed:SETGICON] forState:UIControlStateNormal];
     [stngbtn addTarget:self action:@selector(handleSettings:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *stbarbtn=[[UIBarButtonItem alloc]initWithCustomView:stngbtn];
     self.navigationItem.rightBarButtonItem=stbarbtn;
     
     UIButton *homebtn=[[UIButton alloc]initWithFrame:CGRectMake(10,25,42, 46)];
-    [homebtn setImage:[UIImage imageNamed:@"home.png"] forState:UIControlStateNormal];
+    [homebtn setImage:[UIImage imageNamed:HOMEICON] forState:UIControlStateNormal];
     [homebtn addTarget:self action:@selector(goHome:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *homebarbtn=[[UIBarButtonItem alloc]initWithCustomView:homebtn];
     self.navigationItem.leftBarButtonItem=homebarbtn;
@@ -226,6 +227,14 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    
+    if (mainparam.showads)
+    {
+        [super viewWillAppear:animated];
+        self.shared = [MBGADMasterVC singleton];
+        [self.shared resetAdView:self];
+    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
     

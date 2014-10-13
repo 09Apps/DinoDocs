@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "DDSettingTblViewController.h"
+#import "MBGADMasterVC.h"
 
-@interface DDPlayViewController : UIViewController <DDSettingTblViewControllerDelegate>
+@interface DDPlayViewController : UIViewController <DDSettingTblViewControllerDelegate, GADBannerViewDelegate>
 @property (nonatomic,strong) AVAudioPlayer *bgplayer;
 @property (atomic,strong) UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) MBGADMasterVC* shared;
 @property NSUInteger currprod;
 @end

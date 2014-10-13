@@ -8,6 +8,7 @@
 
 #import "DDIAPUse.h"
 #import "DDMainParam.h"    
+#import "DDDefines.h"
 
 @implementation DDIAPUse
 
@@ -27,6 +28,8 @@
             [productIdentifiers addObject:[dict objectForKey:@"productid"]];
         }
 
+        [productIdentifiers addObject:REMOVEADPRODID];
+        
         sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
         
     });

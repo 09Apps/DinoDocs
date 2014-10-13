@@ -18,6 +18,7 @@
 @property (nonatomic,retain) NSString* infobgimg;
 @property (nonatomic,retain) NSString* badgebgimg;
 @property (nonatomic,retain) NSString* resultbgimg;
+@property (nonatomic,retain) NSString* contribgimg;
 @property (nonatomic,retain) NSString* navimg;
 @property (nonatomic,retain) NSString* btnbgimg;
 @property (nonatomic,retain) NSString* quizbgsound;
