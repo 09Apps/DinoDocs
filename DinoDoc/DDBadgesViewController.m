@@ -292,4 +292,56 @@
     [alert show];
 }
 
+-(NSString*) getTitle
+{
+    // The badges plist file
+    NSString* plistPath = [DDUtils getPlistPath:BADGES];
+    
+    // read property list into memory as an NSData object
+    NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
+    NSString *errorDesc = nil;
+    NSPropertyListFormat format;
+    
+    // convert static property list into dictionary object
+    NSDictionary* dict = (NSDictionary *)[NSPropertyListSerialization propertyListFromData:plistXML mutabilityOption:NSPropertyListMutableContainersAndLeaves format:&format errorDescription:&errorDesc];
+    
+    if (! dict)
+    {
+        NSLog(@"readMainParam: error reading Badge plist, desc: %@", errorDesc);
+    }
+    else
+    {
+        self.badges = [dict objectForKey:@"Badges"];
+        NSUInteger bcount = [self.badges count];
+        
+        NSUInteger earnedbadges = 0;
+        
+        for (int i=0; i<bcount;i++)
+        {
+            NSMutableDictionary* bgdict = [self.badges objectAtIndex:i];
+            
+            BOOL isenabled = [[bgdict objectForKey:@"enabled"] boolValue];
+            if (isenabled )
+            {
+                earnedbadges++;
+            }
+        }
+        
+        if (earnedbadges > 8)
+        {
+            return HIGHTITLE;
+        }
+        else if (earnedbadges > 5)
+        {
+            return MEDTITLE;
+        }
+        else if (earnedbadges > 2)
+        {
+            return LOWTITLE;
+        }
+    }
+    
+    return NOTITLE;
+}
+
 @end

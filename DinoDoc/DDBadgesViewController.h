@@ -22,5 +22,6 @@
                     WithScore:(NSUInteger)score
                         Outof:(NSUInteger)outofcount
                         InTime:(NSUInteger)totaltime;
+-(NSString*) getTitle;
 
 @end

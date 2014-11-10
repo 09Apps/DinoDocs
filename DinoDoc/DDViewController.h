@@ -14,4 +14,5 @@
 @property (nonatomic,strong) AVAudioPlayer *player;
 @property BOOL soundon;
 @property (weak, nonatomic) IBOutlet UILabel *playernm;
+@property (weak, nonatomic) IBOutlet UILabel *playertitle;
 @end

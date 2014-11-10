@@ -57,6 +57,10 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com"]];
     }
 }
+- (IBAction)PolicyPressed:(UIButton *)sender
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:POLICYURL]];
+}
 
 - (IBAction)WWWpressed:(UIButton *)sender
 {

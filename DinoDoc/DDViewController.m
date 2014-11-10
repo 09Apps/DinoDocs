@@ -66,9 +66,22 @@
     UIBarButtonItem *infobarbtn=[[UIBarButtonItem alloc]initWithCustomView:infobtn];
     self.navigationItem.leftBarButtonItem=infobarbtn;
     
-    NSString* playernmstr = @"Hey ";
-    self.playernm.text = [playernmstr stringByAppendingString:mainparam.playername];
+    DDBadgesViewController* bdgVC = [[DDBadgesViewController alloc] init];
 
+    NSString* plrttle = @"Your current title : ";
+    
+    if ([plrttle compare:HIGHTITLE] == NSOrderedSame)
+    {
+        NSString* playernmstr = @"Hi Dr. ";
+        self.playernm.text = [playernmstr stringByAppendingString:mainparam.playername];
+    }
+    else
+    {
+        NSString* playernmstr = @"Hey ";
+        self.playernm.text = [playernmstr stringByAppendingString:mainparam.playername];
+    }
+    
+    self.playertitle.text = [plrttle stringByAppendingString:[bdgVC getTitle]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

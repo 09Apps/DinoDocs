@@ -39,7 +39,7 @@
 	// Overwritting back button, so I can clean up timer and other objects
     UIBarButtonItem *backbutton = [[UIBarButtonItem alloc] initWithTitle:@"Quit" style:UIBarButtonItemStylePlain target:self action:@selector(handleBack:)];
     self.navigationItem.leftBarButtonItem = backbutton;
-    self.navigationItem.title = mainparam.maintitle;
+    self.navigationItem.title = self.opttitle;
     
     self.btnbgimg = mainparam.btnbgimg;
     
