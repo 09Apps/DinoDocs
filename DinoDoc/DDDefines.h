@@ -41,5 +41,11 @@
 #define APPID           @"699394136"                                //App id for appstore
 #define ADUNITID        @"ca-app-pub-1165626743430331/1272847601"   //Admob ad unit id
 #define REMOVEADPRODID  @"com.09apps.dinodoc.removeads"             //Product id for in app purchase of remove ad
+#define POLICYURL       @"http://www.09apps.com/DinoDoc/Privacy"    //webpage for the privacy policy
+
+#define HIGHTITLE       @"Cretaceous"                               //Highest level title
+#define MEDTITLE        @"Jurassic"                                 //Medium level title
+#define LOWTITLE        @"Triassic"                                 //Low level title
+#define NOTITLE         @"Permian"                                  //Beginner level title
 
 #endif
