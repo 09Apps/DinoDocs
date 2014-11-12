@@ -76,7 +76,7 @@
     }
     else
     {
-        NSString *templateReviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=";
+        NSString *templateReviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=09Apps&id=";
         [templateReviewURL stringByAppendingString:APPID];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:templateReviewURL]];
     }

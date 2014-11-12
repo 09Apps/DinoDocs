@@ -37,8 +37,8 @@
 #define CREDITPAGE      @"http://www.09apps.com/DinoDoc/Credits"    //credits
 #define CONTACTEMAIL    @"contact@09apps.com"                       //Contact email id
 #define EMAILSUB        @"DinoDOC iOS"                              //Email subject
-#define FBURL           @"fb://profile/618157821568008"             //Facebook URL
-#define APPID           @"699394136"                                //App id for appstore
+#define FBURL           @"fb://profile/285876748286203"             //Facebook URL
+#define APPID           @"881531237"                                //App id for appstore
 #define ADUNITID        @"ca-app-pub-1165626743430331/1272847601"   //Admob ad unit id
 #define REMOVEADPRODID  @"com.09apps.dinodoc.removeads"             //Product id for in app purchase of remove ad
 #define POLICYURL       @"http://www.09apps.com/DinoDoc/Privacy"    //webpage for the privacy policy

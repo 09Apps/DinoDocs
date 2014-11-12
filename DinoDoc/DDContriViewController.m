@@ -58,6 +58,13 @@
     [self presentViewController:mailComposer animated:YES completion:nil];
 }
 
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
 - (void)goHome:(id)navbarbutton
 {
     [self.navigationController popViewControllerAnimated:YES];
