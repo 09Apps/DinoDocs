@@ -82,6 +82,8 @@
     }
     
     self.playertitle.text = [plrttle stringByAppendingString:[bdgVC getTitle]];
+    
+    self.cupimglbl.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"trophy.png"]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

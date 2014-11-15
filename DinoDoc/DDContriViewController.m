@@ -9,6 +9,7 @@
 #import "DDContriViewController.h"
 #import "DDMainParam.h"    
 #import "DDDefines.h"
+#import "DDNamesViewController.h"
 
 @interface DDContriViewController ()
 
@@ -40,10 +41,12 @@
     UIBarButtonItem *homebarbtn=[[UIBarButtonItem alloc]initWithCustomView:homebtn];
     self.navigationItem.leftBarButtonItem=homebarbtn;
 }
+
 - (IBAction)showContributers:(UIButton *)sender
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.09apps.com/"]];
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.09apps.com/"]];
 }
+
 
 - (IBAction)sendMail:(UIButton *)sender
 {

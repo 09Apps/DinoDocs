@@ -41,6 +41,9 @@
     self.navigationItem.leftBarButtonItem = backbutton;
     self.navigationItem.title = self.opttitle;
     
+    [self.navigationController.navigationBar
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
     self.btnbgimg = mainparam.btnbgimg;
     
     // The name of the plist file with questions and answers for each option must match
@@ -104,7 +107,7 @@
 {
     [self pauseTimer];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Quit?" message:@"Do you want to quit the quiz?" delegate:self cancelButtonTitle:@"Nope" otherButtonTitles: @"Yes",nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Umm.. really?" message:@"Do you want to quit the quiz?" delegate:self cancelButtonTitle:@"Nope" otherButtonTitles: @"Yes",nil];
     
     [alert setTag:QUITQUIZ];
     [alert show];

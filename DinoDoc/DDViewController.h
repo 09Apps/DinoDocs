@@ -15,4 +15,5 @@
 @property BOOL soundon;
 @property (weak, nonatomic) IBOutlet UILabel *playernm;
 @property (weak, nonatomic) IBOutlet UILabel *playertitle;
+@property (weak, nonatomic) IBOutlet UILabel *cupimglbl;
 @end
