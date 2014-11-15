@@ -44,6 +44,8 @@
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
     self.btnbgimg = mainparam.btnbgimg;
     
     // The name of the plist file with questions and answers for each option must match

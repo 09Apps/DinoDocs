@@ -62,17 +62,23 @@
                                     <segue destination="Lfw-gB-Lr9" kind="push" identifier="contriseg" id="1P9-tZ-Ih6"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Level : " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcv-fZ-7Q5">
-                                <rect key="frame" x="20" y="193" width="280" height="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Level : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcv-fZ-7Q5">
+                                <rect key="frame" x="70" y="193" width="230" height="22"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nn9-40-Tcm">
+                                <rect key="frame" x="24" y="187" width="28" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="K7V-gL-7Ro"/>
                     <connections>
+                        <outlet property="cupimglbl" destination="nn9-40-Tcm" id="ufV-IW-SxL"/>
                         <outlet property="playernm" destination="Hrk-T8-Mj1" id="8wK-FD-hiI"/>
                         <outlet property="playertitle" destination="bcv-fZ-7Q5" id="Ga0-fq-dVi"/>
                         <segue destination="PGO-AR-tWc" kind="modal" identifier="settingseg" modalTransitionStyle="coverVertical" id="vU8-X1-dwt"/>
@@ -80,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-795" y="46"/>
+            <point key="canvasLocation" x="-891" y="42"/>
         </scene>
         <!--Badges View Controller-->
         <scene sceneID="RJr-O7-9Xk">
@@ -134,6 +140,7 @@
                                 </state>
                                 <connections>
                                     <action selector="showContributers:" destination="Lfw-gB-Lr9" eventType="touchUpInside" id="ZS7-Z5-1aE"/>
+                                    <segue destination="Lwa-zc-ve3" kind="push" identifier="fetchcontri" id="ThL-3I-vOG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znD-67-WZt">
@@ -155,6 +162,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4O-IR-hxZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-433" y="-590"/>
+        </scene>
+        <!--Names View Controller-->
+        <scene sceneID="xkS-Ch-l7E">
+            <objects>
+                <viewController id="Lwa-zc-ve3" customClass="DDNamesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SLW-wq-QVP"/>
+                        <viewControllerLayoutGuide type="bottom" id="vu5-vT-Yri"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o54-Cc-7bK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1O-SY-ZfG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hsd-vy-W8R"/>
+                    <connections>
+                        <outlet property="cwebview" destination="Q1O-SY-ZfG" id="uUp-vc-C3m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rIr-27-bGs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-76" y="-590"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Pdp-lY-WWR">
@@ -241,7 +276,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyF-P9-YJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="79" y="-334"/>
+            <point key="canvasLocation" x="335" y="-296"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="8kS-28-ykg">
@@ -292,7 +327,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 of 10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGq-ns-AeN">
-                                <rect key="frame" x="18" y="73" width="72" height="21"/>
+                                <rect key="frame" x="16" y="73" width="80" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -393,8 +428,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rnV-qn-XOd"/>
         <segue reference="SG2-cx-PxW"/>
-        <segue reference="VVj-qZ-vpE"/>
+        <segue reference="rnV-qn-XOd"/>
+        <segue reference="vU8-X1-dwt"/>
     </inferredMetricsTieBreakers>
 </document>
