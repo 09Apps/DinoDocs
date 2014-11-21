@@ -12,4 +12,5 @@
 @interface DDNamesViewController : UIViewController <UIWebViewDelegate, MBProgressHUDDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *cwebview;
 @property (nonatomic,strong) MBProgressHUD *HUD;
+
 @end

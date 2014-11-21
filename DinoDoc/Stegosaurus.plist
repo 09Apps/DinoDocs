@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>newverupdate</key>
+	<false/>
+	<key>Quizcount</key>
+	<integer>10</integer>
+	<key>WrongAnsTxt</key>
+	<string>Remember, An incorrect answer makes the Stegosaurus stand up on its large hind legs..</string>
+	<key>QArr</key>
+	<array>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>COLORADO</string>
+				<string>MARYLAND</string>
+				<string>MISSOURI</string>
+				<string>OKLAHOMA</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>The US state of Colorado lists the Stegosaurus as its state dinosaur.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>Which US state has Stegosaurus as official state dinosaur?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Rambo</string>
+				<string>Dawn thief</string>
+				<string>Roofed lizard</string>
+				<string>Mad cow</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>The bone plates on its back looked like roof tiles, hence the name.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>What is a Stegosaurus also called as ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>It was tiny in relation to the creature&apos;s size</string>
+				<string>It was really huge.</string>
+				<string>They did not have brain.</string>
+				<string>Their brain was located behind the stomach.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Stegosaurus are known to have a tiny brain.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>What was remarkable about the brain of the Stegosaurus ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Carnivores (meat eaters)</string>
+				<string>Omnivore (ate whatever came their way)</string>
+				<string>Herbivores (plant eaters)</string>
+				<string>Coffee addicts.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Stegosaurus ate plants.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Stegosaurus were..</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>25 million years ago</string>
+				<string>65 million years ago</string>
+				<string>150 million years ago</string>
+				<string>400 million years ago</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>It lived during the middle to late Jurassic period, about 156 to 140 million years ago.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>During which period did Stegosaurus live?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Stegosaurus was a smart dinosaur</string>
+				<string>Stegosaurus was bipedal.</string>
+				<string>Stegosaurus was a fast runner.</string>
+				<string>Stegosaurus had a beak.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Stegosaurus had no teeth in the front, just a horny beak.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>Which of the following is true?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Tiny, like chickens.</string>
+				<string>It is not known yet.</string>
+				<string>Up to 6.8 feet long.</string>
+				<string>Up to 30 feet long.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Stegosaurus grew up to 9 metres (30 ft) in length (that is about the size of a bus) !</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>How big was a Stegosaurus ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>As a form of defense against larger predators.</string>
+				<string>To regulate this dinosaur&apos;s body temperature.</string>
+				<string>No one knows why!</string>
+				<string>To attract the mates.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Though it may have helped in regulating the dinosaur&apos;s temparature, the scientists are not sure yet.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Why Did Stegosaurus Have Plates on its Back?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Asia</string>
+				<string>North America</string>
+				<string>Antartica</string>
+				<string>Africa.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Remains of Stegosaurus have been found all over the world, with the largest concentration in Asia.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>Most stegosaurs hailed from -</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Stegosaurus had cheeks.</string>
+				<string>Stegosaurus walked on two legs.</string>
+				<string>Stegosaurus supplemented its diet with rocks.</string>
+				<string>Stegosaurus had a brain the size of a walnut.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>It is generally though to have walked on all four legs (quadtupedal).</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Which of the following is false?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Stegosaurus</string>
+				<string>Brachiosaurus</string>
+				<string>Kentrosaurus</string>
+				<string>Tuojiangosaurus</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Stegosaurids had two rows of plates and/or spines along their backs. Brachiosaurus did not!</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Which one of the below is not a Stegosaurids ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Marshosaurus</string>
+				<string>Allosaurus</string>
+				<string>Tyrannosaurus rex</string>
+				<string>Ceratosaurus</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>T-Rex and Stegosaurus didn&apos;t live in the same time period.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Which one of following was not a predator of the Stegosaurus?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Thagomizer</string>
+				<string>Armor tail</string>
+				<string>Stegamizer</string>
+				<string>Docodonts</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>A thagomizer is the distinctive arrangement of four to ten spikes on the tails of stegosaurid dinosaurs.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>What was the spiked tail of Stegosaurus called ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Stegosaurus had short forelimbs, in relation to its hind legs.</string>
+				<string>Stegosaurus gave birth to babies.</string>
+				<string>Stegosaurus lived in multi-age herds.</string>
+				<string>Stegosaurus weighed over 5 tons</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Like most of the other dinosuars, Stegosaurus hatched from eggs.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Whch of the following is false ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Stegosaurus</string>
+				<string>Tyrannosaurus Rex</string>
+				<string>Velocirator</string>
+				<string>Allosaurus</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>All except Stegosaurus are meat eaters.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>Find the odd one out -</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Gideon A. Mantell</string>
+				<string>Othniel C. Marsh</string>
+				<string>Barnum Brown</string>
+				<string>Robert Plot</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Paleontologist Othniel C. Marsh named Stegosaurus in 1877.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Who named Stegosaurus?</string>
+		</dict>
+	</array>
+</dict>
+</plist>

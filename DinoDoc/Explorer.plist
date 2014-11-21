@@ -5,7 +5,7 @@
 	<key>newverupdate</key>
 	<false/>
 	<key>Quizcount</key>
-	<integer>5</integer>
+	<integer>10</integer>
 	<key>WrongAnsTxt</key>
 	<string>Remember, An incorrect answer makes the dinosaurs really sad!</string>
 	<key>QArr</key>
@@ -16,12 +16,12 @@
 				<string>So far, it’s a tie. so, let’s see.</string>
 				<string>Can’t say, scientists are busy counting.</string>
 				<string>Dinosaurs - they lived for millions of years.</string>
-				<string>Off course humans, We are here and dinosaurs are not!</string>
+				<string>Off course humans, We are here &amp; dinosaurs are not!</string>
 			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
-			<string>The dinosaurs dominated the Earth for over 165 million years, Homo sapiens, the species to which we belong, has existed for about 200,000 years.</string>
+			<string>Homo sapiens, (human species) existed for about 200,000 years, while dinosaurs for over 165 million years.</string>
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
@@ -40,7 +40,7 @@
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
-			<string>Dinosaurs had replaceable teeth; as teeth became worn or broken they fell out and new ones grew in their places.</string>
+			<string>As dinosaur’s teeth became worn or broken they fell out and new ones grew in their places.</string>
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
@@ -51,15 +51,15 @@
 		<dict>
 			<key>Options</key>
 			<array>
-				<string>No one knows for sure, whoever went to check out did not come back.</string>
-				<string>Dinosaurs didn&apos;t sleep, they were always hunting or star-gazing.</string>
+				<string>No one knows for sure.</string>
+				<string>Dinosaurs didn’t sleep; they were either hunting or stargazing.</string>
 				<string>They slept standing up and were sleep walking all the time!</string>
 				<string>They liked lying down on comfy beds made up of trees.</string>
 			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
-			<string>There are only speculations. The giant ones would have hard time getting back up again, given their weight and size. But most dinosaurs were not enormous and didn&apos;t have tiny arms so there wouldn&apos;t be a physical problem lying down, but no one knows how they slept.</string>
+			<string>There are only speculations; no one really knows how they slept.</string>
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
@@ -71,14 +71,14 @@
 			<key>Options</key>
 			<array>
 				<string>What else do you call a dinosaur?</string>
-				<string>Dinosaur were first discovered by Sir Richard Dinosaur, hence the name.</string>
+				<string>B&apos;coz Dinosaurs were discovered by Sir Richard Dinosaur.</string>
 				<string>That&apos;s the name ancient Romans gave them.</string>
 				<string>It means terrifying lizards in greek.</string>
 			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
-			<string>The term dinosaur was coined by the English anatomist Sir Richard Owen in 1842, who derived it from green words &quot;deinos&quot; (means terrifying) and &quot;sauros&quot; (means lizard).</string>
+			<string>The term dinosaur is derived from Greek words &quot;deinos&quot; (means terrifying) and &quot;sauros&quot; (means lizard).</string>
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
@@ -97,7 +97,7 @@
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
-			<string>The only remains of the dinosaurs are fossils. The pigmentation (the color) of dinosaurs&apos; skin is not preserved in the fossils, so no one knows what color they were.</string>
+			<string>The pigmentation (the color) of dinosaurs&apos; skin is not preserved in the fossils, so no one knows.</string>
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
@@ -116,7 +116,7 @@
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
-			<string>Many dinosaurs such as Brachiosaurus, Protoceratops, Stegosaurus, Triceratops, Diplodocus, Apatosaurus were plant eaters.</string>
+			<string>Many dinosaurs such as Brachiosaurus, Protoceratops, Stegosaurus, Triceratops, Diplodocus were plant eaters.</string>
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
@@ -135,7 +135,7 @@
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
-			<string>Alvarez theory explains dinosaurs became exticts at the K-T boundary due to asteroid hitting earth. That impact, combined with geological changes and volcanic eruptions, most likely led to extinction of dinosaurs and about 50 percent of other species on Earth.</string>
+			<string>Alvarez theory explains dinosaurs became exticts at the K-T boundary due to asteroid hitting earth. </string>
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
@@ -173,7 +173,7 @@
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
-			<string>Reptiles are a group of animals that includes lizards , snakes , turtles , dinosaurs , and in some classifications, birds.</string>
+			<string>Reptiles includes lizards , snakes , turtles , dinosaurs , and in some classifications, birds.</string>
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
@@ -192,7 +192,7 @@
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
-			<string>Most paleontologists believe that the birds  probably evolved from the maniraptors, a branch of bird-like dinosaurs.</string>
+			<string>Paleontologists believe that the birds probably evolved from the maniraptors, a branch of bird-like dinosaurs.</string>
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
@@ -211,7 +211,7 @@
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
-			<string>A widely accepted theory is that an asteroid 4-9 miles in diameter hit the Earth  about 65 million years ago. The impact, off the Yucatan peninsula, would have penetrated the Earth&apos;s crust, scattered dust and debris into the atmosphere, and caused huge fires, volcanic activity , tsunamis, severe storms with high winds and highly acidic rain.</string>
+			<string>A theory is that an asteroid hit the Earth about 65 million years ago, caused huge fires, tsunamis, severe storms and acidic rains.</string>
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
@@ -225,11 +225,12 @@
 				<string>Nope.</string>
 				<string>Yes. as seen in movies.</string>
 				<string>Scientists are not sure yet.</string>
+				<string>Yes, but they were called flyosaurs.</string>
 			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
-			<string>There were a lot of flying reptiles that lived at the same time the dinosaurs did, but the Dinosaurs lived their entire lives on land. </string>
+			<string>There were a lot of flying reptiles, but the Dinosaurs lived their entire lives on land.</string>
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
@@ -297,9 +298,10 @@
 		<dict>
 			<key>Options</key>
 			<array>
-				<string>It is a lingering question on which scientists have not agreed yet.</string>
+				<string>Scientists have not agreed yet on this.</string>
 				<string>Warm blooded, like birds.</string>
 				<string>Cold blooded, like lizards.</string>
+				<string>Their blood temperature depended on situation.</string>
 			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
@@ -311,6 +313,272 @@
 			<integer>0</integer>
 			<key>Question</key>
 			<string> Were dinosaurs cold or warm blooded?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Dromaeosaurids</string>
+				<string>Oviraptors</string>
+				<string>Tyrannosaurids</string>
+				<string>They all were dumb.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Dromaeosaurids had the largest ratio of brain weight:body weight.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>Which dinosaur family was the smartest?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>In the end of Jurassic park movie.</string>
+				<string>Cretaceous period.</string>
+				<string>Jurassic period.</string>
+				<string>Triassic period.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>The Cretaceous period (the last period of the Mesozoic Era) ended with the extinction of dinosaurs.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>When did dinosaur become extinct?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Rhinosaurus</string>
+				<string>Triceratops</string>
+				<string>Stegosaurus</string>
+				<string>Saltopus</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Triceratops was a rhinoceros-like dinosaur that had three horns on its face.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Which one of these dinosaurs was most like a rhinoceros?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Argentinosaurus huinculensis</string>
+				<string>Ultrasauros</string>
+				<string>blue whales</string>
+				<string>Paralititan</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Blue whales are BIGGER THAN ANY of the dinosaurs were!</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Who is biggest among below list of animals.</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Hadrosaurs</string>
+				<string>Ultrasauros</string>
+				<string>T-Rex</string>
+				<string>Sauropods</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>The plant-eating hadrosaurs (the duck-billed dinosaurs) had about 960 cheek teeth. </string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>Which dinosaurs had the most teeth?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Sauroposeidon</string>
+				<string>Diplodocus</string>
+				<string>Mamenchisaurus</string>
+				<string>Tailosaurus</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Diplodocus had the longest tail. It was up to 43 feet (13 m) long.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Which dinosaurs had the longest tail?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Oh yeah, they did fart a lot!</string>
+				<string>No, they never farted.</string>
+				<string>Scientists are not sure yet.</string>
+				<string>Dinosaurs could only burp.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Dinosaurs farted a lot, which could have contributed to global warming millions of years ago. </string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>Did Dinosaurs fart ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>India</string>
+				<string>China</string>
+				<string>Arizona, US</string>
+				<string>None of the above</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Fossilized dinosaur remains have been found all over the world.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>Where have dinosaur remains NOT been found?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Apatosaurus</string>
+				<string>Maiasaura</string>
+				<string>Eoraptor</string>
+				<string>Stegosaurus</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Eoraptor means Dawn Thief, were among earliest dinosaurs.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>What dinosaur&apos;s name means &quot;dawn thief&quot; ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Iguanodon</string>
+				<string>Euoplocephalus</string>
+				<string>Triceratops</string>
+				<string>Stegosaurus</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Stegosaurus had two rows of plates along its back.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>Which of these dinosaurs had two rows of plates along its back?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Eoraptor</string>
+				<string>Saltasaurus</string>
+				<string>Hadrosaurus</string>
+				<string>T-Rex</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>The first dinosaur skeleton, discovered in New Jersey, was a Hadrosaurus.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>The first dinosaur skeleton ever found was :</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Around 9000</string>
+				<string>Nearly 900</string>
+				<string>About 100</string>
+				<string>Exactly 729</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>It&apos;s around 900 now, but many new discoveries happening continuously.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>The total number of kinds of dinosaurs now known is :</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Scatolite</string>
+				<string>Coprolite</string>
+				<string>Nitelite</string>
+				<string>pooposaur</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Caprolite is what scientists call Dinosaur waste.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>What is scientific name for fossilized dinosaur poop?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>They gave birth to babies.</string>
+				<string>They laid eggs.</string>
+				<string> Dinosaur babies were created in labs.</string>
+				<string>They got it from another planet.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Most donpsaurs are reptiles who laid eggs.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>How did dinosaurs produce their young ?</string>
 		</dict>
 	</array>
 </dict>

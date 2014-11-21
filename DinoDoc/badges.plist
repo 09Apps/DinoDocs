@@ -4,57 +4,189 @@
 <dict>
 	<key>newverupdate</key>
 	<false/>
-	<key>currenttitle</key>
-	<string></string>
+	<key>quizcounter</key>
+	<integer>0</integer>
 	<key>Badges</key>
 	<array>
 		<dict>
 			<key>title</key>
-			<string>beginner</string>
+			<string>First_Quiz</string>
+			<key>description</key>
+			<string>The OnLooker</string>
+			<key>details</key>
+			<string>Cool, you have completed your first quiz!</string>
 			<key>enabled</key>
 			<false/>
 			<key>enabledimg</key>
-			<string>best-answer.png</string>
-			<key>disabledimg</key>
-			<string>questionaire.png</string>
-			<key>details</key>
-			<string></string>
+			<string>bdg_onlooker.png</string>
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>faster</string>
-			<key>enabled</key>
-			<true/>
-			<key>enabledimg</key>
-			<string>best-week.png</string>
-			<key>disabledimg</key>
-			<string></string>
+			<string>Speed</string>
+			<key>description</key>
+			<string>The Speed Doctor</string>
 			<key>details</key>
-			<string></string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>T-Rex champ</string>
-			<key>enabled</key>
-			<true/>
-			<key>enabledimg</key>
-			<string>best-of-month.png</string>
-			<key>disabledimg</key>
-			<string></string>
-			<key>details</key>
-			<string></string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>All correct</string>
+			<string>You were so fast that you got this badge!</string>
 			<key>enabled</key>
 			<false/>
 			<key>enabledimg</key>
-			<string></string>
-			<key>disabledimg</key>
-			<string></string>
+			<string>bdg_Speeddoc.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Explorer</string>
+			<key>description</key>
+			<string>Doctorate in Paleontology</string>
 			<key>details</key>
-			<string></string>
+			<string>You cracked Explorer quiz!</string>
+			<key>enabled</key>
+			<false/>
+			<key>enabledimg</key>
+			<string>bdg_paleonto.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Ankylosaurus</string>
+			<key>description</key>
+			<string>Doctorate in Ankylosaurus</string>
+			<key>details</key>
+			<string>You cracked Ankylosaurus quiz!</string>
+			<key>enabled</key>
+			<false/>
+			<key>enabledimg</key>
+			<string>bdg_Anky.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Brachiosaurus</string>
+			<key>description</key>
+			<string>Doctorate in Brachiosaurus</string>
+			<key>details</key>
+			<string>You cracked Brachiosaurus quiz!</string>
+			<key>enabled</key>
+			<false/>
+			<key>enabledimg</key>
+			<string>bdg_Brachio.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Dilophosaurus</string>
+			<key>description</key>
+			<string>Doctorate in Dilophosaurus</string>
+			<key>details</key>
+			<string>You cracked Dilophosaurus quiz!</string>
+			<key>enabled</key>
+			<false/>
+			<key>enabledimg</key>
+			<string>bdg_Dilo.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Stegosaurus</string>
+			<key>description</key>
+			<string>Doctorate in Stegosaurus</string>
+			<key>details</key>
+			<string>You cracked Stegosaurus quiz!</string>
+			<key>enabled</key>
+			<false/>
+			<key>enabledimg</key>
+			<string>bdg_Stego.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Triceratops</string>
+			<key>description</key>
+			<string>Doctorate in Triceratops</string>
+			<key>details</key>
+			<string>You cracked Triceratops quiz!</string>
+			<key>enabled</key>
+			<false/>
+			<key>enabledimg</key>
+			<string>bdg_Tricera.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Velociraptor</string>
+			<key>description</key>
+			<string>Doctorate in Velociraptor</string>
+			<key>details</key>
+			<string>You cracked Velociraptor quiz!</string>
+			<key>enabled</key>
+			<false/>
+			<key>enabledimg</key>
+			<string>bdg_Velo.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Parasaurolophus</string>
+			<key>description</key>
+			<string>Doctorate in Parasaurolophus</string>
+			<key>details</key>
+			<string>You cracked Parasaurolophus quiz!</string>
+			<key>enabled</key>
+			<false/>
+			<key>enabledimg</key>
+			<string>bdg_Parasauro.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Spinosaurus</string>
+			<key>description</key>
+			<string>Doctorate in Spinosaurus</string>
+			<key>details</key>
+			<string>You cracked Spinosaurus quiz!</string>
+			<key>enabled</key>
+			<false/>
+			<key>enabledimg</key>
+			<string>bdg_Spino.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>T-Rex</string>
+			<key>description</key>
+			<string>Doctorate in T-Rex</string>
+			<key>details</key>
+			<string>You cracked T-Rex quiz!</string>
+			<key>enabled</key>
+			<false/>
+			<key>enabledimg</key>
+			<string>bdg_trex.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>QuizMaster</string>
+			<key>description</key>
+			<string>The Quiz Master</string>
+			<key>details</key>
+			<string>You really know a thing or two about Dinosaurs!</string>
+			<key>enabled</key>
+			<false/>
+			<key>enabledimg</key>
+			<string>bdg_quizmaster.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>QuizDoc</string>
+			<key>description</key>
+			<string>The Quiz Doctor</string>
+			<key>details</key>
+			<string>Bow Down, You are a Dinosaur expert!</string>
+			<key>enabled</key>
+			<false/>
+			<key>enabledimg</key>
+			<string>bdg_Quizdoc.png</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Contributor</string>
+			<key>description</key>
+			<string>The Contributor</string>
+			<key>details</key>
+			<string>Thanks for sending us quiz questions!</string>
+			<key>enabled</key>
+			<false/>
+			<key>enabledimg</key>
+			<string>bdg_contri.png</string>
 		</dict>
 	</array>
 </dict>

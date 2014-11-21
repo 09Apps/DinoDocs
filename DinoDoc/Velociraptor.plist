@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>newverupdate</key>
+	<false/>
+	<key>Quizcount</key>
+	<integer>10</integer>
+	<key>WrongAnsTxt</key>
+	<string>Remember, An incorrect answer makes the Velociraptor run away!</string>
+	<key>QArr</key>
+	<array>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Hauzer</string>
+				<string>Alex</string>
+				<string>Tricky</string>
+				<string>Yoshi</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>It&apos;s Alex !</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>What was name of the Velociraptor character from game Tekken?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>A fast running bipedal dinosaur</string>
+				<string>A plant eater</string>
+				<string>A huge dinosaur</string>
+				<string>A dinosaur that could talk</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Velociraptor may have been able to run up to roughly 40 mph (60 km/hr) for short bursts.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>How is a Velociraptor best described?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Velociraptor was a carnivore, a meat eater.</string>
+				<string>It was a slow moving dinosaur.</string>
+				<string>It may have hunted in packs. </string>
+				<string>Its retractible claw was its main weapon</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Velociraptor was certainly among the fastest of the dinosaurs !</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Which of the following is false?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Really bad period</string>
+				<string>Jurassic period</string>
+				<string>Triassic period</string>
+				<string>Late Cretaceous period</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Velociraptor lived during the late Cretaceous period, about 85 - 80 million years ago. </string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>In which geologic time period did Velociraptor live?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Vocal dinosaurs</string>
+				<string>Flying raptors</string>
+				<string>Speedy thief</string>
+				<string>Scary chicken</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>A speedy thief in fact !</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>What does the name Velociraptor mean?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Nowhere</string>
+				<string>Connecticut &amp; Arizona</string>
+				<string>Mongolia and nearby parts of China</string>
+				<string>Western Europe</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Velociraptor fossils have been found in the Gobi Desert - southern Mongolia and parts of northern China.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Velociraptor fossils have been found in ..</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Size of a turkey</string>
+				<string>As big as humans</string>
+				<string>Big as an elephant</string>
+				<string>Size of a frog</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Adult Velociraptors were up to 6.8 feet (2 meters) long.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>How big were Velociraptors ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>A huge chunk of grass</string>
+				<string>A subway sandwich</string>
+				<string>Ants</string>
+				<string>The horned Protoceratops</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Velociraptor preyed on herbivore dinosaurs.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>What was a favorite meal of a Velociraptor ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Toronto Raptors</string>
+				<string>Seattle Seahawks</string>
+				<string>Trail Blazers</string>
+				<string>Indiana Velos</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>The name &amp; logo of the NBA basketball team based in Toronto, Canada are based on Velociraptor.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>A velociraptor is mascot for which team?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Its sharp teeth</string>
+				<string>Its single, oversized hind claws</string>
+				<string>Its speed</string>
+				<string>Its big size</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>They used this claw, measuring about 2.6 inches long, to attack and eat their prey alive</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>What was the Velociraptor&apos;s main weapon?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Allosaurids</string>
+				<string>Sauropoda</string>
+				<string>Dromaeosaurs.</string>
+				<string>Fabrosaurids</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Family Dromaeosauridae included Velociraptor, Utahraptor, Saurornitholestes, and Dromaeosaurus.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Which family of dinosaurs did Velociraptor belong to?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Velocirators are depicted as featherless</string>
+				<string>They hunted in packs</string>
+				<string>They had long tail</string>
+				<string>Velociraptors were meat eaters.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>A Velociraptor is believed it looked more like a chicken because of the feathers. </string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>One incorrect fact shown in the movie Jurassic Park was ..</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Velociraptors had hollow bones.</string>
+				<string>They did not eat the kills of other dinosaurs.</string>
+				<string>Velociraptor lived in a desert-like environment.</string>
+				<string>Velociraptor had a huge brain for its size.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Evidences show Velociraptors were not averse to scavenging the kills of other dinosaurs.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Which of the following is not true -</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>A Protoceratops</string>
+				<string>A T-Rex</string>
+				<string>Another velociraptor</string>
+				<string>A tiger</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>In this fossil the Velociraptor was attacking the Protoceratops with its claws.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>In the famous Velociraptor fossil, it is found in battle with ..</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Velociraptor</string>
+				<string>Ankylosaurus</string>
+				<string>Rajasaurus</string>
+				<string>Tyrannosaurus rex</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Ankylosaurus is herbivore, while others are meat eaters.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Which of the following is odd one out ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>85 to 71 million years ago</string>
+				<string>154-144 million years ago</string>
+				<string>127-89 million years ago</string>
+				<string>206-180 million years ago</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Velociraptor lived during the late Cretaceous period, about 85 - 80 million years ago</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>When did Velociraptor live?</string>
+		</dict>
+	</array>
+</dict>
+</plist>

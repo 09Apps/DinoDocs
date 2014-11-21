@@ -2,74 +2,317 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>newverupdate</key>
+	<false/>
 	<key>Quizcount</key>
-	<integer>3</integer>
+	<integer>10</integer>
 	<key>WrongAnsTxt</key>
-	<string>Remember, An incorrect answer makes the dinosaurs really sad!</string>
+	<string>Remember, An incorrect answer makes the T-Rex roar !</string>
 	<key>QArr</key>
 	<array>
 		<dict>
 			<key>Options</key>
 			<array>
-				<string>They had really strong teeth, never lost it.</string>
-				<string>Yes, the poor old dinos were toothless.</string>
-				<string>They got new teeth when old one fell out.</string>
-				<string>Who said Dinosaurs had teeth?</string>
+				<string>Cretaceous</string>
+				<string>The worst period</string>
+				<string>Triassic</string>
+				<string>Jurassic</string>
 			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
-			<string>Dinosaurs had replaceable teeth; as teeth became worn or broken they fell out and new ones grew in their places.</string>
-			<key>UserGaveAns</key>
-			<false/>
+			<string>The Cretaceous period is the last period of the Mesozoic Era when T-Rex lived.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>During what period did Tyrannosaurus rex live?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Exact 12 tonnes each</string>
+				<string>Around 6.4 tonnes</string>
+				<string>Less than 3 tonnes</string>
+				<string>Over 15 tonnes</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Tyrannosaurus rex weighed roughly 5 to 7 tons.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>How heavy was a Tyrannosaurus rex?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Large head size.</string>
+				<string>Big nostrils.</string>
+				<string>Large olfactory bulbs relative to brain size.</string>
+				<string>They liked flowers.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Based on the size of its olfactory bulbs ,T-Rex likely had a nose as powerful as that of 1,000 bloodhounds.</string>
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
 			<integer>2</integer>
 			<key>Question</key>
-			<string>Did Dinosaurs lose their tooth when they grew old?</string>
+			<string>Why do researchers think T- Rex had an excellent sense of smell?</string>
 		</dict>
 		<dict>
 			<key>Options</key>
 			<array>
-				<string>No one knows for sure, whoever went to check out did not come back.</string>
-				<string>Dinosaurs didn&apos;t sleep, they were always hunting or star-gazing.</string>
-				<string>They slept standing up and were sleep walking all the time!</string>
-				<string>They liked lying down on comfy beds made up of trees.</string>
+				<string>Craig</string>
+				<string>Baby Bop</string>
+				<string>Paula</string>
+				<string>Barney</string>
 			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
 			<key>Details</key>
-			<string>There are only speculations. The giant ones would have hard time getting back up again, given their weight and size. But most dinosaurs were not enormous and didn&apos;t have tiny arms so there wouldn&apos;t be a physical problem lying down, but no one knows how they slept.</string>
-			<key>UserGaveAns</key>
-			<false/>
-			<key>Image</key>
-			<string></string>
-			<key>Answer</key>
-			<integer>0</integer>
-			<key>Question</key>
-			<string>Dinosaurs slept standing up or lying down?</string>
-		</dict>
-		<dict>
-			<key>Options</key>
-			<array>
-				<string>What else do you call a dinosaur?</string>
-				<string>Dinosaur were first discovered by Sir Richard Dinosaur, hence the name.</string>
-				<string>That&apos;s the name ancient Romans gave them.</string>
-				<string>It means terrifying lizards in greek.</string>
-			</array>
-			<key>Complexity</key>
-			<integer>0</integer>
-			<key>Details</key>
-			<string>The term dinosaur was coined by the English anatomist Sir Richard Owen in 1842, who derived it from green words &quot;deinos&quot; (means terrifying) and &quot;sauros&quot; (means lizard).</string>
-			<key>UserGaveAns</key>
-			<false/>
+			<string>Barney is the friendly 200,000,000 year old, purple T-Rex of the iconic PBS series, Barney &amp; Friends.</string>
 			<key>Image</key>
 			<string></string>
 			<key>Answer</key>
 			<integer>3</integer>
 			<key>Question</key>
-			<string>Why are dinosaurs called dinosaurs?</string>
+			<string>Which famous character is supposed to be a Tyrannosaurus Rex?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Powerful jaws</string>
+				<string>Strong arms</string>
+				<string>Saw-edged teeth</string>
+				<string>Sense of smell</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>T-Rex lacked strong arms as they did not go to a gym.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>which of the following did the T-Rex NOT have?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>It circled the objects multiple times.</string>
+				<string>Both eyes placed on the sides.</string>
+				<string>Both eyes faced forwards on the front of its skull.</string>
+				<string>It used it&apos;s tell to judge the depth.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>T. rex also had depth perception since both eyes faced forwards on the front of its skull.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>What gave a T-rex depth perception?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Tyrannosaurus Raptor</string>
+				<string>Tyrannosaurus KT1</string>
+				<string>Tyrannosaurus Sue</string>
+				<string>T-Rex Dacota</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Field Museum of Natural History in Chicago has &quot;Sue&quot;, a 85% complete, full-grown T. Rex skeleton</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>What is the world&apos;s most complete T. Rex skeleton known as ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Over 100 miles an hour.</string>
+				<string>Walked at speeds up to 15 mph</string>
+				<string>They slowly crowled to their prey.</string>
+				<string>Around 60 miles an hour.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>T. rex&apos;s muscle distribution and center of mass, suggests the giant could run 10 to 25 mph.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>How quickly did T-Rex run ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Over 100 years.</string>
+				<string>They never died.</string>
+				<string>Less than 5 years.</string>
+				<string>Around 30 years.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Tyrannosaurus Rex may have lived as long as 30 years.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>How long did T-Rex live ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Boxing.</string>
+				<string>Eat up to 500 pounds of meat in one bite.</string>
+				<string>Close its eyes with its hands.</string>
+				<string>Scratch its back.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Its two-fingered forearms were really small to be of any real use.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Which of the following a T-Rex could easily do?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>T. Rex had very bad breath.</string>
+				<string>T. Rex hatchlings may have been covered in feathers.</string>
+				<string>T. Rex was the only tyrannosaur.</string>
+				<string>Female T. Rex were bigger than the males.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Many other genera of tyrannosaur prowled the Cretaceous landscape e.g. Dilong or Albertosaurus.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Which of the following is false ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>King of the tyrant lizards.</string>
+				<string>The big raptor.</string>
+				<string>Deadly hunter.</string>
+				<string>The smart runner</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Tyrannosaurus rex means &quot;tyrant lizard king&quot;.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>What does Tyrannosaurus rex mean?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Its arms.</string>
+				<string>Massive jaws with blade-like teeth.</string>
+				<string>Its speed.</string>
+				<string>Sickle-shaped claw.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Massive jaws with 50 to 60 blade-like teeth, some up to 9 inches long!</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>What was main weapon of a T-Rex?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Henry Fairfield Osborn</string>
+				<string>Dr. Tyran Rec</string>
+				<string>Richard Owen</string>
+				<string>Students of Dacota.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Henry F. Osborn was a US paleontologist who named Tyrannosaurus in 1905.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>T-Rex was named by -</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Tyrannosaurus rex</string>
+				<string>Brachiosaurus</string>
+				<string>Giganotosaurus</string>
+				<string>Carcharodontosaurus</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>All except Brachiosaurus are meat eaters.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Find the odd one out -</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>About 19.</string>
+				<string>Less than 87.</string>
+				<string>About 200</string>
+				<string>More than 326.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>T. rex has about 200 bones.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>How many bones are in a T-Rex ?</string>
 		</dict>
 	</array>
 </dict>

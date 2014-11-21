@@ -62,12 +62,18 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:POLICYURL]];
 }
 
+- (IBAction)fqaPressed:(UIButton *)sender
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:FAQURL]];
+}
+
 - (IBAction)WWWpressed:(UIButton *)sender
 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:WEBURL]];
 }
+
 - (IBAction)AppStoreClicked:(UIButton *)sender
-{    
+{
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
     {
         NSString *templateReviewURLiOS7 = @"itms-apps://itunes.apple.com/app/id";

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>newverupdate</key>
+	<false/>
+	<key>Quizcount</key>
+	<integer>10</integer>
+	<key>WrongAnsTxt</key>
+	<string>Remember, An incorrect answer makes the Ankylosaurus swing its tail ..</string>
+	<key>QArr</key>
+	<array>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Early Jurassic.</string>
+				<string>Late Cretaceous Period</string>
+				<string>Lower Jurassic - Recent.</string>
+				<string>Middle Jurassic to Early Cretaceous</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>It lived in the late Cretaceous Period, about 70-65 million years ago.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>When did Ankylosaurus live ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Speedy thief</string>
+				<string>Fused lizard</string>
+				<string>Double-crested lizard</string>
+				<string>An Arm lizard</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Ankylosaurus means &quot;Fused, stiff, or bent Lizard&quot;.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>What does Ankylosaurus mean ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Tiny, like chickens.</string>
+				<string>It is not known yet.</string>
+				<string>Up to 6.8 feet long.</string>
+				<string>Up to 25-35 feet long.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Ankylosaurus was a huge dinosaur, measuring about 25-35 feet (7.5-10.7 m) long.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>How big was a Ankylosaurus ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Arthropoda</string>
+				<string>Chordate</string>
+				<string>Mollusca</string>
+				<string>Chordata</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Ankylosaurus belonged to Phylum Chordata (having a hollow nerve chord ending in a brain).</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>What phylum does Ankylosaurus belong to?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Archosauria</string>
+				<string>Insecta</string>
+				<string>Heterobasidiomycetes</string>
+				<string>Chlorophyceae</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Ankylosaurus belong to Classis Archosauria (diapsids with socket-set teeth, etc.)</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>What class does Ankylosaurus belong to?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Australia</string>
+				<string>Asia</string>
+				<string>South America</string>
+				<string>North America</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Ankylosaurus fossils have been found in the western USA (Montana) and Canada (Alberta).</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>Where are the Ankylosaur fossils found ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>The venom spray</string>
+				<string>An expandable neck frill</string>
+				<string>Body Armor</string>
+				<string>A long neck.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Its top side was covered with thick, oval plates embedded in its leathery skin.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>What is the most distinctive feature of Ankylosaurus ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Four short legs</string>
+				<string>A short neck</string>
+				<string>A huge brain</string>
+				<string>A wide skull</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Ankylosaurus had a tiny brain.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Which of the following was not a feature of Ankylosaurus ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>By swinging its tail.</string>
+				<string>By traveling in packs.</string>
+				<string>Lie flat on the ground covering abdomen.</string>
+				<string>All of above.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Ankylosaurus used all of these tactics to save itself.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>How did Ankylosaurus protected itself ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Top side covered with with thick, oval plates.</string>
+				<string>Two rows of spikes along its body.</string>
+				<string>A club-like tail</string>
+				<string>Plates on under belly.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Ankylosaurus&apos; under-belly was unplated.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>Which of the following is not a feature of Ankylosaurus ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Around 500 pounds</string>
+				<string>Roughly 3-4 tons</string>
+				<string>Around 100 pounds</string>
+				<string>More than to 8 tons</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Ankylosaurus weighed roughly 3-4 tons.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>How much did a Ankylosaurus weigh ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Ankylosaurus was a huge armored dinosaur.</string>
+				<string>This huge, heavy reptile was an herbivore.</string>
+				<string>It walked very slowly.</string>
+				<string>It produced prodigious amounts of gas !</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>These huge creatures could run at a &quot;decent jog&quot;.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Which of the following is false ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Gideon A. Mantell</string>
+				<string>Samuel P. Welles</string>
+				<string>Barnum Brown</string>
+				<string>Robert Plot</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Paleontologist Barnum Brown named Ankylosaurus in 1908.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Who named Ankylosaurus?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>It contained a “fermentation chamber”.</string>
+				<string>It was missing the teeth needed to aid in grinding food.</string>
+				<string>It produced quite a bit of gas.</string>
+				<string>It could live without eating for days.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Ankylosaurus had to eat a huge amount of low-lying plant material to sustain itself.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>Which of the following is not true About Ankylosaurus ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Tyrannosaurus</string>
+				<string>Ankylosaurus</string>
+				<string>Tarbosaurus</string>
+				<string>Deinonychus</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>All except Ankylosaurus are meat eaters!</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Find the odd one out -</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Tropical climate.</string>
+				<string>Cold climate.</string>
+				<string>Underwater.</string>
+				<string>In any climate.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Ankylosaurus was a cold-blooded creature that required high temperatures to keep its body warm. </string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>What kind of climate Ankylosaurus lived in?</string>
+		</dict>
+	</array>
+</dict>
+</plist>

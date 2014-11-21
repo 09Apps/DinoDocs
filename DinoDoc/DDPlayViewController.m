@@ -47,10 +47,8 @@
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     self.currprod = senderbtn.tag;
     NSDictionary* dict = [mainparam.options objectAtIndex:senderbtn.tag];
-    
-    NSString* prodid = [dict objectForKey:@"productid"];
 
-    if ([[dict objectForKey:@"purchased"] boolValue] || [[DDIAPUse sharedInstance] productPurchased:prodid] )
+    if ([[dict objectForKey:@"purchased"] boolValue] )
     {
         if ([self.spinner isAnimating])
         {
@@ -70,7 +68,18 @@
         }
         else
         {
-            SKProduct *product = _products[senderbtn.tag];
+            unsigned int fetchcode;
+            
+            if (senderbtn.tag == REMOVEADTAG)
+            {
+                fetchcode = senderbtn.tag + 2;
+            }
+            else
+            {
+                fetchcode = senderbtn.tag;
+            }
+            
+            SKProduct *product = _products[fetchcode];
             [[DDIAPUse sharedInstance] buyProduct:product];
         }
         

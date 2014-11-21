@@ -272,9 +272,13 @@
     NSString* detstr = [bgdict objectForKey:@"details"];
     NSString* imgstr = [bgdict objectForKey:@"enabledimg"];
     
-    UIImage *mybdg = [DDUtils imageWithImage:[UIImage imageNamed:imgstr] scaledToSize:CGSizeMake(155, 155)];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(40, 40, 195, 195)];
+    //UIImage *mybdg = [DDUtils imageWithImage:[UIImage imageNamed:imgstr] scaledToSize:CGSizeMake(155, 155)];
+    
+    UIImage *mybdg = [UIImage imageNamed:imgstr];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(40, 40, mybdg.size.width, mybdg.size.height)];
     [imageView setImage:mybdg];
+    
  /*
     CGFloat scrwidth = CGRectGetWidth(self.view.bounds);
     CGFloat scrheight = CGRectGetHeight(self.view.bounds);

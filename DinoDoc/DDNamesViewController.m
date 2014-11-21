@@ -32,7 +32,7 @@
     UIBarButtonItem *homebarbtn=[[UIBarButtonItem alloc]initWithCustomView:homebtn];
     self.navigationItem.leftBarButtonItem=homebarbtn;
     
-    self.navigationItem.title = @"Our Stars";
+    
     
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
@@ -50,20 +50,12 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    // Initiate activity indicator
-    self.HUD = [[MBProgressHUD alloc] initWithView:self.view];
-    [self.view addSubview:self.HUD];
-    
-    self.HUD.delegate = self;
-    self.HUD.labelText = @"Fetching list ... ";
-    self.HUD.square = YES;
-    
-    [self.HUD show:YES];
+    self.navigationItem.title = @"Loading ..";
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    [self.HUD hide:YES];
+    self.navigationItem.title = @"Our Stars";
 }
 
 /*

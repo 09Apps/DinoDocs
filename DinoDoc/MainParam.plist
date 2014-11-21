@@ -7,7 +7,7 @@
 	<key>maintitle</key>
 	<string>DinoDoc</string>
 	<key>playername</key>
-	<string>Aryan</string>
+	<string></string>
 	<key>anstime</key>
 	<integer>20</integer>
 	<key>bgsound</key>
@@ -22,6 +22,10 @@
 	<string>dinoinfobg.png</string>
 	<key>badgebgimg</key>
 	<string>dinobadgebg.png</string>
+	<key>resultbgimg</key>
+	<string>dinoshowRes.png</string>
+	<key>contribgimg</key>
+	<string>dinocontri_bg.png</string>
 	<key>navimg</key>
 	<string>navgbar.png</string>
 	<key>btnbgimg</key>
@@ -43,128 +47,146 @@
 		<dict>
 			<key>title</key>
 			<string>Ankylosaurus</string>
+			<key>butseq</key>
+			<integer>1</integer>
 			<key>productid</key>
 			<string>com.09apps.dinodoc.Ankylosaurus</string>
 			<key>active</key>
 			<true/>
+			<key>iap-image</key>
+			<string>Anky_iap.png</string>
 			<key>on-image</key>
-			<string></string>
-			<key>off-image</key>
-			<string></string>
+			<string>anky.png</string>
 			<key>purchased</key>
-			<false/>
+			<true/>
+			<key>highscore</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>title</key>
 			<string>Brachiosaurus</string>
+			<key>butseq</key>
+			<integer>6</integer>
 			<key>productid</key>
 			<string>com.09apps.dinodoc.Brachiosaurus</string>
 			<key>active</key>
 			<true/>
+			<key>iap-image</key>
+			<string>Brachio_iap.png</string>
 			<key>on-image</key>
-			<string></string>
-			<key>off-image</key>
-			<string></string>
+			<string>brachio.png</string>
 			<key>purchased</key>
-			<true/>
+			<false/>
+			<key>highscore</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>title</key>
 			<string>Dilophosaurus</string>
+			<key>butseq</key>
+			<integer>2</integer>
 			<key>productid</key>
 			<string>com.09apps.dinodoc.Dilophosaurus</string>
 			<key>active</key>
 			<true/>
+			<key>iap-image</key>
+			<string>Dilo_iap.png</string>
 			<key>on-image</key>
-			<string></string>
-			<key>off-image</key>
-			<string></string>
+			<string>dilo.png</string>
 			<key>purchased</key>
-			<false/>
+			<true/>
+			<key>highscore</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>title</key>
 			<string>Stegosaurus</string>
+			<key>butseq</key>
+			<integer>3</integer>
 			<key>productid</key>
 			<string>com.09apps.dinodoc.Stegosaurus</string>
 			<key>active</key>
 			<true/>
+			<key>iap-image</key>
+			<string>Stego_iap.png</string>
 			<key>on-image</key>
-			<string></string>
-			<key>off-image</key>
-			<string></string>
+			<string>stego.png</string>
 			<key>purchased</key>
 			<false/>
+			<key>highscore</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>title</key>
 			<string>Triceratops</string>
+			<key>butseq</key>
+			<integer>5</integer>
 			<key>productid</key>
 			<string>com.09apps.dinodoc.Triceratops</string>
 			<key>active</key>
 			<true/>
+			<key>iap-image</key>
+			<string>Tricer_iap.png</string>
 			<key>on-image</key>
-			<string></string>
-			<key>off-image</key>
-			<string></string>
+			<string>tricer.png</string>
 			<key>purchased</key>
 			<false/>
+			<key>highscore</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>title</key>
 			<string>Explorer</string>
+			<key>butseq</key>
+			<integer>0</integer>
 			<key>productid</key>
 			<string>com.09apps.dinodoc.explorer</string>
 			<key>active</key>
 			<true/>
+			<key>iap-image</key>
+			<string></string>
 			<key>on-image</key>
-			<string></string>
-			<key>off-image</key>
-			<string></string>
+			<string>explorer.png</string>
 			<key>purchased</key>
 			<true/>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>Get All</string>
-			<key>productid</key>
-			<string>com.09apps.dinodoc.getall</string>
-			<key>active</key>
-			<true/>
-			<key>on-image</key>
-			<string></string>
-			<key>off-image</key>
-			<string></string>
-			<key>purchased</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>T-Rex</string>
-			<key>productid</key>
-			<string>com.09apps.dinodoc.trex</string>
-			<key>active</key>
-			<true/>
-			<key>on-image</key>
-			<string></string>
-			<key>off-image</key>
-			<string></string>
-			<key>purchased</key>
-			<false/>
+			<key>highscore</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>title</key>
 			<string>Velociraptor</string>
+			<key>butseq</key>
+			<integer>7</integer>
 			<key>productid</key>
 			<string>com.09apps.dinodoc.velociraptor</string>
 			<key>active</key>
 			<true/>
+			<key>iap-image</key>
+			<string>Velo_iap.png</string>
 			<key>on-image</key>
-			<string></string>
-			<key>off-image</key>
-			<string></string>
+			<string>velo.png</string>
 			<key>purchased</key>
+			<false/>
+			<key>highscore</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>T-Rex</string>
+			<key>butseq</key>
+			<integer>4</integer>
+			<key>productid</key>
+			<string>com.09apps.dinodoc.trex</string>
+			<key>active</key>
 			<true/>
+			<key>iap-image</key>
+			<string>trex_iap.png</string>
+			<key>on-image</key>
+			<string>trex.png</string>
+			<key>purchased</key>
+			<false/>
+			<key>highscore</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 </dict>

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>newverupdate</key>
+	<false/>
+	<key>Quizcount</key>
+	<integer>10</integer>
+	<key>WrongAnsTxt</key>
+	<string>Remember, An incorrect answer makes the brachiosaurus sneeze !</string>
+	<key>QArr</key>
+	<array>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>To grind their food</string>
+				<string>To weigh them down</string>
+				<string>They just ate whatever came their way</string>
+				<string>Stones in those era were really tasty.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Stones in brachiosaurus&apos; stomach helped them to grind their food.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Why did brachiosaurus have stones in their stomach?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Brachiosaurus</string>
+				<string>Diplodocus</string>
+				<string>T-Rex</string>
+				<string>Spinosaurus</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>This Diplodocus skeleton was as long as the size of five double-decker buses !</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Whom does the longest complete skeleton belong ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>An Arm lizard</string>
+				<string>Scary monster</string>
+				<string>Speedy thief</string>
+				<string>Terrifying lizard</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>It meant &quot;arm lizard&quot;, from the Greek brachion(&quot;arm&quot;) and sauros(&quot;lizard&quot;)</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>What does Brachiosaurus mean ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>True</string>
+				<string>False</string>
+				<string>Scientists are not sure yet.</string>
+				<string>It did not have nostrils</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Studies by Lawrence Witmer show that, its nasal openings in the skull were placed high above the eyes.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>Brachiosaurus&apos; nostrils were over its eyes.</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Smell predators from a long way</string>
+				<string>Breathe under water</string>
+				<string>Breathe and eat at the same time</string>
+				<string>Find other brachiosaurs by scent</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Their nasal bones were expanded into a broad arch so that they could breathe easily while feeding. </string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Brachiosaurus’s head featured nostrils at the very top so it could do what?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Centosaurs</string>
+				<string>Sauropods</string>
+				<string>Titanomorphs</string>
+				<string>Theropods</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Brachiosaurus was a sauropod, one of a group of four-legged, plant-eating dinosaurs with long necks.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Brachiosaurus is one of a group of giant, long-necked dinosaurs called as -</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Spoon shaped</string>
+				<string>Chisel shaped</string>
+				<string>Knife shaped</string>
+				<string>Oval</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Brachiosaurus had spatulate teeth (resembling chisels), well-suited to its herbivorous diet.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Which of the following choices best describes the shape of the teeth of brachiosaurus? </string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>North America</string>
+				<string>Europe</string>
+				<string>Asia</string>
+				<string>South America</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Brachiosaurus fossils are found in North America &amp; Africa (Tanzania).</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>Fossils of brachiosaurus are found in what part of the world? </string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Eat leaves from tall trees</string>
+				<string>Signal to other brachiosaurs</string>
+				<string>See above tall waves while submerged in water</string>
+				<string>Attract mates</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Brachiosaurus probably ate the tops of tall trees.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>Brachiosaurus most likely used its long neck to -</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>They helped keep the neck rigid and straight</string>
+				<string>They made the long neck stronger</string>
+				<string>They helped conduct sound</string>
+				<string>They made the long neck lighter</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Obviously the hollow spaces keep things lighter !</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>What was the purpose of the hollow spaces in the neck bones of brachiosaurus? </string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>25 million years ago</string>
+				<string>65 million years ago</string>
+				<string>150 million years ago</string>
+				<string>400 million years ago</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>It lived during the middle to late Jurassic period, about 156 to 130 million years ago.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>When did brachiosaurus live? </string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Longer and whiplike</string>
+				<string>Shorter and thicker</string>
+				<string>Covered with feathers</string>
+				<string>They had no tail.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Its tail was shorter in proportion to its neck than other sauropods of the Jurassic.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Compared to other giant sauropod dinosaurs, the tail of brachiosaurus was -</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>The front legs are longer than the back legs</string>
+				<string>The front legs are shorter than the back legs</string>
+				<string>The front legs are the same length as the back legs</string>
+				<string>The front legs end in sharp claws while the back legs do not.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Their morphology is unusual among dinosaurs in that the forelimbs were longer than the hind limbs. </string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>How do the front legs of brachiosaurus compare to the back legs? </string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Fish</string>
+				<string>Plants</string>
+				<string>Chocolates</string>
+				<string>Insects</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Brachiosaurus was an herbivore, a plant eater. </string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>From its teeth, scientists can tell the brachiosaurus ate what kind of food? </string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Annelid</string>
+				<string>Craniata</string>
+				<string>Chordate</string>
+				<string>Nematode
+Nematode
+Nematode
+Nematode
+</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Brachiosaurus phylum was Chordate (having a hollow nerve chord ending in a brain).</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>What phylum does Brachiosaurus belong to?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Pods</string>
+				<string>Herds</string>
+				<string>A boat</string>
+				<string>Rivers</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>It is speculated that groups of Brachiosaurus moved in herds.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Brachiosaurus may have migrated in __</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Brachiosaurs were built like huge giraffes.</string>
+				<string>Brachiosaurus ate just once a week.</string>
+				<string>A Stegosaurus could walk underneath Brachiosaurus belly.</string>
+				<string>A Brachiosaurus swallowed its food whole, without chewing it.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Brachiosaurus was a colossal dinosaur that had to feed constantly.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Which of the following is false?</string>
+		</dict>
+	</array>
+</dict>
+</plist>

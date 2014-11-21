@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>newverupdate</key>
+	<false/>
+	<key>Quizcount</key>
+	<integer>10</integer>
+	<key>WrongAnsTxt</key>
+	<string>Remember, An incorrect answer makes the Dilophosaurus eat more !</string>
+	<key>QArr</key>
+	<array>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Early Jurassic.</string>
+				<string>Cretaceous Period</string>
+				<string>Lower Jurassic - Recent.</string>
+				<string>Middle Jurassic to Early Cretaceous</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>It lived in early Jurassic period, about 201 to 189 million years ago.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>What period does the fossils of the Dilophosaurus come from?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Speedy thief</string>
+				<string>Scary monster</string>
+				<string>Double-crested lizard</string>
+				<string>An Arm lizard</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Dilophosaurus means &quot;double-crested lizard&quot;.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>What does Dilophosaurus mean ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Tiny, like chickens.</string>
+				<string>It is not known yet.</string>
+				<string>Up to 6.8 feet long.</string>
+				<string>Up to 20 feet long.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Dilophosaurus grew up to about 20 feet (6 m) long</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>How big was a Dilophosaurus ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Arthropoda</string>
+				<string>Chordate</string>
+				<string>Mollusca</string>
+				<string>Chordata</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Dilophosaurus belonged to Phylum Chordata (having a hollow nerve chord ending in a brain).</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>What phylum does Dilophosaurus belong to?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Reptile</string>
+				<string>Insecta</string>
+				<string>Heterobasidiomycetes</string>
+				<string>Chlorophyceae</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Dilophosaurus belong to Classis Reptilia.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>What classis does Dilophosaurus belong to?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Connecticut, USA</string>
+				<string>California, USA</string>
+				<string>China</string>
+				<string>Arizona, USA</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>The first fossil Dilophosaurus skeleton was found in Arizona, USA, in the 1940&apos;s. </string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>Where was first Dilophosaurus fossils found ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>The venom spray</string>
+				<string>An expandable neck frill</string>
+				<string>The paired crests on top of its skull</string>
+				<string>It&apos;s huge size</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>The most distinctive feature of Dilophosaurus was the paired crests on top of its skull.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>What is the most distinctive feature of Dilophosaurus ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Sharp teeth</string>
+				<string>Clawed hands</string>
+				<string>Walking on four legs</string>
+				<string>hunted in packs</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Dilophosaurus were bipedal.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Which of the following was not a feature of Dilophosaurus ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Scientists don&apos;t know yet</string>
+				<string>As a weapon</string>
+				<string>To regulate body temperature</string>
+				<string>Used by males to attract females </string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Scientists are not completely sure yet on use of crests.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>What was the use of two crests on Dilophosaurus&apos; head?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Dilophosaurus was a fast-moving bipedal predator.</string>
+				<string>It ate smaller plant-eating dinosaurs.</string>
+				<string>Dilophosaurus may have roved in packs.</string>
+				<string>Dilophosaurus hunted by spitting poison.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>There&apos;s no evidence that Dilophosaurus was venomous.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>Which of the following is false ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Around 500 pounds</string>
+				<string>About 650 to 1,000 pounds</string>
+				<string>Around 100 pounds</string>
+				<string>Up to 5 tons</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Dilophosaurus were about 650 to 1,000 pounds (300 kg to 450 kg).</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>How much did a Dilophosaurus weigh ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>It had hollow bones and an S-shaped, curved neck.</string>
+				<string>It was a theropod.</string>
+				<string>It did not have any teeth , just a beak.</string>
+				<string>Dilophosaurus were about 5 feet (1.5 m) tall at the hip</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Dilophosaurus had 12 maxillary teeth and as many as 18 dentary teeth.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Which of the following is false ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Gideon A. Mantell</string>
+				<string>Samuel P. Welles</string>
+				<string>Barnum Brown</string>
+				<string>Robert Plot</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Paleontologist Samuel P. Welles named Dilophosaurus in 1970.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Who named Dilophosaurus?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>It was pictured far too small</string>
+				<string>Shown with a frill it did not have.</string>
+				<string>It was depicted as spitting poison</string>
+				<string>All of above.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>There is no fossil evidence for any of these.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>What did Jurassic Park movie got wrong about Dilophosaurus?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Dilophosaurus</string>
+				<string>Ammosaurus</string>
+				<string>Syntarsus</string>
+				<string>Segisaurus</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>All except Ammosaurus are meat eaters!</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>Find the odd one out -</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Primal Carnage</string>
+				<string>Angry birds</string>
+				<string>Temple run</string>
+				<string>Flappy bird</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Primal Carnage feature Dilophosaurus modeled after the representations in Jurassic Park.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>What video game features a dilophosaurus ?</string>
+		</dict>
+	</array>
+</dict>
+</plist>

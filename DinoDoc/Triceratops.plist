@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>newverupdate</key>
+	<false/>
+	<key>Quizcount</key>
+	<integer>10</integer>
+	<key>WrongAnsTxt</key>
+	<string>Remember, An incorrect answer makes the Triceratops charge like a rhino..</string>
+	<key>QArr</key>
+	<array>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>TEXAS</string>
+				<string>MARYLAND</string>
+				<string>OKLAHOMA</string>
+				<string>WYOMING</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>The US state of Wyoming lists the Triceratops as its state dinosaur.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>Which US state has Triceratops as official state dinosaur?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>With venom</string>
+				<string>By running away</string>
+				<string>With tail club</string>
+				<string>With horns on its head</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Triceratops probably charged into its enemy like the modern-day rhinoceros does.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>How did triceratops defend itself?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>It means a terrifying lizard in greek.</string>
+				<string>The fast runner in latin.</string>
+				<string>Three-horned Lizard.</string>
+				<string>There is no meaning of this word.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Triceratops means &quot;three-horn face&quot; in Greek.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>What does the name Triceratops mean ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Sound collection</string>
+				<string>To look good</string>
+				<string>Temperature regulation</string>
+				<string>Predator detection</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Triceratops&apos; 6.5-foot (2-meter) wide neck frill may also have been used to help regulate its temperature.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Besides protection, the neck frill of Triceratops might also have been used for what purpose?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Baby Bop</string>
+				<string>Craig</string>
+				<string>Buddy</string>
+				<string>Cera</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Buddy is a T-Rex from Dinosaur Train who likes to ask questions.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Which of the following characters in not a Triceratops?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>1</string>
+				<string>None</string>
+				<string>6</string>
+				<string>3</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>It had one short horn above its parrot-like beak and two longer horns above its eyes.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>How many horns a Triceratops had ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Carnivores (meat eaters)</string>
+				<string>Omnivore (ate whatever came their way)</string>
+				<string>Herbivores (plant eaters)</string>
+				<string>Chocolate fans</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Triceratops ate plants, they were herbivores.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Triceratops were ..</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Triceratops hatched from eggs</string>
+				<string>Triceratops may have traveled in herds.</string>
+				<string>Triceratops was bipedal.</string>
+				<string>Triceratops was up to 30 feet long.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Triceratops was quadrupedal.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Which of the following is false ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Cretaceous Period</string>
+				<string>Jurassic Period</string>
+				<string>Triassic Period</string>
+				<string>Very interesting period.</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Triceratops lived in late Cretaceous period, about 72-65 million years ago</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>Triceratops lived during what period?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Triceratops</string>
+				<string>Ugrosaurus</string>
+				<string>Parasaurolophus</string>
+				<string>Dilophosaurus</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Dilophosaurus was a meat eater, all others were plat eaters.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>Find the odd one out.</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Between 50,000 and 75,000 lbs </string>
+				<string>Between 1,000 and 9,000 lbs </string>
+				<string>Between 13,000 and 26,000 lbs </string>
+				<string>Between 110,000 and 140,000 lbs</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>it is estimated it weighed Between 13,000 and 26,000 lbs. </string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>How much is Triceratops thought to have weighed?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>20 mph </string>
+				<string>30 mph </string>
+				<string>15 mph </string>
+				<string>40 mph</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>As Triceratops had a vast girth and short legs, it is thought that it could only reach a speed of 15 mph.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>It is thought that Triceratops was able to run how fast?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Sauropods</string>
+				<string>Hadrosaurs</string>
+				<string>Therapods</string>
+				<string>Ceratopsians</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Ceratopsians is the right answer!</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>Triceratops belongs to a group of horned dinosaurs known as which of the following?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Tyrannosaurus rex</string>
+				<string>Dilophosaurus</string>
+				<string>Albertosaurus</string>
+				<string>Spinosaurus</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>Except Dilophosaurus, all others lived in same period.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>What dinosaur did not live alongwith Triceratops?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>1887</string>
+				<string>1904</string>
+				<string>1906</string>
+				<string>1838</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>The first fossils of a triceratops were found in Denver Colorado in 1887.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>When were first fossils of triceratops found ?</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>Mud</string>
+				<string>Bristle like formations</string>
+				<string>Thik hair</string>
+				<string>Feathers</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>The triceratops skin was believed to be covered in bristle like formations.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>The triceratops skin was believed to be covered in ..</string>
+		</dict>
+		<dict>
+			<key>Options</key>
+			<array>
+				<string>One-third of the entire length of the dinosaur&apos;s body.</string>
+				<string>Half of the entire length of the dinosaur&apos;s body</string>
+				<string>It had a tiny head.</string>
+				<string>One-fifth of the entire length of the dinosaur&apos;s body</string>
+			</array>
+			<key>Complexity</key>
+			<integer>0</integer>
+			<key>Details</key>
+			<string>The head of Triceratops was making up one-third of the entire length of the dinosaur&apos;s body.</string>
+			<key>Image</key>
+			<string></string>
+			<key>Answer</key>
+			<integer>0</integer>
+			<key>Question</key>
+			<string>How big was head of a Triceratops?</string>
+		</dict>
+	</array>
+</dict>
+</plist>
