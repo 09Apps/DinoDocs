@@ -68,16 +68,16 @@
         }
         else
         {
-            unsigned int fetchcode;
+            long fetchcode;
             
-            if (senderbtn.tag == REMOVEADTAG)
-            {
-                fetchcode = senderbtn.tag + 2;
-            }
-            else
-            {
+//            if (senderbtn.tag == REMOVEADTAG)
+//            {
+//                fetchcode = senderbtn.tag + 2;
+//            }
+//            else
+//            {
                 fetchcode = senderbtn.tag;
-            }
+//            }
             
             SKProduct *product = _products[fetchcode];
             [[DDIAPUse sharedInstance] buyProduct:product];
@@ -229,7 +229,6 @@
 }
 
 - (void)modalDialogClosed:(UIViewController *)viewController
-//- (void)modalDialogClosed
 {
     [self goHome:nil];
 }

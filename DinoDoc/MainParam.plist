@@ -154,27 +154,9 @@
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>Velociraptor</string>
-			<key>butseq</key>
-			<integer>7</integer>
-			<key>productid</key>
-			<string>com.09apps.dinodoc.velociraptor</string>
-			<key>active</key>
-			<true/>
-			<key>iap-image</key>
-			<string>Velo_iap.png</string>
-			<key>on-image</key>
-			<string>velo.png</string>
-			<key>purchased</key>
-			<false/>
-			<key>highscore</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>title</key>
 			<string>T-Rex</string>
 			<key>butseq</key>
-			<integer>4</integer>
+			<integer>7</integer>
 			<key>productid</key>
 			<string>com.09apps.dinodoc.trex</string>
 			<key>active</key>
@@ -183,6 +165,24 @@
 			<string>trex_iap.png</string>
 			<key>on-image</key>
 			<string>trex.png</string>
+			<key>purchased</key>
+			<false/>
+			<key>highscore</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Velociraptor</string>
+			<key>butseq</key>
+			<integer>4</integer>
+			<key>productid</key>
+			<string>com.09apps.dinodoc.velociraptor</string>
+			<key>active</key>
+			<true/>
+			<key>iap-image</key>
+			<string>Velo_iap.png</string>
+			<key>on-image</key>
+			<string>velo.png</string>
 			<key>purchased</key>
 			<false/>
 			<key>highscore</key>

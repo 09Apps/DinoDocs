@@ -11,5 +11,5 @@
 
 @interface MBInfoVC : UIViewController <MFMailComposeViewControllerDelegate, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
-
+@property (nonatomic, strong) NSString* openurl;
 @end

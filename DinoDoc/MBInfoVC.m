@@ -50,26 +50,39 @@
 }
 - (IBAction)FBClicked:(UIButton *)sender
 {
+//    self.openurl = FBURL;
+//    [self parentalGate];  //Parental Gate
+    
     NSURL *facebookURL = [NSURL URLWithString:FBURL];
-    if ([[UIApplication sharedApplication] canOpenURL:facebookURL]) {
+    if ([[UIApplication sharedApplication] canOpenURL:facebookURL])
+    {
         [[UIApplication sharedApplication] openURL:facebookURL];
-    } else {
+    } else
+    {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com"]];
     }
 }
 - (IBAction)PolicyPressed:(UIButton *)sender
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:POLICYURL]];
+    self.openurl = POLICYURL;
+//  [self parentalGate];  //Parental Gate
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.openurl]];
 }
 
 - (IBAction)fqaPressed:(UIButton *)sender
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:FAQURL]];
+    self.openurl = FAQURL;
+//  [self parentalGate];  //Parental Gate
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.openurl]];
+
 }
 
 - (IBAction)WWWpressed:(UIButton *)sender
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:WEBURL]];
+    self.openurl = TWITTERURL;
+//  [self parentalGate];  //Parental Gate
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.openurl]];
+
 }
 
 - (IBAction)AppStoreClicked:(UIButton *)sender
@@ -78,18 +91,22 @@
     {
         NSString *templateReviewURLiOS7 = @"itms-apps://itunes.apple.com/app/id";
         [templateReviewURLiOS7 stringByAppendingString:APPID];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:templateReviewURLiOS7]];
+        self.openurl = templateReviewURLiOS7;
     }
     else
     {
         NSString *templateReviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=09Apps&id=";
         [templateReviewURL stringByAppendingString:APPID];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:templateReviewURL]];
+        self.openurl = templateReviewURL;
     }
+    
+//  [self parentalGate];  //Parental Gate
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.openurl]];
 }
 
 - (IBAction)EmailClicked:(UIButton *)sender
 {
+    
     MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
     
     mailComposer.mailComposeDelegate = self;
@@ -106,12 +123,55 @@
 
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-    
 }
 
 - (void)goHome:(id)navbarbutton
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+/* future implementation for made for kids category
+-(void)parentalGate
+{
+    //get two random numbers between 10 & 20
+    int num1 = (arc4random() % 20) + 10;
+    int num2 = (arc4random() % 20) + 10;
+    
+    NSString* pgQuestion = [NSString stringWithFormat:@"What is sum of %d + %d",num1,num2];
+    
+    int ans = num1 + num2;
+    
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Consult your parent!" message:pgQuestion delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    [alertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    alertView.tag = ans;
+    [alertView show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    { //OK button
+        int parentalGateAnswer = [[[alertView textFieldAtIndex:0] text] intValue];
+        
+        if ( alertView.tag == parentalGateAnswer )
+        {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.openurl]];
+        }
+        else
+        {
+            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Wrong answer!" message:@"Please consult your parent!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            alertView.tag = 0; // required so that the alertview does not go in loop
+            [alertView show];
+
+        }
+    }
+    else if (buttonIndex == 0 && alertView.tag != 0)
+    {
+            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Consult your parent!" message:@"Please answer the question to access this link!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            alertView.tag = 0; // required so that the alertview does not go in loop
+            [alertView show];
+    }
+}
+*/
 
 @end
