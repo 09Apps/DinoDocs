@@ -37,10 +37,10 @@
 #define CONTACTEMAIL    @"contact@09apps.com"                               //Contact email id
 #define EMAILSUB        @"DinoDOC iOS"                                      //Email subject
 #define FBURL           @"fb://profile/285876748286203"                     //Facebook URL
-#define TWITTERURL      @"https://twitter.com/09apps"                       //Twitter URL
+#define TWITTERURL      @"twitter:///user?screen_name=09Apps"               //Twitter URL
 #define APPID           @"881531237"                                        //App id for appstore
 #define ADUNITID        @"ca-app-pub-1165626743430331/1272847601"           //Admob ad unit id
-#define REMOVEADPRODID  @"com.09apps.dinodoc.withoutads"                     //Product id for in app purchase of remove ad
+#define REMOVEADPRODID  @"com.09apps.dinodoc.withoutads"                    //Product id for in app purchase of remove ad
 #define POLICYURL       @"http://dinodocapp.wordpress.com/privacy-policy/"  //webpage for the privacy policy
 #define CONTRIURL       @"http://dinodocapp.wordpress.com/credits/"         //webpage with list of contributors
 #define FAQURL          @"http://dinodocapp.wordpress.com/faq/"             //FAQ webpage
