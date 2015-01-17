@@ -10,6 +10,7 @@
 #import "DDDefines.h"
 #import "DDUtils.h"
 #import "DDMainParam.h"    
+#import <Tapdaq/Tapdaq.h>
 
 @interface DDBadgesViewController ()
 
@@ -29,8 +30,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     DDMainParam* mainparam = [DDMainParam sharedInstance];
+    self.adshow = mainparam.showads;
     
-    if (mainparam.showads)
+    if (self.adshow)
     {
         [super viewWillAppear:animated];
         self.shared = [MBGADMasterVC singleton];
@@ -113,6 +115,8 @@
     // The badges plist file
     NSString* plistPath = [DDUtils getPlistPath:BADGES];
     
+    NSLog(@"badge plistPath %@",plistPath);
+    
     // read property list into memory as an NSData object
     NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
     NSString *errorDesc = nil;
@@ -144,9 +148,11 @@
                 
             if (isenabled == NO)
             {
-                // Check if beginner
                 if (self.quizcounter == 0)
                 {
+                    // Check if beginner
+                    // First Quiz of every user gets him this badge
+                    
                     if ([titlestr compare:@"First_Quiz"] == NSOrderedSame)
                     {
                         [bgdict setObject:nsenabled forKey:@"enabled"];
@@ -156,9 +162,10 @@
                     }
                 }
 
-                if (score > outofcount*BADGEFACTOR)
+                if (score >= outofcount*BADGEFACTOR)
                 {
-                    //Check if fast
+                    // Check if fast
+                    // If user completes the quiz in certain time and gets good score, give him a badge
                     if (totaltime <= SPEEDMASTERFACTOR*outofcount )
                     {
                         if ([titlestr compare:@"Speed"] == NSOrderedSame)
@@ -170,7 +177,7 @@
                         }
                     }
                     
-                    //Check if any other badge
+                    // Check if any other badge specific to Dino type
                     if ([titlestr compare:quiztype] == NSOrderedSame)
                     {
                         [bgdict setObject:nsenabled forKey:@"enabled"];
@@ -182,7 +189,8 @@
                 }
                 
                 //Check if quiz master
-                if (self.quizcounter > QUIZMASTERFACTOR )
+                // This does not have score condition, if user plays more than X times , give him a badge
+                if (self.quizcounter >= QUIZMASTERFACTOR )
                 {
                     if ([titlestr compare:@"QuizMaster"] == NSOrderedSame)
                     {
@@ -261,6 +269,10 @@
 
 - (void)goHome:(id)navbarbutton
 {
+    if (self.adshow)
+    {
+        [[Tapdaq sharedSession] showInterstitial];
+    }
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -292,6 +304,28 @@
 
 -(NSString*) getTitle
 {
+    NSUInteger earnedbadges = [self getEarnedBadgeCount];
+    
+    if (earnedbadges >= QUIZDOCFACTOR)
+    {
+        return HIGHTITLE;
+    }
+    else if (earnedbadges >= FREEQZSCORE2)
+    {
+        return MEDTITLE;
+    }
+    else if (earnedbadges > 2)
+    {
+        return LOWTITLE;
+    }
+    
+    return NOTITLE;
+}
+
+-(NSUInteger) getEarnedBadgeCount
+{
+    NSUInteger earnedbadges = 0;
+    
     // The badges plist file
     NSString* plistPath = [DDUtils getPlistPath:BADGES];
     
@@ -312,8 +346,6 @@
         self.badges = [dict objectForKey:@"Badges"];
         NSUInteger bcount = [self.badges count];
         
-        NSUInteger earnedbadges = 0;
-        
         for (int i=0; i<bcount;i++)
         {
             NSMutableDictionary* bgdict = [self.badges objectAtIndex:i];
@@ -324,22 +356,9 @@
                 earnedbadges++;
             }
         }
-        
-        if (earnedbadges > 8)
-        {
-            return HIGHTITLE;
-        }
-        else if (earnedbadges > 5)
-        {
-            return MEDTITLE;
-        }
-        else if (earnedbadges > 2)
-        {
-            return LOWTITLE;
-        }
     }
     
-    return NOTITLE;
+    return earnedbadges;
 }
 
 @end

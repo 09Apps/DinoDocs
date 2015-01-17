@@ -21,6 +21,7 @@
 @property BOOL soundon;
 @property BOOL showansdetails;
 @property BOOL restored;
+@property BOOL adshow;
 @property (nonatomic,strong) AVAudioPlayer *bgplayer;
 @property (nonatomic,strong) NSString* playername;
 @property (nonatomic,strong) NSString* btnbgimg;

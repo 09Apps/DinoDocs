@@ -16,4 +16,5 @@
 @property (atomic,strong) UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) MBGADMasterVC* shared;
 @property NSUInteger currprod;
+@property BOOL adshow;
 @end

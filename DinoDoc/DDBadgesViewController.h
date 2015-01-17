@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) NSArray* badges;
 @property BOOL newverupd;
+@property BOOL adshow;
 @property NSUInteger quizcounter;
 @property (weak, nonatomic) MBGADMasterVC* shared;
 
@@ -23,5 +24,6 @@
                         Outof:(NSUInteger)outofcount
                         InTime:(NSUInteger)totaltime;
 -(NSString*) getTitle;
+-(NSUInteger) getEarnedBadgeCount;
 
 @end

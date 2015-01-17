@@ -131,6 +131,7 @@
     
     // Get the singleton instance of main param
     DDMainParam* mainparam = [DDMainParam sharedInstance];
+    self.adshow = mainparam.showads;
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.playbgimg]];
     
     NSUInteger optionscount = [mainparam.options count];
@@ -235,9 +236,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    //DDMainParam* mainparam = [DDMainParam sharedInstance];
     
-    if (mainparam.showads)
+    if (self.adshow)
     {
         [super viewWillAppear:animated];
         self.shared = [MBGADMasterVC singleton];

@@ -24,7 +24,12 @@
 #define BADGEFACTOR 0.80            // The multiplier for score benchmarking
 #define SPEEDMASTERFACTOR 2.0       // Quickest time to answer a question
 #define QUIZMASTERFACTOR 15         // Number of quiz played more than 15
-#define QUIZDOCFACTOR 9             // Number of max badges - 1
+#define QUIZDOCFACTOR 8             // Number of max badges - 2
+#define FREEQZSCORE1 4              // Number of badges needed to unlock first free quiz
+#define FREEQZSCORE2 6              // Number of badges needed to unlock Second free quiz
+#define FREEQZ1 @"Velociraptor"     // First free unlock quiz - Velociraptor
+#define FREEQZ2 @"Triceratops"      // First free unlock quiz - Triceratops
+
 #define MAINPARAM   @"MainParam"    // Name of main parameter file
 #define BADGES      @"badges"       // Name of badges plist file
 #define HOMEICON    @"home.png"     // Name of Home icon

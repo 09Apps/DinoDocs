@@ -39,6 +39,7 @@
     self.soundon = mainparam.soundon;
     self.showansdetails = mainparam.showansdetails;
     self.playername = mainparam.playername;
+    self.adshow = mainparam.showads;
     self.restored = NO;
 
     // Uncomment the following line to preserve selection between presentations.
@@ -58,9 +59,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    //DDMainParam* mainparam = [DDMainParam sharedInstance];
     
-    if (mainparam.showads)
+    if (self.adshow)
     {
         [super viewWillAppear:animated];
         self.shared = [MBGADMasterVC singleton];
@@ -91,6 +92,7 @@
     if ([productIdentifier compare:REMOVEADPRODID] == NSOrderedSame)
     {
         mainparam.showads = NO;
+        self.adshow = NO;
         [mainparam setParamchanged:YES];
     }
     else
@@ -317,8 +319,8 @@
 
 - (void)removeAds
 {
-    DDMainParam* mainparam = [DDMainParam sharedInstance];
-    if (mainparam.showads)
+    //DDMainParam* mainparam = [DDMainParam sharedInstance];
+    if (self.adshow)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Remove Ads" message:@"One time fees of $0.99 would be charged for removing all ads from the app" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: @"Continue", nil];
         

@@ -33,6 +33,8 @@
     
     // Get the singleton instance of main param
     DDMainParam* mainparam = [DDMainParam sharedInstance];
+    
+    self.adshow = mainparam.showads;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:mainparam.contribgimg]];
     
     UIButton *homebtn=[[UIButton alloc]initWithFrame:CGRectMake(10,25,42, 46)];
@@ -81,9 +83,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    //DDMainParam* mainparam = [DDMainParam sharedInstance];
     
-    if (mainparam.showads)
+    if (self.adshow)
     {
         [super viewWillAppear:animated];
         self.shared = [MBGADMasterVC singleton];

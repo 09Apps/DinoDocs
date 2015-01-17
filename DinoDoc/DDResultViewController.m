@@ -13,6 +13,7 @@
 #import "DDUtils.h"
 #import "DDPlayViewController.h"
 #import "DDBadgesViewController.h"
+#import <Tapdaq/Tapdaq.h>
 
 @interface DDResultViewController ()
 
@@ -37,9 +38,20 @@
     DDMainParam* mainparam = [DDMainParam sharedInstance];
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:mainparam.resultbgimg]];
     
+    self.adshow = mainparam.showads;
+    
     UIImage *image = [UIImage imageNamed: mainparam.navimg];
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics: UIBarMetricsDefault];
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    if (self.soundon)
+    {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"claps" ofType:@"wav"];
+        NSURL *pathURL = [NSURL fileURLWithPath:path];
+        
+        self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:pathURL error:nil];
+        [self.player play];
+    }
 
     self.scorelbl.text = [NSString stringWithFormat:@" %lu of %lu",(unsigned long)self.score,(unsigned long)self.quizcount];
 
@@ -71,26 +83,75 @@
     }
     else
     {
-        self.bdglbl.text = @"Keep playing to earn badges!";
+        self.bdglbl.text = @"Keep playing to earn badges & Titles!";
     }
     
-    if (self.soundon)
+    // Unlock quiz for free if badge count matches
+    NSUInteger earnedbdgcnt = [bdgVC getEarnedBadgeCount];
+    
+    if (earnedbdgcnt == FREEQZSCORE1)
     {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"claps" ofType:@"wav"];
-        NSURL *pathURL = [NSURL fileURLWithPath:path];
-        
-        self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:pathURL error:nil];
-        [self.player play];
+        NSUInteger optionscount = [mainparam.options count];
+            
+        for (int i=0; i<optionscount; i++)
+        {
+            NSDictionary* dict = [mainparam.options objectAtIndex:i];
+            NSString* titlestr = [dict objectForKey:@"title"];
+                
+            if ([titlestr compare:FREEQZ1] == NSOrderedSame)
+            {
+                if (! [[dict objectForKey:@"purchased"] boolValue] )
+                {
+                    [dict setValue:[DDUtils stringFromBool:YES] forKey:@"purchased"];
+                    [mainparam updateMainParam];
+                
+                    NSString* unlockqz = [NSString stringWithFormat:@"You have unlocked %@ quiz for FREE! ", FREEQZ1];
+                
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:unlockqz delegate:self cancelButtonTitle:@"Cool" otherButtonTitles:nil];
+                
+                    [alert show];
+                }
+                break;
+            }
+        }
     }
+    else if (earnedbdgcnt == FREEQZSCORE2)
+    {
+        NSUInteger optionscount = [mainparam.options count];
+        
+        for (int i=0; i<optionscount; i++)
+        {
+            NSDictionary* dict = [mainparam.options objectAtIndex:i];
+            NSString* titlestr = [dict objectForKey:@"title"];
+            
+            if ([titlestr compare:FREEQZ2] == NSOrderedSame)
+            {
+                if (! [[dict objectForKey:@"purchased"] boolValue] )
+                {
+                    [dict setValue:[DDUtils stringFromBool:YES] forKey:@"purchased"];
+                    [mainparam updateMainParam];
+                    
+                    NSString* unlockqz = [NSString stringWithFormat:@"You have unlocked %@ quiz for FREE! ", FREEQZ2];
+                    
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:unlockqz delegate:self cancelButtonTitle:@"Cool" otherButtonTitles:nil];
+                    
+                    [alert show];
+                }
+                break;
+            }
+        }
+    }
+
 
     [self.navigationItem setHidesBackButton:YES animated:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    DDMainParam* mainparam = [DDMainParam sharedInstance];
+    //DDMainParam* mainparam = [DDMainParam sharedInstance];
+    //self.adshow = mainparam.showads;
     
-    if (mainparam.showads)
+    if (self.adshow)
     {
         [super viewWillAppear:animated];
         self.shared = [MBGADMasterVC singleton];
@@ -107,9 +168,10 @@
 - (IBAction)playAgain:(UIButton *)senderbutton
 {
     [self.player stop];
+    if (self.adshow)
+    {
+        [[Tapdaq sharedSession] showInterstitial];
+    }
     [self performSegueWithIdentifier:@"goplay" sender:senderbutton];
-    
-/*    [self dismissViewControllerAnimated:YES completion:^{}];
- */
 }
 @end

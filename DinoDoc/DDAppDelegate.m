@@ -10,6 +10,7 @@
 #import "DDIAPUse.h"
 #import "DDMainParam.h"
 #import "iRate.h"
+#import <Tapdaq/Tapdaq.h>
 
 @implementation DDAppDelegate
 
@@ -21,6 +22,9 @@
     self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:mainparam.bgimg]];
     
     [DDIAPUse sharedInstance];
+    
+    [[Tapdaq sharedSession] setApplicationId:@"54ba536c9c58aa3857e9b0ac"
+                                   clientKey:@"2ca7f01b-a6bd-4731-9e29-4d3a53029dc4"];
     return YES;
 }
 							

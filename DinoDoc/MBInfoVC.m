@@ -9,6 +9,7 @@
 #import "MBInfoVC.h"
 #import "DDMainParam.h"
 #import "DDDefines.h"
+#import <Tapdaq/Tapdaq.h>
 
 @interface MBInfoVC ()
 
@@ -127,6 +128,7 @@
 
 - (void)goHome:(id)navbarbutton
 {
+    [[Tapdaq sharedSession] showInterstitial];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

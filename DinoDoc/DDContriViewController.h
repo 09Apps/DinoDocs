@@ -13,5 +13,6 @@
 @interface DDContriViewController : UIViewController <MFMailComposeViewControllerDelegate, GADBannerViewDelegate>
 
 @property (weak, nonatomic) MBGADMasterVC* shared;
+@property BOOL adshow;
 
 @end
