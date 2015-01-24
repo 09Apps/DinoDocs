@@ -53,7 +53,7 @@
 			<array>
 				<string>An Arm lizard</string>
 				<string>Scary monster</string>
-				<string>Speedy thief</string>
+				<string>Coughing monster</string>
 				<string>Terrifying lizard</string>
 			</array>
 			<key>Complexity</key>
@@ -110,7 +110,7 @@
 			<array>
 				<string>Centosaurs</string>
 				<string>Sauropods</string>
-				<string>Titanomorphs</string>
+				<string>Neckosaurs</string>
 				<string>Theropods</string>
 			</array>
 			<key>Complexity</key>
@@ -167,7 +167,7 @@
 			<array>
 				<string>Eat leaves from tall trees</string>
 				<string>Signal to other brachiosaurs</string>
-				<string>See above tall waves while submerged in water</string>
+				<string>Do neck dance</string>
 				<string>Attract mates</string>
 			</array>
 			<key>Complexity</key>
@@ -204,7 +204,7 @@
 			<key>Options</key>
 			<array>
 				<string>25 million years ago</string>
-				<string>65 million years ago</string>
+				<string>In 8th century.</string>
 				<string>150 million years ago</string>
 				<string>400 million years ago</string>
 			</array>
@@ -222,7 +222,7 @@
 		<dict>
 			<key>Options</key>
 			<array>
-				<string>Longer and whiplike</string>
+				<string>Colorful</string>
 				<string>Shorter and thicker</string>
 				<string>Covered with feathers</string>
 				<string>They had no tail.</string>

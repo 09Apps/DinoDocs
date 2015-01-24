@@ -15,8 +15,8 @@
 			<array>
 				<string>Early Jurassic.</string>
 				<string>Late Cretaceous Period</string>
-				<string>Lower Jurassic - Recent.</string>
-				<string>Middle Jurassic to Early Cretaceous</string>
+				<string>In 14th century</string>
+				<string>They are sill found in Amazon rainforest.</string>
 			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
@@ -34,7 +34,7 @@
 			<array>
 				<string>Speedy thief</string>
 				<string>Fused lizard</string>
-				<string>Double-crested lizard</string>
+				<string>Water monkey</string>
 				<string>An Arm lizard</string>
 			</array>
 			<key>Complexity</key>
@@ -110,7 +110,7 @@
 			<array>
 				<string>Australia</string>
 				<string>Asia</string>
-				<string>South America</string>
+				<string>France</string>
 				<string>North America</string>
 			</array>
 			<key>Complexity</key>
@@ -241,8 +241,8 @@
 		<dict>
 			<key>Options</key>
 			<array>
-				<string>Gideon A. Mantell</string>
-				<string>Samuel P. Welles</string>
+				<string>John Hammond</string>
+				<string>Dr. Anko</string>
 				<string>Barnum Brown</string>
 				<string>Robert Plot</string>
 			</array>

@@ -112,7 +112,7 @@
 			<key>on-image</key>
 			<string>stego.png</string>
 			<key>purchased</key>
-			<false/>
+			<true/>
 			<key>highscore</key>
 			<integer>0</integer>
 		</dict>

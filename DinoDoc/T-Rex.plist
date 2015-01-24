@@ -15,7 +15,7 @@
 			<array>
 				<string>Cretaceous</string>
 				<string>The worst period</string>
-				<string>Triassic</string>
+				<string>11th century</string>
 				<string>Jurassic</string>
 			</array>
 			<key>Complexity</key>
@@ -35,7 +35,7 @@
 				<string>Exact 12 tonnes each</string>
 				<string>Around 6.4 tonnes</string>
 				<string>Less than 3 tonnes</string>
-				<string>Over 15 tonnes</string>
+				<string>Over 100 tonnes</string>
 			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
@@ -51,7 +51,7 @@
 		<dict>
 			<key>Options</key>
 			<array>
-				<string>Large head size.</string>
+				<string>They used perfumes.</string>
 				<string>Big nostrils.</string>
 				<string>Large olfactory bulbs relative to brain size.</string>
 				<string>They liked flowers.</string>
@@ -72,7 +72,7 @@
 			<array>
 				<string>Craig</string>
 				<string>Baby Bop</string>
-				<string>Paula</string>
+				<string>James Bond</string>
 				<string>Barney</string>
 			</array>
 			<key>Complexity</key>
@@ -111,7 +111,7 @@
 				<string>It circled the objects multiple times.</string>
 				<string>Both eyes placed on the sides.</string>
 				<string>Both eyes faced forwards on the front of its skull.</string>
-				<string>It used it&apos;s tell to judge the depth.</string>
+				<string>It used 3D glasses.</string>
 			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
@@ -166,7 +166,7 @@
 			<key>Options</key>
 			<array>
 				<string>Over 100 years.</string>
-				<string>They never died.</string>
+				<string>As much they wanted.</string>
 				<string>Less than 5 years.</string>
 				<string>Around 30 years.</string>
 			</array>

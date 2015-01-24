@@ -83,7 +83,7 @@
     }
     else
     {
-        self.bdglbl.text = @"Keep playing to earn badges & Titles!";
+        self.bdglbl.text = @"Keep playing, earn badges & Titles!";
     }
     
     // Unlock quiz for free if badge count matches

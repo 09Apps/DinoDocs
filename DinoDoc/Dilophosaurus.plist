@@ -15,7 +15,7 @@
 			<array>
 				<string>Early Jurassic.</string>
 				<string>Cretaceous Period</string>
-				<string>Lower Jurassic - Recent.</string>
+				<string>In 3rd century.</string>
 				<string>Middle Jurassic to Early Cretaceous</string>
 			</array>
 			<key>Complexity</key>
@@ -35,7 +35,7 @@
 				<string>Speedy thief</string>
 				<string>Scary monster</string>
 				<string>Double-crested lizard</string>
-				<string>An Arm lizard</string>
+				<string>Funny dancer</string>
 			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
@@ -71,7 +71,7 @@
 			<key>Options</key>
 			<array>
 				<string>Arthropoda</string>
-				<string>Chordate</string>
+				<string>Kiwi</string>
 				<string>Mollusca</string>
 				<string>Chordata</string>
 			</array>
@@ -241,10 +241,10 @@
 		<dict>
 			<key>Options</key>
 			<array>
-				<string>Gideon A. Mantell</string>
+				<string>John Hammond</string>
 				<string>Samuel P. Welles</string>
 				<string>Barnum Brown</string>
-				<string>Robert Plot</string>
+				<string>Dr. Dilo</string>
 			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
@@ -281,7 +281,7 @@
 			<array>
 				<string>Dilophosaurus</string>
 				<string>Ammosaurus</string>
-				<string>Syntarsus</string>
+				<string>T-Rex</string>
 				<string>Segisaurus</string>
 			</array>
 			<key>Complexity</key>

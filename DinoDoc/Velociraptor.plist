@@ -13,9 +13,9 @@
 		<dict>
 			<key>Options</key>
 			<array>
-				<string>Hauzer</string>
+				<string>James Bond</string>
 				<string>Alex</string>
-				<string>Tricky</string>
+				<string>Dr. Evil</string>
 				<string>Yoshi</string>
 			</array>
 			<key>Complexity</key>
@@ -35,7 +35,7 @@
 				<string>A fast running bipedal dinosaur</string>
 				<string>A plant eater</string>
 				<string>A huge dinosaur</string>
-				<string>A dinosaur that could talk</string>
+				<string>A dinosaur that could sing</string>
 			</array>
 			<key>Complexity</key>
 			<integer>0</integer>
@@ -184,7 +184,7 @@
 		<dict>
 			<key>Options</key>
 			<array>
-				<string>Its sharp teeth</string>
+				<string>Guns</string>
 				<string>Its single, oversized hind claws</string>
 				<string>Its speed</string>
 				<string>Its big size</string>
@@ -203,7 +203,7 @@
 		<dict>
 			<key>Options</key>
 			<array>
-				<string>Allosaurids</string>
+				<string>Kapoor family</string>
 				<string>Sauropoda</string>
 				<string>Dromaeosaurs.</string>
 				<string>Fabrosaurids</string>
@@ -300,7 +300,7 @@
 			<array>
 				<string>85 to 71 million years ago</string>
 				<string>154-144 million years ago</string>
-				<string>127-89 million years ago</string>
+				<string>14th century.</string>
 				<string>206-180 million years ago</string>
 			</array>
 			<key>Complexity</key>

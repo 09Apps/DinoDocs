@@ -58,6 +58,7 @@
  
     // The badges plist file
     NSString* plistPath = [DDUtils getPlistPath:BADGES];
+    //NSLog(@"badge plistPath %@",plistPath);
     
     // read property list into memory as an NSData object
     NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
@@ -115,8 +116,6 @@
     // The badges plist file
     NSString* plistPath = [DDUtils getPlistPath:BADGES];
     
-    NSLog(@"badge plistPath %@",plistPath);
-    
     // read property list into memory as an NSData object
     NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
     NSString *errorDesc = nil;
@@ -162,7 +161,7 @@
                     }
                 }
 
-                if (score >= outofcount*BADGEFACTOR)
+                if (score >= outofcount*BENCHMARKFACTOR)
                 {
                     // Check if fast
                     // If user completes the quiz in certain time and gets good score, give him a badge
