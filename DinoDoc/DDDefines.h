@@ -21,8 +21,7 @@
 #define NOADS       600             // alert tag when ads removed already
 #define OPTCT       4               // Number of Answer options
 #define BENCHMARKFACTOR 0.7         // The multiplier for score benchmarking
-//#define BADGEFACTOR 0.80            // The multiplier for score benchmarking
-#define SPEEDMASTERFACTOR 2.0       // Quickest time to answer a question
+#define SPEEDMASTERFACTOR 1.6       // Quickest time to answer a question
 #define QUIZMASTERFACTOR 15         // Number of quiz played more than 15
 #define QUIZDOCFACTOR 8             // Number of max badges - 2
 #define FREEQZSCORE1 4              // Number of badges needed to unlock first free quiz

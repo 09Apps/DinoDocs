@@ -7,6 +7,7 @@
 //  This is utilities class. 
 
 #import "DDUtils.h"
+#import "DDDefines.h"
 
 @implementation DDUtils
 
@@ -34,14 +35,42 @@
     // check to see if Data.plist exists in documents
     if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
     {
-        NSError *err;
-        // if not in documents, get property list from main bundle
-        NSString* pBundlePath = [[NSBundle mainBundle] pathForResource:pListName ofType:@"plist"];
-        
         // Copy Plist to document directory
         NSFileManager* manager = [NSFileManager defaultManager];
-        [manager copyItemAtPath:pBundlePath toPath:plistPath error:&err];
+        NSError *err;
         
+        if ([pListName compare:MAINPARAM] == NSOrderedSame || [pListName compare:BADGES] == NSOrderedSame)
+        {
+            // We want to use some Plist files from old version, so let's copy them
+            // Step 1 - reduce BundleVersion by 0.1 to go to old version of plist
+            NSString *curver = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+            
+            float oldver = [curver floatValue] - 0.1;
+            NSString *oldplistver = [pListName stringByAppendingString:[NSString stringWithFormat:@"_%.1f",oldver]];
+            
+            NSString *oldplist = [oldplistver stringByAppendingString:@".plist"];
+            NSString *oldplistPath = [documentsPath stringByAppendingPathComponent:oldplist];
+            
+            // check to see if this old plist exists in documents
+            if ([[NSFileManager defaultManager] fileExistsAtPath:oldplistPath])
+            {
+                [manager copyItemAtPath:oldplistPath toPath:plistPath error:&err];
+                
+                if(err)
+                {
+                    NSLog(@"getPlistPath: file %@ Error in saveData: %@", oldplist,err);
+                }
+                else
+                {
+                    return plistPath;
+                }
+            }
+        }
+        
+        // if not in documents, get property list from main bundle
+        NSString* pBundlePath = [[NSBundle mainBundle] pathForResource:pListName ofType:@"plist"];
+        [manager copyItemAtPath:pBundlePath toPath:plistPath error:&err];
+            
         if(err)
         {
             NSLog(@"getPlistPath: file %@ Error in saveData: %@", pListName,err);

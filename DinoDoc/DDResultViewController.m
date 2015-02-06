@@ -58,7 +58,7 @@
     // Change headings as per score
     NSUInteger benchmark = self.quizcount * BENCHMARKFACTOR;
     
-    if(self.score > benchmark)
+    if(self.score >= benchmark)
     {
         NSString* playernm = @"Excellent score, ";
         self.namelbl.text = [playernm stringByAppendingString:mainparam.playername];
@@ -88,11 +88,10 @@
     
     // Unlock quiz for free if badge count matches
     NSUInteger earnedbdgcnt = [bdgVC getEarnedBadgeCount];
+    NSUInteger optionscount = [mainparam.options count];
     
     if (earnedbdgcnt == FREEQZSCORE1)
     {
-        NSUInteger optionscount = [mainparam.options count];
-            
         for (int i=0; i<optionscount; i++)
         {
             NSDictionary* dict = [mainparam.options objectAtIndex:i];
@@ -106,10 +105,13 @@
                     [mainparam updateMainParam];
                 
                     NSString* unlockqz = [NSString stringWithFormat:@"You have unlocked %@ quiz for FREE! ", FREEQZ1];
-                
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:unlockqz delegate:self cancelButtonTitle:@"Cool" otherButtonTitles:nil];
-                
-                    [alert show];
+                    
+                    dispatch_async(dispatch_get_main_queue(),^
+                    {
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:unlockqz delegate:self cancelButtonTitle:@"Cool" otherButtonTitles:nil];
+                        
+                        [alert show];
+                    });
                 }
                 break;
             }
@@ -117,8 +119,6 @@
     }
     else if (earnedbdgcnt == FREEQZSCORE2)
     {
-        NSUInteger optionscount = [mainparam.options count];
-        
         for (int i=0; i<optionscount; i++)
         {
             NSDictionary* dict = [mainparam.options objectAtIndex:i];
@@ -133,9 +133,12 @@
                     
                     NSString* unlockqz = [NSString stringWithFormat:@"You have unlocked %@ quiz for FREE! ", FREEQZ2];
                     
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:unlockqz delegate:self cancelButtonTitle:@"Cool" otherButtonTitles:nil];
-                    
-                    [alert show];
+                    dispatch_async(dispatch_get_main_queue(),^
+                    {
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:unlockqz delegate:self cancelButtonTitle:@"Cool" otherButtonTitles:nil];
+                        
+                        [alert show];
+                    });
                 }
                 break;
             }
